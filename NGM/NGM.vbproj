@@ -95,12 +95,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="images\backgrounds\" />
     <Folder Include="images\banners\" />
     <Folder Include="images\headerIcons\" />
     <Folder Include="images\largeButtons\" />
-    <Folder Include="images\logos\" />
-    <Folder Include="images\roundIcons\" />
     <Folder Include="images\smallButtons\" />
   </ItemGroup>
   <ItemGroup>
@@ -127,11 +124,25 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="home.aspx" />
+    <Content Include="images\backgrounds\home_ice.png" />
+    <Content Include="images\logos\logo_Big.png" />
+    <Content Include="images\logos\logo_loginBig.png" />
+    <Content Include="images\logos\logo_Small.png" />
+    <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
-    <Content Include="styleSheet\StyleSheet.css" />
+    <Content Include="styleSheet\styleSheetHome.css" />
+    <Content Include="styleSheet\styleSheetLogin.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="home.aspx.designer.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="index.aspx.designer.vb">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>

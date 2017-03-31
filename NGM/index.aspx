@@ -5,14 +5,14 @@
 <head runat="server">
     <title>NGM</title>
     <meta charset="utf-8"/>
-    <link href="styleSheet/StyleSheet.css" rel="stylesheet" type="text/css"/>
+    <link href="styleSheet/styleSheetLogin.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
  <header>
  	<input type="image" class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"/>
  </header>
 <div id="loginOverlay">
-	<img id="loginLogo" src="images/logos/NGM Logo.png" width="287" height="292" alt="Logo"/><br/>
+	<img id="loginLogo" src="images/logos/logo_Small.png" width="287" height="292" alt="Logo"/><br/>
 	
 <form id="login_form" runat="server">
   <img src="images/banners/kioskLoginBanner.png" alt="" width="310" height="50" class="loginBanner"/>    

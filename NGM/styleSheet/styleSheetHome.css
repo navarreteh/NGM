@@ -1,0 +1,30 @@
+﻿#homeOverlay {
+	background-image: url(../images/backgrounds/home_ice.png);
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1100px;
+	overflow: visible;
+	position: relative;
+}
+#homeLogo {
+	float: left;
+	width: 400px;
+	height: auto;
+	margin-left: 1em;
+	padding-top: 6em;
+	padding-bottom: 6em;
+	padding-left: 2em;
+	padding-right: 2em;
+
+}
+#companyName{
+	color: #9C8F5F;
+	text-align: right;
+	padding: .5em;
+	
+	
+}#home_footer {
+	margin-top: 1em;
+	clear: both;
+}
