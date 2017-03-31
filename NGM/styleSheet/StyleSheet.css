@@ -1,0 +1,98 @@
+body {
+	background-repeat: no-repeat;
+	background-color: #102C54;
+	background-image: url(../images/backgrounds/background.png);
+	background-size:auto;
+	background-position: center 0%;
+	margin: auto;
+	height: auto;
+
+}
+.headerButtons   {
+	height: 60px;
+	width: 60px;
+	padding: 1em;
+	float: right;
+	opacity: .75;
+	clear:both;
+}
+ :hover.headerButtons {opacity:1;}
+
+
+#loginOverlay {
+	background-image: url(../images/backgrounds/login_ice.png);
+	background-position: center top;
+	margin: auto;
+	width: 300px;
+	height: auto;
+	text-align: center;
+	overflow: visible;
+	position:relative;
+}
+
+#loginOverlay #loginLogo {
+	margin-top: 5em;
+	margin-bottom: 25%;
+	margin-left: auto;
+	margin-right:auto;
+	height: 200px;
+	width: 200px;
+
+}
+#loginOverlay #login_form {
+	margin-bottom: 60%;
+	background-color: rgba(255,255,255,0.75);
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 250px;
+}
+.loginBanner {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1em;
+}
+.roundIcons  {
+	width: 2em;
+	height: 2em;
+	position: relative;
+	vertical-align: middle;
+}
+.textBoxes  {
+	height: 1.5em;
+	position: relative;
+	margin: .5em;
+	width: 10em;
+}
+.formButtons   {
+	height: 3em;
+	width: 8em;
+	margin: .5em;
+	position: relative;
+	opacity:.75;
+}
+:hover.formButtons {opacity: 1;}
+
+
+footer  {
+	background-color: rgba(0,0,0,0.70);
+	width: 300px;
+	position:relative;
+	background-position: center bottom;
+	height: auto;
+	bottom: 0px;
+
+}
+
+#companyName{
+	color: #9C8F5F;
+	text-align: center;
+	padding: .5em;
+}
+
+#hotKeyRef{
+	color: #FFFFFF;
+	text-align: left;
+	
+}
