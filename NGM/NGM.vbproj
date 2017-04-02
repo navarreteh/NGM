@@ -132,7 +132,7 @@
     <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
     <Content Include="styleSheet\styleSheetHome.css" />
-    <Content Include="styleSheet\styleSheetLogin.css" />
+    <Content Include="styleSheet\styleSheetIndex.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
