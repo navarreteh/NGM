@@ -15,7 +15,7 @@
 	float: left;
 	width: 475px;
 	height: 475px;
-    margin:4em;
+    margin: 5.5em 4em 4em 4em;
 
 }
 #companyName{
@@ -36,7 +36,7 @@
 	position:relative;
     text-align: center;
 	float:left; 
-	margin: 4em;
+	margin: 5.5em 4em 4em 4em;
 	width: 475px;
 	height: 475px;
 }
@@ -58,4 +58,13 @@
 }
 #searchBar{
 	width:350px;
+}
+#homeNavigation{
+	position:absolute;
+	height: 400px;
+	right: 50px;
+	top:100px
+}
+a{
+	display: inline-block;
 }

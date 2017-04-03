@@ -10,8 +10,9 @@
 <body>
  <form runat="server">
  <header>
- 	 <asp:ImageButton runat="server" type="image" class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"/>
-    
+     <div id="headerContainer">
+ 	    <asp:ImageButton runat="server" type="image" class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"/>
+    </div>
  </header>
 <div id="loginOverlay">
 	<img id="loginLogo" src="images/logos/logo_Small.png" width="287" height="292" alt="Logo"/><br/>

@@ -7,7 +7,47 @@
         End If
     End Sub
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    Protected Sub posButton_Click(sender As Object, e As ImageClickEventArgs) Handles posButton.Click
+        switchViews()
+
+    End Sub
+
+    Protected Sub reportsButton_Click(sender As Object, e As ImageClickEventArgs) Handles reportsButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub backOfficeButton_Click(sender As Object, e As ImageClickEventArgs) Handles backOfficeButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub closeButton_Click(sender As Object, e As ImageClickEventArgs) Handles closeButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub shipmentButton_Click(sender As Object, e As ImageClickEventArgs) Handles shipmentButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub messageButton_Click(sender As Object, e As ImageClickEventArgs) Handles messageButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub clockButton_Click(sender As Object, e As ImageClickEventArgs) Handles clockButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub helpButton_Click(sender As Object, e As ImageClickEventArgs) Handles helpButton.Click
+        switchViews()
+    End Sub
+
+    Protected Sub searchIcon_Click(sender As Object, e As ImageClickEventArgs) Handles searchIcon.Click
+        switchViews()
+    End Sub
+
+
+
+    Sub switchViews()
         If homeMultiView.GetActiveView().ID = "homeLogoView" Then
             homeMultiView.SetActiveView(homeLoginView)
         Else

@@ -16,7 +16,12 @@
 				<asp:TextBox runat="server" id="searchBar"></asp:TextBox>
 				<a><asp:ImageButton runat="server" type="image" class="roundIcons" id="searchIcon" src="images/roundIcons/searchIcon.png" alt="searchIcon"/></a>
 			</div>
-			<a><input class="headerButtons" type="image" name="helpIcon" id="header_helpIcon" src="images/headerIcons/helpIcon.png"/></a>
+			<div id="headerContainer">
+				<a><asp:ImageButton runat="server" ID="shipmentButton" class="headerButtons" type="image" name="shipmentIcon"  src="images/headerIcons/truckIcon.png"/></a>
+				<a><asp:ImageButton runat="server" ID="messageButton" class="headerButtons" type="image" name="messageIcon"  src="images/headerIcons/mailIcon.png"/></a>
+				<a><asp:ImageButton runat="server" ID="clockButton" class="headerButtons" type="image" name="clockIcon"  src="images/headerIcons/clockIcon.png"/></a>
+				<a><asp:ImageButton runat="server" ID="helpButton" class="headerButtons" type="image" name="helpIcon" src="images/headerIcons/helpIcon.png"/></a>
+			</div>
 		</header>
         <asp:MultiView ID="homeMultiView" runat="server">
             <asp:View ID="homeLogoView" runat="server">
@@ -35,8 +40,11 @@
 
             </asp:View>
          </asp:MultiView>
-		<div id="homeNavigation">
-           <asp:Button ID="Button1" runat="server" Text="Test Button" />
+        <div id="homeNavigation">
+			<a><asp:ImageButton runat="server" ID="posButton" src="images/largeButtons/home_pos.png" alt="pos" class="largeButtons"/></a><br>
+	    	<a><asp:ImageButton runat="server" ID="reportsButton" src="images/largeButtons/home_reports.png" alt="reports" class="largeButtons"/></a><br>
+	    	<a><asp:ImageButton runat="server" ID="backOfficeButton" src="images/largeButtons/home_backOffice.png" alt="backOffice" class="largeButtons"/></a><br>
+	    	<a><asp:ImageButton runat="server" ID="closeButton" src="images/largeButtons/home_closePos.png" alt="closePos" class="largeButtons"/></a><br> 
 		</div>
 		<footer id="home_footer">
 			<p id="hotKeyRef"> 
