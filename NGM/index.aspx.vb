@@ -6,6 +6,6 @@
     End Sub
 
     Protected Sub login_submitButton_Click(sender As Object, e As ImageClickEventArgs) Handles login_submitButton.Click
-        Response.Redirect("http://ourclassproject.com/home.aspx")
+        Response.Redirect("https://www.google.com/")
     End Sub
 End Class

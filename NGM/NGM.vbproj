@@ -131,8 +131,10 @@
     <Content Include="images\logos\logo_Small.png" />
     <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
+    <Content Include="pos.aspx" />
     <Content Include="styleSheet\styleSheetHome.css" />
     <Content Include="styleSheet\styleSheetIndex.css" />
+    <Content Include="styleSheet\styleSheetPos.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="pos.aspx.designer.vb">
+      <DependentUpon>pos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pos.aspx.vb">
+      <DependentUpon>pos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
