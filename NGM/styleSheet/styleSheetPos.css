@@ -1,4 +1,3 @@
-
 #posOverlay {
 	background-image: url(../images/backgrounds/white_ice.png);
 	background-color: rgba(255,255,255,0.75);
@@ -21,28 +20,72 @@
 	width:1084px;
 	clear: both;
 	
+}
+#addBarContainer {
+	position:absolute;
+	display:inline;
+	top:1.5em;
+	left:50px;
+	margin-bottom: 2em;
+	
 }#searchBarContainer {
 	position:absolute;
 	display:inline;
 	top:1.5em;
-	left:120px;
+	left:320px;
 	margin-bottom: 2em;
 	
 }#searchBar{
 	width:350px;
+	
+}#addBar{
+	width:200px;
 	
 }#posScreenContainer{
 	margin-left:50px;
 	float:left;
 	height:auto;
 	
-}#posScreen{
+}
+#purchaseScreen{
 	background-color: rgba(255,255,255,1);
 	position: absolute;
 	width: 650px;
 	height:605px;
 	bottom:2em;
+}#purchaseScreen #returnBannerPurchase{
+	position: absolute;
+	bottom: 45px; 
+}#purchaseScreen #paymentBannerPurchase{
+	position: absolute;
+	bottom: 3px; 
 }
+
+#returnScreen{
+	background-color: rgba(255,255,255,1);
+	position: absolute;
+	width: 650px;
+	height:605px;
+	bottom:2em;
+}#returnScreen #returnBannerReturn{
+	margin-top:-3px; 
+}#returnScreen #paymentBannerReturn{
+	position: absolute;
+	bottom: 3px; 
+}
+
+#paymentScreen{
+	background-color: rgba(255,255,255,1);
+	position: absolute;
+	width: 650px;
+	height:605px;
+	bottom:2em;
+}#paymentScreen #returnBannerPayment{
+	margin-top:-3px; 
+}#paymentScreen #paymentBannerPayment{
+	margin-top:-3px; 
+}
+
 .posBanners   {
 	width: 650px;
 }
@@ -66,16 +109,31 @@
 	background-color: rgba(255,255,255,1);
 	position: absolute;
 	width: 300px;
-	height:400px;
+	height:300px;
 	right:50px;
-	bottom:2em;
+	bottom:140px;
 	
+}
+#checkoutButton{
+	position:absolute;
+	bottom: 35px;
+	right:38px;
 }
 #headerContainer{
 	float:right;
 	width:300px;
 	margin-right: -40px;
 }
-a{
-	display: inline-block;
+a{display: inline-block;}
+
+.paymentButtons{
+	width:175px;
+	padding-bottom: 25px;
+}
+#paymentMethodContainer{
+	position: absolute;
+	top:200px;
+	left:25px;
+	width:175px;
+	height:auto;
 }

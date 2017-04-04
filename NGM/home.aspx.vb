@@ -9,7 +9,7 @@
 
 
     Protected Sub posButton_Click(sender As Object, e As ImageClickEventArgs) Handles posButton.Click
-        switchViews()
+        Response.Redirect("pos.aspx")
 
     End Sub
 
