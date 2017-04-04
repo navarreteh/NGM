@@ -1,15 +1,16 @@
 html{
 	background-color:#102C54;
 	background-repeat: no-repeat;
-	background-image: url(../images/backgrounds/background.png);
+	background-image: url(../images/backgrounds/background.jpg);
 	background-size:auto;
 	background-position: center 0%;
 }
 body {
+	position: relative;
 	margin: auto;
-	width:100%;
-	height: 100%;
-    max-width:1920px;
+	width:auto;
+	max-width: 1920px;
+	height: auto;
 
 }
 .headerButtons   {
@@ -53,7 +54,6 @@ body {
 	max-width: 250px;
 }
 .loginBanner {
-	width: auto;
 	max-width: 100%;
 	height: auto;
 	margin-bottom: 1em;
@@ -111,7 +111,6 @@ footer  {
 	float:right;
 	margin-right:50px;
 	width:300px;
-    position:relative;
 }
 :hover.largeButtons{opacity:1;}
 
