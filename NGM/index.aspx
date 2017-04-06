@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>NGM</title>
+    <title>NGM - Login</title>
     <meta charset="utf-8"/>
     <link href="styleSheet/styleSheetLogin.css" rel="stylesheet" type="text/css"/>
 </head>
