@@ -12,7 +12,7 @@
 	color: #9C8F5F;
 	text-align: right;
 	padding: .5em;
-	margin-left: 8em;
+	margin-left: 5px;
 	
 }#posFooter{
 	position: absolute;
@@ -52,13 +52,15 @@
 	position: absolute;
 	width: 650px;
 	height:605px;
-	bottom:2em;
+	bottom:35px;
 }#purchaseScreen #returnBannerPurchase{
 	position: absolute;
-	bottom: 45px; 
+    left:0;
+	bottom: 41px; 
 }#purchaseScreen #paymentBannerPurchase{
 	position: absolute;
-	bottom: 3px; 
+	bottom: 0; 
+    left:0;
 }
 
 #returnScreen{
@@ -66,12 +68,15 @@
 	position: absolute;
 	width: 650px;
 	height:605px;
-	bottom:2em;
+	bottom:35px;
 }#returnScreen #returnBannerReturn{
-	margin-top:-3px; 
+    position: absolute;
+    top:41px;
+    left:0;
 }#returnScreen #paymentBannerReturn{
 	position: absolute;
-	bottom: 3px; 
+	bottom: 0; 
+    left:0;
 }
 
 #paymentScreen{
@@ -79,7 +84,7 @@
 	position: absolute;
 	width: 650px;
 	height:605px;
-	bottom:2em;
+	bottom:35px;
 }#paymentScreen #returnBannerPayment{
 	margin-top:-3px; 
 }#paymentScreen #paymentBannerPayment{
@@ -88,6 +93,7 @@
 
 .posBanners   {
 	width: 650px;
+   position:relative;
 }
 #posAside{
 	width:300px;

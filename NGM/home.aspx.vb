@@ -14,7 +14,7 @@
     End Sub
 
     Protected Sub reportsButton_Click(sender As Object, e As ImageClickEventArgs) Handles reportsButton.Click
-        switchViews()
+        Response.Redirect("reports.aspx")
     End Sub
 
     Protected Sub backOfficeButton_Click(sender As Object, e As ImageClickEventArgs) Handles backOfficeButton.Click

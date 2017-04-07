@@ -1,0 +1,91 @@
+#reportsOverlay {
+	background-image: url(../images/backgrounds/white_ice.png);
+	background-color: rgba(255,255,255,0.75);
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100px;
+	height:734px;
+	overflow: visible;
+	position: relative;
+	
+}
+#reportsFooter{
+	position: absolute;
+	margin-top: 10px;
+	width:1084px;
+	clear: both;
+	
+}
+#companyName{
+	color: #9C8F5F;
+	text-align: right;
+	padding: .5em;
+	margin-left: 350px;
+	
+}
+#reportsContainer{
+	padding-bottom:25px;
+	padding-left: 25px;
+	padding-right: 25px;
+	position: absolute;
+	bottom: 25px;
+}
+.reportsSection{
+	width:330px;
+	height:575px;
+	margin:10px;
+	float:left;
+}
+#hourlyReportsContatiner{
+	background-color: rgba(255,255,255,1);
+}
+
+#dailyReportsContainer{
+	background-color: rgba(255,255,255,1);
+}
+#detailedContainer{
+    background-color: rgba(255,255,255,1);
+    width:680px;
+	height:575px;
+	margin:10px;
+	float:left;
+}
+
+#asideContainer{
+	float:right;
+}
+a{display: inline-block;}
+header{
+	padding:25px;
+}
+.headerContainer{
+	float:left;
+	width:330px;
+	margin:10px;
+}
+#headerButtons{
+	text-align: right;
+	margin-top: -25px;
+}
+#detailedButton {
+	display:block;
+	width:300px;
+	height:auto;
+    margin:auto;
+	margin-top:200px;
+}
+#reportsLogo{
+	width: 275px;
+	display:block;
+	height:auto;
+	margin:auto;
+}
+#locationDD{
+    width:200px;
+    height:2.5em;
+}
+.calendarDD{
+    width:140px;
+    height:2.5em;
+}
+

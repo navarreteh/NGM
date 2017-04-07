@@ -54,4 +54,10 @@
     End Sub
 
 
+    Protected Sub pos_voidIcon_Click(sender As Object, e As ImageClickEventArgs) Handles pos_voidIcon.Click
+        Response.Redirect("home.aspx")
+    End Sub
+
+
+
 End Class

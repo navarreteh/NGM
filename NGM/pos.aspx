@@ -22,32 +22,32 @@
 				<a><input type="image" class="roundIcons" id="searchIcon" src="images/roundIcons/searchIcon.png" width="50" height="50" alt="searchIcon"/></a>
 			</div>
 			<div id="headerContainer">
-				<a><input class="headerButtons" type="image" name="editIcon" id="pos_editIcon" src="images/headerIcons/overrideIcon.png"/></a>
-				<a><input class="headerButtons" type="image" name="voidIcon" id="pos_voidIcon" src="images/headerIcons/voidIcon.png"/></a>
-				<a><input class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="pos_editIcon" src="images/headerIcons/overrideIcon.png"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="pos_voidIcon" src="images/headerIcons/voidIcon.png"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png"/></a>
 			</div>
 		</header>
 		<div id="posScreenContainer">
             <asp:MultiView ID="posMultiView" runat="server">
                 <asp:View ID="purchaseView" runat="server">
     		    <div id="purchaseScreen">
-	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.png" class="posBanners" id="purchaseBannerPurchase"	alt="purchaseBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/returns.png" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/payments.png" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPurchase"	alt="purchaseBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
 			    </div> 
                 </asp:View>
                 <asp:View ID="returnView" runat="server">
                 <div id="returnScreen">
-	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.png" class="posBanners" id="purchaseBannerReturn"	alt="purchaseBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/returns.png" 	class="posBanners" id="returnBannerReturn"	    alt="returnBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/payments.png" 	class="posBanners" id="paymentBannerReturn" 	alt="paymentanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerReturn"	alt="purchaseBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerReturn"	    alt="returnBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerReturn" 	alt="paymentanner"/>
 			    </div> 
                 </asp:View>
                 <asp:View ID="paymentView" runat="server">
                 <div id="paymentScreen">
-	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.png" class="posBanners" id="purchaseBannerPayment"	alt="purchaseBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/returns.png" 	class="posBanners" id="returnBannerPayment"	    alt="returnBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/payments.png" 	class="posBanners" id="paymentBannerPayment"	alt="paymentanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPayment"	alt="purchaseBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPayment"	    alt="returnBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPayment"	alt="paymentanner"/>
 
                      <div id="paymentMethodContainer">
 					    <img src="images/largeButtons/pos_cash.png" class="paymentButtons" alt="cashButton"/><br/>
@@ -70,7 +70,7 @@
 		</div>
 		<footer id="posFooter">
 			<p id="hotKeyRef"> 
-				Escape - [ESC] &nbsp;|&nbsp; Search - [CTRL - S] &nbsp;|&nbsp; Shipment - [F8] &nbsp;|&nbsp; Email - [F9] &nbsp;|&nbsp; Time Clock - [F10] &nbsp;|&nbsp; Help - [F11]
+				Escape - [ESC] &nbsp;|&nbsp; Add Items - [F1] &nbsp;|&nbsp; Search - [CTRL-S] &nbsp;|&nbsp; Edits - [CTRL-F8] &nbsp;|&nbsp; Void Transaction - [CTRL-F12] &nbsp;|&nbsp; Help - [F11]
 			</p>
 		<p id="companyName">&copy; New Generation Merchandising</p>
 		</footer>

@@ -132,12 +132,21 @@
     <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
     <Content Include="pos.aspx" />
+    <Content Include="reports.aspx" />
     <Content Include="styleSheet\styleSheetHome.css" />
     <Content Include="styleSheet\styleSheetIndex.css" />
     <Content Include="styleSheet\styleSheetPos.css" />
+    <Content Include="styleSheet\styleSheetReports.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backoffice.Master.designer.vb">
+      <DependentUpon>backoffice.Master</DependentUpon>
+    </Compile>
+    <Compile Include="backoffice.Master.vb">
+      <DependentUpon>backoffice.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="home.aspx.designer.vb">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
@@ -178,6 +187,13 @@
       <DependentUpon>pos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="reports.aspx.designer.vb">
+      <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports.aspx.vb">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -191,6 +207,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="backoffice.Master" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
