@@ -18,11 +18,12 @@
     End Sub
 
     Protected Sub backOfficeButton_Click(sender As Object, e As ImageClickEventArgs) Handles backOfficeButton.Click
-        switchViews()
+        Response.Redirect("BackOffice/bank.aspx")
+
     End Sub
 
     Protected Sub closeButton_Click(sender As Object, e As ImageClickEventArgs) Handles closeButton.Click
-        switchViews()
+        Response.Redirect("index.aspx")
     End Sub
 
     Protected Sub shipmentButton_Click(sender As Object, e As ImageClickEventArgs) Handles shipmentButton.Click

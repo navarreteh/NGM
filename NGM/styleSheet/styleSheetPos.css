@@ -56,7 +56,7 @@
 }#purchaseScreen #returnBannerPurchase{
 	position: absolute;
     left:0;
-	bottom: 41px; 
+	bottom: 42px; 
 }#purchaseScreen #paymentBannerPurchase{
 	position: absolute;
 	bottom: 0; 
@@ -71,7 +71,7 @@
 	bottom:35px;
 }#returnScreen #returnBannerReturn{
     position: absolute;
-    top:41px;
+    top:42px;
     left:0;
 }#returnScreen #paymentBannerReturn{
 	position: absolute;
@@ -88,7 +88,7 @@
 }#paymentScreen #returnBannerPayment{
 	margin-top:-3px; 
 }#paymentScreen #paymentBannerPayment{
-	margin-top:-3px; 
+	margin-top:-2px; 
 }
 
 .posBanners   {

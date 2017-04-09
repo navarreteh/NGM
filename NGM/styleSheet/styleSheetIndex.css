@@ -16,8 +16,8 @@ body {
 .headerButtons   {
 	height: 65px;
 	width: 65px;
-	padding-top: 1em;
-	padding-right:7px;
+	margin-top: 1em;
+	margin-right:7px;
 	float: right;
 	opacity: .85;
 	clear:both;
