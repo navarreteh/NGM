@@ -1,0 +1,45 @@
+﻿<%@ Master Language="VB" CodeBehind="backoffice.master.vb" Inherits="NGM.backoffice" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Back Office</title>
+    <link href="../styleSheet/styleSheetIndex.css" 		rel="stylesheet" type="text/css"/>
+	<link href="../styleSheet/styleSheetBackOffice.css" 	rel="stylesheet" type="text/css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="backOfficeOverlay">
+        <header>
+		<div id="headerButtons" class="headerContainer">
+            <a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon"  id="homeIcon" 		src="../images/headerIcons/homeIcon.png"/></a>
+			<a><asp:ImageButton runat="server"  class="headerButtons" type="image" name="printIcon" id="printIcon" 	    src="../images/headerIcons/printIcon.png"/></a>
+			<a><asp:ImageButton runat="server"  class="headerButtons" type="image" name="helpIcon"  id="poshelpIcon" 	src="../images/headerIcons/helpIcon.png"/></a>
+		</div>
+		<h1 class="headerContainer">Back Office</h1>
+	</header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+       
+	<div id="buttonsContainer">
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="bankButton" 			src="../images/largeButtons/bank.png"/></a><br/>
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="employeeButton" 		src="../images/largeButtons/employees.png"/></a><br/>
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="inventoryButton" 	src="../images/largeButtons/inventory.png"/></a><br/>
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="ordersButton" 		src="../images/largeButtons/orders.png"/></a><br/>
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="productsButton" 		src="../images/largeButtons/products.png"/></a><br/>
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="suppliersButton" 	src="../images/largeButtons/suppliers.png"/></a><br/>
+		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="transactionsButton" 	src="../images/largeButtons/transaction.png"/></a>
+	 </div>
+     <footer id="backOfficeFooter">
+		<p id="hotKeyRef"> 
+				Escape - [ESC] &nbsp;|&nbsp; Home - [CTRL-H] &nbsp;|&nbsp; Print - [CTRL-P] &nbsp;|&nbsp; Help - [F11]
+			</p>
+		<p id="companyName">&copy; New Generation Merchandising</p>
+	</footer>
+    </div>
+    </form>
+</body>
+</html>

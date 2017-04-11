@@ -7,24 +7,64 @@
 	overflow: visible;
 	position: relative;
 }
-#homeLogo {
+#homeCircle {
+    background-image: url(../images/logos/logo_Big.png);
+    background-size: 475px 475px;
+    background-repeat:no-repeat;
+    position:relative;
 	float: left;
-	width: 400px;
-	height: auto;
-	margin-left: 1em;
-	padding-top: 6em;
-	padding-bottom: 6em;
-	padding-left: 2em;
-	padding-right: 2em;
+	width: 475px;
+	height: 475px;
+    margin: 5.5em 4em 4em 4em;
 
 }
 #companyName{
 	color: #9C8F5F;
 	text-align: right;
 	padding: .5em;
+	margin-left: 8em;
 	
 	
 }#home_footer {
 	margin-top: 1em;
 	clear: both;
+}
+#homeLoginCircle{
+    background-image: url(../images/logos/logo_loginBig.png);
+    background-size: 475px 475px;
+    background-repeat:no-repeat;
+	position:relative;
+    text-align: center;
+	float:left; 
+	margin: 5.5em 4em 4em 4em;
+	width: 475px;
+	height: 475px;
+}
+#homeLoginForm{
+	position: absolute;
+	width: 200px;
+	bottom: 50px;
+	left: 0px;
+	right: 10px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+#searchBarContainer {
+	position:absolute;
+	display:inline;
+	top:1.5em;
+	left:120px;
+}
+#searchBar{
+	width:350px;
+}
+#homeNavigation{
+	position:absolute;
+	height: 400px;
+	right: 50px;
+	top:100px
+}
+a{
+	display: inline-block;
 }

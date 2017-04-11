@@ -1,0 +1,65 @@
+#backOfficeOverlay {
+	background-image: url(../images/backgrounds/white_ice.png);
+	background-color: rgba(255,255,255,0.75);
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100px;
+	height:734px;
+	overflow: visible;
+	position: relative;
+}
+#backOfficeFooter{
+	position: absolute;
+	margin-top: 10px;
+	width:1084px;
+	clear: both;
+}
+#companyName{
+	color: #9C8F5F;
+	text-align: right;
+	padding: .5em;
+	margin-left: 310px;
+}
+#hotKeyRef{
+	margin-left: 35px;
+}
+.headerContainer{
+	float:right;
+	width:330px;
+	margin:10px;
+}
+#headerButtons{
+	text-align: right;
+	margin-top: -25px;
+}
+a{display: inline-block;}
+header{
+	padding:25px;
+}
+#buttonsContainer{
+	float:left;
+}
+section{
+	background-color: rgba(126,129,126,.85);
+	box-shadow: -2px 8px 5px 1px rgba(98,100,103,1);
+	float: left;
+	margin-left: 45px;
+	margin-right: 44px;
+	width: 750px;
+	border-radius: 15px;
+	height: 565px;
+}
+#sectionHeader{
+	background-color: rgba(124,128,129,1);
+	width: 730px;
+	padding:5px 0 5px 20px;
+	font-size: 200%;
+	font-weight:bolder;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+h1{
+	padding-right:335px;
+	font-weight: bolder;
+	font-size: 300%;
+}
