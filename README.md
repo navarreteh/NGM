@@ -1,7 +1,7 @@
 # NGM
 New Generation Merchandising
 
-Project Leader: Shaughnessy Connor
+Project Leader: Shaughnessy Connor\n
 Chief UI Designer: Daniel Choi 
 Chief Database Administrator: Devin McRee
 Chief Database Architect & Design: Hannah Navarrete
