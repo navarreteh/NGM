@@ -12,4 +12,157 @@ Option Explicit On
 
 
 Partial Public Class home
+    
+    '''<summary>
+    '''form control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents form As Global.System.Web.UI.HtmlControls.HtmlForm
+    
+    '''<summary>
+    '''searchBar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents searchBar As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''searchIcon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents searchIcon As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''shipmentButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents shipmentButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''messageButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents messageButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''clockButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents clockButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''helpButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents helpButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''homeMultiView control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents homeMultiView As Global.System.Web.UI.WebControls.MultiView
+    
+    '''<summary>
+    '''homeLogoView control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents homeLogoView As Global.System.Web.UI.WebControls.View
+    
+    '''<summary>
+    '''homeLoginView control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents homeLoginView As Global.System.Web.UI.WebControls.View
+    
+    '''<summary>
+    '''login_usernameTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents login_usernameTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''login_passwordTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents login_passwordTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''login_submitButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents login_submitButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''posButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents posButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''reportsButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents reportsButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''backOfficeButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents backOfficeButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''closeButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents closeButton As Global.System.Web.UI.WebControls.ImageButton
 End Class

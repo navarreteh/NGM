@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class index
     
     '''<summary>
-    '''login_form control.
+    '''header_helpIcon control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents login_form As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents header_helpIcon As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
     '''login_usernameTB control.
