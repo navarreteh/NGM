@@ -13,6 +13,7 @@
  <header>
      <div id="headerContainer">
  	    <asp:ImageButton runat="server" type="image" class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"/>
+         <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     </div>
  </header>
 <div id="loginOverlay">
