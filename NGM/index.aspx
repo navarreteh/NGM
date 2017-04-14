@@ -34,3 +34,13 @@
 
 </body>
 </html>
+<asp:sqldatasource runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="Select Employee_Login.Employee_ID, Employee_Password, Employee_First_Name, Employees.Role_ID
+From Employee_Login, Employees
+Where Employee_Login.Employee_ID = Employees.Employee_ID
+And Employee_Login.Employee_ID = @empID
+And Employee_Password = @empPass;">
+    <SelectParameters>
+        <asp:ControlParameter ControlID="login_usernameTB" Name="empID" PropertyName="Text" />
+        <asp:ControlParameter ControlID="login_passwordTB" Name="empPass" PropertyName="Text" />
+    </SelectParameters>
+</asp:sqldatasource>
