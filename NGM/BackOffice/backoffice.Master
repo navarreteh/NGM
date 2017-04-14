@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Back Office</title>
     <link href="../styleSheet/styleSheetIndex.css" 		rel="stylesheet" type="text/css"/>
-	<link href="../styleSheet/styleSheetBackOffice.css" 	rel="stylesheet" type="text/css"/>
+	<link href="~/styleSheet/styleSheetBackOffice.css" 	rel="stylesheet" type="text/css" runat="server"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
