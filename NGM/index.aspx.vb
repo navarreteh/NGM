@@ -10,27 +10,34 @@ Partial Class index
             Dim loginID = Integer.Parse(login_usernameTB.Text)
             Dim conn As SqlConnection
             Dim cmd As SqlCommand
-            Dim cmdString As String = "Select [Employee_Password] FROM Employee_Login" &
-            "Where (([Employee_ID] = @Username) And ([Employee_Password] = @Password))"
+            Dim cmdString As String = "SELECT [Employee_Password] FROM Employee_Login WHERE (([Employee_ID] = @Username) AND ([Employee_Password] = @Password))"
 
-            conn = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString)
+            conn = New SqlConnection(ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString)
             cmd = New SqlCommand(cmdString, conn)
             cmd.Parameters.Add("@Username", SqlDbType.Int)
-            cmd.Parameters("@Username").Value = login_usernameTB.Text
+            cmd.Parameters("@Username").Value = loginID
             cmd.Parameters.Add("@Password", SqlDbType.VarChar, 30)
             cmd.Parameters("@Password").Value = login_passwordTB.Text
             conn.Open()
 
-            Dim myReader As SqlDataReader
-            myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            Dim myReader As SqlDataReader = cmd.ExecuteReader()
 
             If myReader.Read() Then
+                'Update Login Attempts
+                'IF POS is close - popup/dialog to open kiosk
+                'we need a field for kiosk status
+                'check role
+
+
                 Response.Redirect("home.aspx")
             Else
                 InvalidCredLabel.Text = "Invalid Credentials"
 
             End If
             myReader.Close()
+
+
+
         End If
 
 
