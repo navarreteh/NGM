@@ -25,9 +25,9 @@
         <img src="images/banners/kioskLoginBanner.png" alt="" width="310" height="50" class="loginBanner"/>  
         <asp:Label ID="InvalidCredLabel" runat="server"></asp:Label><br />
         <img class="roundIcons" id="userIcon" src="images/roundIcons/userIcon.png" alt="userIcon"/>
-	    <asp:TextBox class="textBoxes" autofocus="true" type="text" name="textfield" id="login_usernameTB" runat="server" required="true"/><br/>
+	    <asp:TextBox class="textBoxes" autocomplete="off" autofocus="true" type="text" name="textfield" id="login_usernameTB" runat="server" required="true"/><br/>
 	    <img class="roundIcons"  id="passwordIcon" src ="images/roundIcons/passwordIcon.png" alt=""/>
-	    <asp:TextBox class="textBoxes" type="text" name="textfield2" id="login_passwordTB" runat="server" required="true"/><br/>
+	    <asp:TextBox class="textBoxes" autocomplete="off" type="text" name="textfield2" id="login_passwordTB" runat="server" required="true"/><br/>
 	    <asp:ImageButton class="formButtons" type="image" name="sumbitIcon" id="login_submitButton" src="images/smallButtons/submitIcon.png" runat="server"/>
     </div>
 <footer id="login_footer">
