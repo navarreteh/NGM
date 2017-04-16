@@ -11,41 +11,32 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class index
+Partial Public Class onlineorders
     
     '''<summary>
-    '''InvalidCredLabel control.
+    '''homeIcon control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents InvalidCredLabel As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents homeIcon As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
-    '''login_usernameTB control.
+    '''printIcon control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents login_usernameTB As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents printIcon As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
-    '''login_passwordTB control.
+    '''poshelpIcon control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents login_passwordTB As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''login_submitButton control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents login_submitButton As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents poshelpIcon As Global.System.Web.UI.WebControls.ImageButton
 End Class

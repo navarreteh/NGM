@@ -127,10 +127,11 @@
     <Content Include="BackOffice\bank.aspx" />
     <Content Include="BackOffice\employees.aspx" />
     <Content Include="BackOffice\inventory.aspx" />
-    <Content Include="BackOffice\orders.aspx" />
+    <Content Include="BackOffice\shipments.aspx" />
     <Content Include="BackOffice\products.aspx" />
     <Content Include="BackOffice\suppliers.aspx" />
     <Content Include="BackOffice\transactions.aspx" />
+    <Content Include="help.aspx" />
     <Content Include="home.aspx" />
     <Content Include="images\backgrounds\home_ice.png" />
     <Content Include="images\logos\logo_Big.png" />
@@ -138,9 +139,11 @@
     <Content Include="images\logos\logo_Small.png" />
     <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
+    <Content Include="onlineorders.aspx" />
     <Content Include="pos.aspx" />
     <Content Include="reports.aspx" />
     <Content Include="styleSheet\styleSheetBackOffice.css" />
+    <Content Include="styleSheet\styleSheetHelp.css" />
     <Content Include="styleSheet\styleSheetHome.css" />
     <Content Include="styleSheet\styleSheetIndex.css" />
     <Content Include="styleSheet\styleSheetPos.css" />
@@ -167,8 +170,8 @@
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BackOffice\orders.aspx.vb">
-      <DependentUpon>orders.aspx</DependentUpon>
+    <Compile Include="BackOffice\shipments.aspx.vb">
+      <DependentUpon>shipments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BackOffice\products.aspx.vb">
@@ -182,6 +185,13 @@
     <Compile Include="BackOffice\transactions.aspx.vb">
       <DependentUpon>transactions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="help.aspx.designer.vb">
+      <DependentUpon>help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.vb">
+      <DependentUpon>help.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="home.aspx.designer.vb">
       <DependentUpon>home.aspx</DependentUpon>
@@ -215,6 +225,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="onlineorders.aspx.designer.vb">
+      <DependentUpon>onlineorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="onlineorders.aspx.vb">
+      <DependentUpon>onlineorders.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="pos.aspx.designer.vb">
       <DependentUpon>pos.aspx</DependentUpon>

@@ -1,0 +1,78 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#manualOverlay {
+	background-image: url(../images/backgrounds/white_ice.png);
+	background-color: rgba(255,255,255,0.75);
+	margin-left: auto;
+	margin-right: auto;
+	padding-top:25px;
+	width: 1100px;
+	height:734px;
+	position: relative;
+	
+}
+#manualContainer{
+	background-color: rgba(126,129,126,.85);
+	box-shadow: -2px 8px 5px 1px rgba(98,100,103,1);
+	margin:auto;
+	width: 1025px;
+	height: 565px;
+	border-radius: 15px;
+	padding-top: 20px;
+}
+#manualFooter{
+	position: absolute;
+	margin-top: 10px;
+	width:1084px;
+	clear: both;
+}
+#companyName{
+	color: #9C8F5F;
+	text-align: right;
+	padding: .5em;
+	margin-left: 310px;
+}
+h1{
+	padding-right:335px;
+	font-weight: bolder;
+	font-size: 300%;
+}
+.headerContainer{
+	float:right;
+	width:330px;
+	margin:10px;
+}
+#headerButtons{
+	text-align: right;
+	margin-top: -10px;
+}
+a{display: inline-block;}
+
+header{
+	display: inline-block;
+	margin:0px 25px 0px 35px;
+}
+#displays{
+	float:left;
+	margin-left:25px;
+    background-color: rgba(255,255,255,0.75);
+	padding-left:10px;
+	padding-right:10px;
+	width:680px;
+	height:545px;
+	margin-bottom: 25px;
+	overflow-y: scroll;
+    
+}
+h2{
+	display:inline;
+}
+#manualMenu{
+	float:left;
+	margin-left:25px;
+	background-color: rgba(255,255,255,0.75);
+	width:230px;
+	height:545px;
+    padding-left:10px;
+	padding-right:10px;
+}

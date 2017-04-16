@@ -42,8 +42,8 @@ And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.E
                     End If
                     ' If query fails to return results then attempted user and attempted pass were NOT found in database.
                 Else
-                        InvalidCredLabel.Text = "Invalid Credentials."
-                    End If
+                    InvalidCredLabel.Text = "Invalid Credentials."
+                End If
 
                 myReader.Close()
             End If

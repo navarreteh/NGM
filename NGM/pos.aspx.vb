@@ -58,6 +58,8 @@
         Response.Redirect("home.aspx")
     End Sub
 
-
+    Protected Sub poshelpIcon_Click(sender As Object, e As ImageClickEventArgs) Handles poshelpIcon.Click
+        Response.Redirect("help.aspx")
+    End Sub
 
 End Class

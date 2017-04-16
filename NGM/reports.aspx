@@ -7,6 +7,11 @@
     <title>Reports</title>
     <link href="styleSheet/styleSheetIndex.css" rel="stylesheet" type="text/css"/>
     <link href="styleSheet/styleSheetReports.css" rel="stylesheet" type="text/css"/>
+    <script type = "text/javascript">
+         function SetTarget() {
+         document.forms[0].target = "_blank";
+     }
+</script>
 </head>
 <body>
 <form runat="server">
@@ -28,7 +33,7 @@
 		<div id="headerButtons" class="headerContainer">
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="homeIcon" src="images/headerIcons/homeIcon.png"/></a>
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="printIcon" src="images/headerIcons/printIcon.png"/></a>
-			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png"/></a>
+			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png" OnClientClick = "SetTarget();"/></a>
 		</div>
 	</header>
 	<div id="reportsContainer">
