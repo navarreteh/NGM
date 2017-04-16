@@ -9,16 +9,16 @@
     <link href="styleSheet/styleSheetIndex.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
- <form runat="server" defaultbutton="login_submitButton">
+ <form runat="server">
  <header>
      <div id="headerContainer">
- 	    <asp:ImageButton runat="server" type="image" class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png" />
+ 	    <a href="help.aspx" target="_blank""><img class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"  /></>
      </div>
  </header>
 <div id="loginOverlay">
 	<img id="loginLogo" src="images/logos/logo_Small.png" width="287" height="292" alt="Logo"/><br/>
 	
-    <div id="index_loginForm"> 
+    <div id="index_loginForm" > 
         <img src="images/banners/kioskLoginBanner.png" alt="" width="310" height="50" class="loginBanner"/>  
         <asp:Label ID="InvalidCredLabel" runat="server"></asp:Label><br />
         <img class="roundIcons" id="userIcon" src="images/roundIcons/userIcon.png" alt="userIcon"/>

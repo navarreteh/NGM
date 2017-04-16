@@ -12,8 +12,8 @@ Partial Class backoffice
     Protected Sub inventoryButton_Click(sender As Object, e As ImageClickEventArgs) Handles inventoryButton.Click
         Response.Redirect("inventory.aspx")
     End Sub
-    Protected Sub ordersButton_Click(sender As Object, e As ImageClickEventArgs) Handles ordersButton.Click
-        Response.Redirect("orders.aspx")
+    Protected Sub ordersButton_Click(sender As Object, e As ImageClickEventArgs) Handles shipmentsButton.Click
+        Response.Redirect("shipments.aspx")
     End Sub
     Protected Sub productsButton_Click(sender As Object, e As ImageClickEventArgs) Handles productsButton.Click
         Response.Redirect("products.aspx")
@@ -31,7 +31,7 @@ Partial Class backoffice
 
     End Sub
     Protected Sub poshelpIcon_Click(sender As Object, e As ImageClickEventArgs) Handles poshelpIcon.Click
-
+        Response.Redirect("help.aspx")
     End Sub
 
 

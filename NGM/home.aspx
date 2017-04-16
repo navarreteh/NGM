@@ -18,9 +18,9 @@
 				<a><asp:ImageButton runat="server" type="image" class="roundIcons" id="searchIcon" src="images/roundIcons/searchIcon.png" alt="searchIcon"/></a>
 			</div>
 			<div id="headerContainer">
-				<a><asp:ImageButton runat="server" ID="shipmentButton"  class="headerButtons" type="image" name="shipmentIcon"  src="images/headerIcons/truckIcon.png"/></a>
 				<a><asp:ImageButton runat="server" ID="messageButton"   class="headerButtons" type="image" name="messageIcon"   src="images/headerIcons/mailIcon.png"/></a>
 				<a><asp:ImageButton runat="server" ID="clockButton"     class="headerButtons" type="image" name="clockIcon"     src="images/headerIcons/clockIcon.png"/></a>
+                <a><asp:ImageButton runat="server" ID="onlineButton"  class="headerButtons" type="image" name="intenetIcon"     src="images/headerIcons/internetIcon.png"/></a>
 				<a><asp:ImageButton runat="server" ID="helpButton"      class="headerButtons" type="image" name="helpIcon"      src="images/headerIcons/helpIcon.png"/></a>
 			</div>
 		</header>
