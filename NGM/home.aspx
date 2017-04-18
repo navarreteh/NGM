@@ -10,7 +10,7 @@
 <link href="styleSheet/styleSheetHome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<form id="form" runat="server">
+	<form id="form1" runat="server">
 	<div id="homeOverlay">
 		<header>
             <div id="searchBarContainer">
@@ -20,7 +20,7 @@
 			<div id="headerContainer">
 				<a><asp:ImageButton runat="server" ID="messageButton"   class="headerButtons" type="image" name="messageIcon"   src="images/headerIcons/mailIcon.png"/></a>
 				<a><asp:ImageButton runat="server" ID="clockButton"     class="headerButtons" type="image" name="clockIcon"     src="images/headerIcons/clockIcon.png"/></a>
-                <a><asp:ImageButton runat="server" ID="onlineButton"  class="headerButtons" type="image" name="intenetIcon"     src="images/headerIcons/internetIcon.png"/></a>
+                <a><asp:ImageButton runat="server" ID="onlineButton"    class="headerButtons" type="image" name="internetIcon"  src="images/headerIcons/internetIcon.png"/></a>
 				<a><asp:ImageButton runat="server" ID="helpButton"      class="headerButtons" type="image" name="helpIcon"      src="images/headerIcons/helpIcon.png"/></a>
 			</div>
 		</header>
@@ -42,10 +42,10 @@
             </asp:View>
          </asp:MultiView>
         <div id="homeNavigation">
-			<a><asp:ImageButton ID="posButton"           src="images/largeButtons/home_pos.png"          alt="pos"           class="largeButtons"   runat="server" /></a><br>
-	    	<a><asp:ImageButton ID="reportsButton"       src="images/largeButtons/home_reports.png"      alt="reports"       class="largeButtons"   runat="server"/></a><br>
-	    	<a><asp:ImageButton ID="backOfficeButton"    src="images/largeButtons/home_backOffice.png"   alt="backOffice"    class="largeButtons"   runat="server"/></a><br>
-	    	<a><asp:ImageButton ID="closeButton"         src="images/largeButtons/home_closePos.png"     alt="closePos"      class="largeButtons"   runat="server"/></a><br> 
+			<a><asp:ImageButton ID="posButton"           src="images/largeButtons/home_pos.png"          alt="pos"           class="largeButtons"   runat="server"/></a><br/>
+	    	<a><asp:ImageButton ID="reportsButton"       src="images/largeButtons/home_reports.png"      alt="reports"       class="largeButtons"   runat="server"/></a><br/>
+	    	<a><asp:ImageButton ID="backOfficeButton"    src="images/largeButtons/home_backOffice.png"   alt="backOffice"    class="largeButtons"   runat="server"/></a><br/>
+	    	<a><asp:ImageButton ID="closeButton"         src="images/largeButtons/home_closePos.png"     alt="closePos"      class="largeButtons"   runat="server"/></a><br/> 
 		</div>
 		<footer id="home_footer">
 			<p id="hotKeyRef"> 

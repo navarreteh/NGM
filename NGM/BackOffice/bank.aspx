@@ -28,7 +28,9 @@
 		<div id="sectionHeader">Bank</div>
           <div id="bank" class="sectionContent">
             <h3>Deposit on: </h3>
-		    <asp:DropDownList id="calendarDD" runat="server" Width="8em" Height="2em">
+		    <asp:DropDownList ID="calendarDD" runat="server" Width="8em" Height="2em">
+                <asp:ListItem>Test</asp:ListItem>
+           
             </asp:DropDownList>
               <img class="roundIcons" id="calendarIcon" src="../images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
             <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">

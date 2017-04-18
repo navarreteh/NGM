@@ -15,7 +15,7 @@
  <form runat="server">
  <header>
      <div id="headerContainer">
- 	    <a href="help.aspx" target="_blank""><img class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"  /></>
+ 	    <a href="help.aspx" target="_blank""><img class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png" /></a>
      </div>
  </header>
 <div id="loginOverlay">
