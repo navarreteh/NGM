@@ -1,4 +1,6 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Configuration
 
 Partial Class index
     Inherits System.Web.UI.Page

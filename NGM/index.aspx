@@ -1,4 +1,7 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="index.aspx.vb" Inherits="NGM.index" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="index.aspx.vb" Inherits="NGM.index"%>
+<%@ Import Namespace ="System.Data" %>
+<%@ Import Namespace ="System.Data.SqlClient" %>
+<%@ Import Namespace ="System.Configuration" %>
 
 <!DOCTYPE html>
 
