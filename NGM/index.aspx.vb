@@ -5,6 +5,7 @@ Imports System.Configuration
 Partial Class index
     Inherits System.Web.UI.Page
 
+
     Protected Sub login_submitButton_Click(sender As Object, e As ImageClickEventArgs) Handles login_submitButton.Click
         Try
             If Not IsNumeric(login_usernameTB.Text) Then
@@ -40,7 +41,7 @@ Partial Class index
                         ' Else, ("Role" value > 1), allow entry into system.
                     Else
                         InvalidCredLabel.Text = "Correct"
-                        Response.Redirect("home.aspx")
+                        Response.Redirect("reports.aspx")
                     End If
                     ' If query fails to return results then attempted user and attempted pass were NOT found in database.
                 Else
