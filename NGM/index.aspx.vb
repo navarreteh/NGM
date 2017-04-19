@@ -13,8 +13,7 @@ Partial Class index
                 Dim loginID = Integer.Parse(login_usernameTB.Text)
                 Dim conn As SqlConnection
                 Dim cmd As SqlCommand
-                Dim cmdString As String = "Select [Employee_Password], Employees.Role_ID From [Employee_Login],[Employees] Where Employee_Login.Employee_ID = @Username 
-And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.Employee_ID;"
+                Dim cmdString As String = "Select [Employee_Password], Employees.Role_ID From [Employee_Login],[Employees] Where Employee_Login.Employee_ID = @Username And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.Employee_ID;"
 
                 '"Select [Employee_Password] From [Employee_Login] Where (([Employee_ID] = @Username) And ([Employee_Password] = @Password))"
 
@@ -40,6 +39,7 @@ And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.E
                         InvalidCredLabel.Text = "Unauthorized Action"
                         ' Else, ("Role" value > 1), allow entry into system.
                     Else
+                        InvalidCredLabel.Text = "Correct"
                         Response.Redirect("home.aspx")
                     End If
                     ' If query fails to return results then attempted user and attempted pass were NOT found in database.
@@ -52,7 +52,6 @@ And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.E
         Catch
             InvalidCredLabel.Text = "Connection Error."
         End Try
-
 
     End Sub
 

@@ -21,8 +21,7 @@ Partial Class bank
             Dim myReader As SqlDataReader
             myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
 
-            'calendarDD.DataTextField = "Text"
-            'calendarDD.DataValueField = "Value"
+            'calendarDD.DataValueField = "Deposit_ID"
             'calendarDD.DataSource = myReader
             'calendarDD.DataBind()
             myReader.Close()
