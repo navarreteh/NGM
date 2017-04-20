@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" CodeFile="shipments.aspx.vb" Inherits="shipments" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="NGM.shipments" Codebehind="shipments.aspx.vb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

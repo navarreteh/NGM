@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bank" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" CodeFile="bank.aspx.vb" Inherits="bank" %>
+﻿<%@ Page Title="Bank" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="NGM.bank" Codebehind="bank.aspx.vb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
@@ -50,6 +50,24 @@
                 <RowStyle BackColor="#E3EAEB" />
             </asp:DetailsView><br />
               <h3>Bank Info </h3>
+            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
+                <AlternatingRowStyle BackColor="White" />
+                <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
+                <EditRowStyle BackColor="#7C6F57" />
+                <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
+                <Fields>
+                    <asp:BoundField DataField="Deposit_ID" HeaderText="Deposit ID" InsertVisible="False" ReadOnly="True" SortExpression="Deposit_ID" />
+                    <asp:BoundField DataField="Bank_ID" HeaderText="Bank ID" ReadOnly="True" SortExpression="Bank_ID" />
+                    <asp:BoundField DataField="Kiosk_ID" HeaderText="Kiosk ID" ReadOnly="True" SortExpression="Kiosk_ID" />
+                    <asp:BoundField DataField="Employee_ID" HeaderText="Employee ID" ReadOnly="True" SortExpression="Employee_ID" />
+                    <asp:BoundField DataField="Deposit_Date" HeaderText="Deposit Date" ReadOnly="True" SortExpression="Deposit_Date" />
+                    <asp:BoundField DataField="Deposit_Amount" HeaderText="Deposit Amount" ReadOnly="True" SortExpression="Deposit_Amount" />
+                </Fields>
+                <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+            </asp:DetailsView><br />
               
         </div>
 	</section>
