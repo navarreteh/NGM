@@ -21,7 +21,9 @@
 		<div id="headerButtons" class="headerContainer">
             <a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon"  id="homeIcon" 		src="../images/headerIcons/homeIcon.png"/></a>
 			<a><asp:ImageButton runat="server"  class="headerButtons" type="image" name="printIcon" id="printIcon" 	    src="../images/headerIcons/printIcon.png"/></a>
+
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon"      src="../images/headerIcons/helpIcon.png" OnClientClick ="SetTarget();"/></a>
+
 		</div>
 		<h1 class="headerContainer">Back Office</h1>
 	</header>
