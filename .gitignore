@@ -240,3 +240,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/NGM/NGM/{E63614AF-0F9E-4F7F-B2F1-6E77A31ABF93}/CodeAnalysisLog.xml
+/NGM/NGM/{E63614AF-0F9E-4F7F-B2F1-6E77A31ABF93}/WebProject.lastcodeanalysissucceeded
+/NGM/App_Data/PublishProfiles/winhost.pubxml

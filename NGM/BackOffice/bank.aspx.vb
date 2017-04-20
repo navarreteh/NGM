@@ -1,32 +1,38 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
-Imports System.Configuration
 
 Partial Class bank
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If Not IsPostBack Then
-            ' HANDLES POPULATION OF DROP DOWN LIST
-            Dim depositID = calendarDD.SelectedIndex
-            Dim conn As SqlConnection
-            Dim cmd As SqlCommand
-            Dim cmdString As String = "SELECT [Deposit_ID] FROM [Deposit];"
 
+        Try
+            If Not IsPostBack Then
 
-            conn = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString)
-            cmd = New SqlCommand(cmdString, conn)
-            conn.Open()
+                'Dim depositID = calendarDD.SelectedIndex
+                Dim conn As SqlConnection
+                Dim cmd As SqlCommand
+                Dim cmdString As String = "SELECT [Deposit_ID] FROM [Deposit];"
 
-            Dim myReader As SqlDataReader
-            myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+                conn = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString)
+                cmd = New SqlCommand(cmdString, conn)
+                conn.Open()
 
-            calendarDD.DataSource = myReader
-            calendarDD.DataValueField = "Deposit_ID"
-            calendarDD.DataBind()
-            myReader.Close()
+                Dim myReader As SqlDataReader
+                myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection)
 
-            calendarDD.Items.Insert(0, New ListItem("Select"))
+                'calendarDD.DataValueField = "Deposit_ID"
+                'calendarDD.DataSource = myReader
+                'calendarDD.DataBind()
+                myReader.Close()
+                conn.Close()
+
+            End If
+        Catch
+
+        End Try
+
+    End Sub
 
         End If
         ' END OF POPULATION OF DROP DOWN LIST

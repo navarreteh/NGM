@@ -15,7 +15,7 @@
  <form runat="server">
  <header>
      <div id="headerContainer">
- 	    <a href="help.aspx" target="_blank""><img class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png"  /></>
+ 	    <a href="help.aspx" target="_blank""><img class="headerButtons" id="header_helpIcon" src="images/headerIcons/helpIcon.png" /></a>
      </div>
  </header>
 <div id="loginOverlay">
@@ -28,7 +28,7 @@
 	    <asp:TextBox class="textBoxes" autocomplete="off" autofocus="true" type="text" name="textfield" id="login_usernameTB" runat="server" required="true"/><br/>
 	    <img class="roundIcons"  id="passwordIcon" src ="images/roundIcons/passwordIcon.png" alt=""/>
 	    <asp:TextBox class="textBoxes" autocomplete="off" type="password" name="textfield2" id="login_passwordTB" runat="server" required="true"/><br/>
-	    <asp:ImageButton class="formButtons" type="submit" name="sumbitIcon" id="login_submitButton" src="images/smallButtons/submitIcon.png" runat="server"/>
+	    <asp:ImageButton class="formButtons" ID="login_submitButton" type="submit" name="sumbitIcon" src="images/smallButtons/submitIcon.png" runat="server"/>
         
     </div>
 <footer id="login_footer">
