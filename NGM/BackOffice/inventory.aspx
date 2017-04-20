@@ -20,38 +20,41 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT [Deposit_ID], [Bank_ID], [Kiosk_ID], [Employee_ID], [Deposit_Date], [Deposit_Amount] FROM [Deposit]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT [Product_ID], [Product_Description], [Product_Name], [Product_Price], [Category_ID] FROM [Products]"></asp:SqlDataSource>
      <section>
 		<div id="sectionHeader">Inventory</div>
          <div id="bank" class="sectionContent">
-            <div id="searchBarContainer">
-				<asp:TextBox runat="server" ID="searchBar" style="width:350px;"></asp:TextBox>
-				<a><asp:ImageButton runat="server" type="image" class="roundIcons" id="searchIcon" src="../images/roundIcons/searchIcon.png" alt="searchIcon"/></a>
-			</div>
-            <h3>Deposit on: </h3>
-		    <asp:DropDownList ID="calendarDD" runat="server" Width="8em" Height="2em">
+            <h3>Kiosk ID: </h3>
+		    <asp:DropDownList ID="kioskDD" runat="server" Width="8em" Height="2em">
                 <asp:ListItem>Test</asp:ListItem>
             </asp:DropDownList>
-              <img class="roundIcons" id="calendarIcon" src="../images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
-                <AlternatingRowStyle BackColor="White" />
-                <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
-                <EditRowStyle BackColor="#7C6F57" />
-                <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
-                <Fields>
-                    <asp:BoundField DataField="Deposit_ID"      HeaderText="Deposit ID" InsertVisible="False" ReadOnly="True" SortExpression="Deposit_ID" />
-                    <asp:BoundField DataField="Bank_ID"         HeaderText="Bank ID" ReadOnly="True" SortExpression="Bank_ID" />
-                    <asp:BoundField DataField="Kiosk_ID"        HeaderText="Kiosk ID" ReadOnly="True" SortExpression="Kiosk_ID" />
-                    <asp:BoundField DataField="Employee_ID"     HeaderText="Employee ID" ReadOnly="True" SortExpression="Employee_ID" />
-                    <asp:BoundField DataField="Deposit_Date"    HeaderText="Deposit Date" ReadOnly="True" SortExpression="Deposit_Date" />
-                    <asp:BoundField DataField="Deposit_Amount"  HeaderText="Deposit Amount" ReadOnly="True" SortExpression="Deposit_Amount" />
-                </Fields>
-                <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
-                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#E3EAEB" />
-            </asp:DetailsView><br />
-              <h3>Bank Info </h3>
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="18"
+                  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                  BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Product_ID" 
+                  DataSourceID="SqlDataSource1" GridLines="Vertical" AllowSorting="True" Width="650px">
+                
+                 <AlternatingRowStyle BackColor="#DCDCDC" />
+                 <Columns>
+                     <asp:CommandField ShowSelectButton="True" />
+                     <asp:BoundField DataField="Product_ID"             HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Product_ID" />
+                     <asp:BoundField DataField="Product_Description"    HeaderText="Description" SortExpression="Product_Description" />
+                     <asp:BoundField DataField="Product_Name"           HeaderText="Name" SortExpression="Product_Name" />
+                     <asp:BoundField DataField="Product_Price"          HeaderText="Price" SortExpression="Product_Price" />
+                     <asp:BoundField DataField="Category_ID"            HeaderText="CAT" SortExpression="Category_ID" />
+                 </Columns>
+                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                 <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                 <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                 <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                 <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                 <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                 <SortedDescendingHeaderStyle BackColor="#000065" />
+             </asp:GridView>
+             <br />
+
+
               
         </div>
 	</section>
