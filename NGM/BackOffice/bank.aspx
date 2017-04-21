@@ -57,6 +57,25 @@
                 <RowStyle BackColor="#E3EAEB" />
             </asp:DetailsView><br />
               <h3>Bank Info </h3>
+            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Bank_ID" DataSourceID="SqlDataSource2" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
+                <AlternatingRowStyle BackColor="White" />
+                <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
+                <EditRowStyle BackColor="#7C6F57" />
+                <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
+                <Fields>
+                    <asp:BoundField DataField="Bank_ID" HeaderText="Bank ID" InsertVisible="False" ReadOnly="True" SortExpression="Bank_ID" />
+                    <asp:BoundField DataField="Bank_Name" HeaderText="Bank Name" ReadOnly="True" SortExpression="Bank_Name" />
+                    <asp:BoundField DataField="Bank_Street_Line1" HeaderText="Bank Street Line 1" ReadOnly="True" SortExpression="Bank_Street_Line1" />
+                    <asp:BoundField DataField="Bank_Street_Line2" HeaderText="Bank Street Line 2" ReadOnly="True" SortExpression="Bank_Street_Line2" />
+                    <asp:BoundField DataField="Bank_City" HeaderText="Bank City" ReadOnly="True" SortExpression="Bank_City" />
+                    <asp:BoundField DataField="Bank_State" HeaderText="Bank State" ReadOnly="True" SortExpression="Bank_State" />
+                    <asp:BoundField DataField="Bank_Zip_Code" HeaderText="Bank Zip Code" ReadOnly="True" SortExpression="Bank_Zip_Code" />
+                </Fields>
+                <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+            </asp:DetailsView><br />
               
         </div>
 	</section>

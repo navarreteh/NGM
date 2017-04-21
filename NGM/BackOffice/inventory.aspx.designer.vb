@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class inventory
-    
+
     '''<summary>
     '''SqlDataSource1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class inventory
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''kioskDD control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class inventory
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents kioskDD As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class inventory
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-    
+
     '''<summary>
     '''qtyAdjustView control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class inventory
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents qtyAdjustView As Global.System.Web.UI.WebControls.DetailsView
-    
+
     '''<summary>
     '''SqlDataSource2 control.
     '''</summary>
