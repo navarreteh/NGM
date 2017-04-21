@@ -32,6 +32,15 @@ Partial Public Class bank
     Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
+    '''SqlDataSource3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource3 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
     '''calendarDD control.
     '''</summary>
     '''<remarks>

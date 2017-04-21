@@ -25,12 +25,15 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT [Deposit_ID], [Bank_ID], [Kiosk_ID], [Employee_ID], [Deposit_Date], [Deposit_Amount] FROM [Deposit]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT Bank.Bank_ID, [Bank_Name], [Bank_Street_Line1], [Bank_Street_Line2], [Bank_City], [Bank_State], [Bank_Zip_Code]
         FROM (Bank INNER JOIN Deposit ON Bank.Bank_ID = Deposit.Bank_ID)
-        WHERE Deposit.Bank_ID = 3;"></asp:SqlDataSource>
+        WHERE Deposit.Bank_ID = 3"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
+        SelectCommand="SELECT[Deposit_Date] FROM [Deposit]">
+    </asp:SqlDataSource>
       <section>
 		<div id="sectionHeader">Bank</div>
           <div id="bank" class="sectionContent">
-            <h3>Deposit on: </h3>
-		    <asp:DropDownList ID="calendarDD" runat="server" Width="8em" Height="2em">
+             <h3>Deposit Date: </h3>
+		    <asp:DropDownList ID="calendarDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="Deposit_Date" DataValueField="Deposit_Date">
             </asp:DropDownList>
               <img class="roundIcons" id="calendarIcon" src="../images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
             <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
