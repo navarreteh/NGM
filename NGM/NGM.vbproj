@@ -158,17 +158,32 @@
       <DependentUpon>backoffice.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\bank.aspx.designer.vb">
+      <DependentUpon>bank.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\bank.aspx.vb">
       <DependentUpon>bank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackOffice\employees.aspx.designer.vb">
+      <DependentUpon>employees.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackOffice\employees.aspx.vb">
       <DependentUpon>employees.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\inventory.aspx.designer.vb">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\inventory.aspx.vb">
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackOffice\products.aspx.designer.vb">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\shipments.aspx.designer.vb">
+      <DependentUpon>shipments.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackOffice\shipments.aspx.vb">
       <DependentUpon>shipments.aspx</DependentUpon>
@@ -178,9 +193,15 @@
       <DependentUpon>products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\suppliers.aspx.designer.vb">
+      <DependentUpon>suppliers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\suppliers.aspx.vb">
       <DependentUpon>suppliers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackOffice\transactions.aspx.designer.vb">
+      <DependentUpon>transactions.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackOffice\transactions.aspx.vb">
       <DependentUpon>transactions.aspx</DependentUpon>

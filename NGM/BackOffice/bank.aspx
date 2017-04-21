@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bank" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" CodeFile="bank.aspx.vb" Inherits="bank" %>
+﻿<%@ Page Title="Bank" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="NGM.bank" Codebehind="bank.aspx.vb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
@@ -22,27 +22,34 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT [Deposit_ID], [Bank_ID], [Kiosk_ID], [Employee_ID], [Deposit_Date], [Deposit_Amount] FROM [Deposit]"></asp:SqlDataSource>
+
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
+        SelectCommand="SELECT DISTINCT [Deposit_Date] FROM [Deposit]">
+    </asp:SqlDataSource>
+    
+      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
+          SelectCommand="SELECT [Deposit_ID], [Employee_ID], [Deposit_Amount], [Kiosk_ID] FROM [Deposit]" >
+      </asp:SqlDataSource>
+    
     
       <section>
 		<div id="sectionHeader">Bank</div>
           <div id="bank" class="sectionContent">
-            <h3>Deposit on: </h3>
-		    <asp:DropDownList ID="calendarDD" runat="server" Width="8em" Height="2em">
+            <h3>Deposit Date: </h3>
+		    <asp:DropDownList ID="calendarDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Deposit_Date" DataValueField="Deposit_Date">
             </asp:DropDownList>
-              <img class="roundIcons" id="calendarIcon" src="../images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
+            
+
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource2" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                 <EditRowStyle BackColor="#7C6F57" />
                 <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
                 <Fields>
-                    <asp:BoundField DataField="Deposit_ID" HeaderText="Deposit ID" InsertVisible="False" ReadOnly="True" SortExpression="Deposit_ID" />
-                    <asp:BoundField DataField="Bank_ID" HeaderText="Bank ID" ReadOnly="True" SortExpression="Bank_ID" />
-                    <asp:BoundField DataField="Kiosk_ID" HeaderText="Kiosk ID" ReadOnly="True" SortExpression="Kiosk_ID" />
-                    <asp:BoundField DataField="Employee_ID" HeaderText="Employee ID" ReadOnly="True" SortExpression="Employee_ID" />
-                    <asp:BoundField DataField="Deposit_Date" HeaderText="Deposit Date" ReadOnly="True" SortExpression="Deposit_Date" />
-                    <asp:BoundField DataField="Deposit_Amount" HeaderText="Deposit Amount" ReadOnly="True" SortExpression="Deposit_Amount" />
+                    <asp:BoundField DataField="Deposit_ID" HeaderText="Deposit_ID" InsertVisible="False" ReadOnly="True" SortExpression="Deposit_ID" />
+                    <asp:BoundField DataField="Employee_ID" HeaderText="Employee_ID" SortExpression="Employee_ID" />
+                    <asp:BoundField DataField="Deposit_Amount" HeaderText="Deposit_Amount" SortExpression="Deposit_Amount" />
+                    <asp:BoundField DataField="Kiosk_ID" HeaderText="Kiosk_ID" SortExpression="Kiosk_ID" />
                 </Fields>
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

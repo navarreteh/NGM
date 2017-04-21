@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" CodeFile="employees.aspx.vb" Inherits="employees" %>
-
+﻿<%@ Page Title="" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="employees" Codebehind="employees.aspx.vb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
         .sectionContent{
@@ -37,10 +36,7 @@
          .tableCells{
              width:400px;
          }
-
     </style>
-    <script>
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
@@ -90,8 +86,8 @@
                         AutoPostBack ="True" AllowSorting="True" >
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
-                            <asp:BoundField DataField="Employee_First_Name" HeaderText="Employee_First_Name" SortExpression="Employee_First_Name" />
-                            <asp:BoundField DataField="Employee_ID"         HeaderText="Employee_ID"         SortExpression="Employee_ID" ReadOnly="True" />
+                            <asp:BoundField DataField="Employee_First_Name" HeaderText="Employee_First_Name"         SortExpression="Employee_First_Name" />
+                            <asp:BoundField DataField="Employee_ID"         HeaderText="Employee_ID"                 SortExpression="Employee_ID" ReadOnly="True" />
                             <asp:BoundField DataField="Employee_Last_Name"  HeaderText="Employee_Last_Name"          SortExpression="Employee_Last_Name" />
                             <asp:BoundField DataField="Employee_Phone"      HeaderText="Employee_Phone"              SortExpression="Employee_Phone" />
                             <asp:CommandField   ShowSelectButton="True"/>
@@ -118,7 +114,7 @@
                     <AlternatingRowStyle    BackColor="White" />
                     <CommandRowStyle        BackColor="#C5BBAF" Font-Bold="True" />
                     <EditRowStyle           BackColor="#7C6F57" />
-                    <FieldHeaderStyle       BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
+                    <FieldHeaderStyle        BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
                     <Fields>
                         <asp:BoundField DataField="Employee_ID"             HeaderText="Employee_ID" ReadOnly="True"    SortExpression="Employee_ID" />
                         <asp:BoundField DataField="Employee_First_Name"     HeaderText="Employee_First_Name"            SortExpression="Employee_First_Name" />

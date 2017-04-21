@@ -33,7 +33,7 @@
 		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="employeeButton" 		src="../images/largeButtons/employees.png"/></a><br/>
 		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="inventoryButton" 	src="../images/largeButtons/inventory.png"/></a><br/>
 		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="productsButton" 		src="../images/largeButtons/products.png"/></a><br/>
-        <a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="shipmentsButton" 		src="../images/largeButtons/shipments.png"/></a><br/>
+        <a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="shipmentsButton" 	src="../images/largeButtons/shipments.png"/></a><br/>
 		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="suppliersButton" 	src="../images/largeButtons/suppliers.png"/></a><br/>
 		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="transactionsButton" 	src="../images/largeButtons/transaction.png"/></a>
 	 </div>
