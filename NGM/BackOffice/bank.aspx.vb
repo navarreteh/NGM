@@ -34,9 +34,6 @@ Partial Class bank
 
     End Sub
 
-        End If
-        ' END OF POPULATION OF DROP DOWN LIST
-    End Sub
 
     Protected Sub calendarDD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles calendarDD.SelectedIndexChanged
         If calendarDD.SelectedIndex > 0 Then
