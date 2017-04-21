@@ -24,7 +24,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-        SelectCommand="SELECT DISTINCT [Deposit_Date] FROM [Deposit]">
+        SelectCommand="SELECT[Deposit_Date] FROM [Deposit]">
     </asp:SqlDataSource>
     
       <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
