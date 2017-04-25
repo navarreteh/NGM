@@ -32,13 +32,14 @@
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
         SelectCommand="SELECT Bank.Bank_ID, [Bank_Name], [Bank_Street_Line1], [Bank_Street_Line2], [Bank_City], [Bank_State], [Bank_Zip_Code]
         FROM (Bank INNER JOIN Deposit ON Bank.Bank_ID = Deposit.Bank_ID)
+
         WHERE Deposit.Bank_ID = 3">
  
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
         SelectCommand="SELECT [Deposit_Date] FROM [Deposit] WHERE Kiosk_ID = 1" >
     </asp:SqlDataSource>
-      
+
       <section>
 		<div id="sectionHeader">Bank</div>
           <div id="bank" class="sectionContent">
@@ -53,10 +54,12 @@
                 <EditRowStyle BackColor="#7C6F57" />
                 <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
                 <Fields>
+
                     <asp:BoundField DataField="Deposit_ID"      HeaderText="Deposit ID"     InsertVisible="False" ReadOnly="True" SortExpression="Deposit_ID" />
                     <asp:BoundField DataField="Kiosk_ID"        HeaderText="Kiosk ID"       ReadOnly="True" SortExpression="Kiosk_ID" />
                     <asp:BoundField DataField="Employee_ID"     HeaderText="Employee ID"    ReadOnly="True" SortExpression="Employee_ID" />
                     <asp:BoundField DataField="Deposit_Amount"  HeaderText="Deposit Amount" ReadOnly="True" SortExpression="Deposit_Amount" />
+
                 </Fields>
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -64,7 +67,7 @@
                 <RowStyle BackColor="#E3EAEB" />
             </asp:DetailsView><br />
               <h3>Bank Info </h3>
-            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Bank_ID" DataSourceID="SqlDataSource2" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
+            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Bank_ID" DataSourceID="SqlDataSource2" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView" Visible="False">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                 <EditRowStyle BackColor="#7C6F57" />

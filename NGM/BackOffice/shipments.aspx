@@ -2,82 +2,84 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
-         .sectionContent{
-            width:620px;
-            height:500px;
+
+        .sectionContent{
+            width:625px;
+            height:200px;
             padding-left:50px;
             padding-right:50px;
-
-        }.detailedView{
-            height:50px;
-            width: 600px;
         }
-         .roundIcons{
-            margin-left:15px;
-            top: 20px;
-            left: 0px;
-         }
+        .sectionLower{
+            width:625px;
+            height:150px;
+            padding-left:50px;
+            padding-right:50px;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <section>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT DISTINCT Shipment_Details.Shipment_ID, Supplier.Supplier_ID, Supplier_Name, Shipment_Date, Shipment_Type_Description
+    FROM (((Shipment 
+    INNER JOIN Shipment_Details ON Shipment.Shipment_ID = Shipment_Details.Shipment_ID) 
+    INNER JOIN Supplier ON Shipment.Supplier_ID = Supplier.Supplier_ID)
+    INNER JOIN Shipment_Type ON Shipment_Details.Shipment_Type_ID = Shipment_Type.Shipment_Type_ID)
+    WHERE Kiosk_ID = 1;"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT Shipment_Details.Product_ID, Products.Product_Name, Shipment_Details.Quantity
+    FROM (Shipment_Details 
+    INNER JOIN Products ON Shipment_Details.Product_ID = Products.Product_ID)
+    WHERE Shipment_Details.Shipment_ID = @Shipment_ID;">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="GridView1" Name="Shipment_ID" PropertyName="SelectedValue" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+      <section>
 		<div id="sectionHeader">Shipments</div>
-         <div class="sectionContent">
-             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-                 SelectCommand="SELECT S.Shipment_ID,  SU.Supplier_Name, SD.Product_ID, SD.Quantity, S.Shipment_Date, ST.Shipment_Type_Description 
-FROM SHIPMENT AS S, SHIPMENT_DETAILS AS SD, SHIPMENT_TYPE AS ST, SUPPLIER AS SU
-WHERE S.Shipment_ID = SD.Shipment_ID AND SD.Shipment_Type_ID = ST.Shipment_Type_ID 
-AND ST.Shipment_Type_ID = 1 AND S.Supplier_ID = SU.Supplier_ID AND S.Kiosk_ID = 1
-ORDER BY S.Shipment_Date ASC"></asp:SqlDataSource>
 
-             <div style="overflow:auto; height:auto; max-height:225px; width:650px; float:left;">
-             <h3>InBound</h3>
-             <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" GridLines="Vertical" Width="650px">
-                 <AlternatingRowStyle BackColor="Gainsboro" />
-                 <Columns>
-                     <asp:CommandField ShowSelectButton="True" />
-                     <asp:BoundField DataField="Shipment_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Shipment_ID" />
-                     <asp:BoundField DataField="Supplier_Name" HeaderText="Supplier" SortExpression="Supplier_Name" />
-                     <asp:BoundField DataField="Product_ID" HeaderText="Product ID" SortExpression="Product_ID" />
-                     <asp:BoundField DataField="Quantity" HeaderText="QTY" SortExpression="Quantity" />
-                     <asp:BoundField DataField="Shipment_Date" HeaderText="Ship Date" SortExpression="Shipment_Date" />
-                     <asp:BoundField DataField="Shipment_Type_Description" HeaderText="TYPE" SortExpression="Shipment_Type_Description" />
-                 </Columns>
-                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                 <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                 <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                 <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                 <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                 <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                 <SortedDescendingHeaderStyle BackColor="#000065" />
-             </asp:GridView>
-             <div style="float:left;">
-                 Buttons
-             </div>
-            </div>
-             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-                 SelectCommand="SELECT S.Shipment_ID,  SU.Supplier_Name, SD.Product_ID, SD.Quantity, S.Shipment_Date, ST.Shipment_Type_Description 
-FROM SHIPMENT AS S, SHIPMENT_DETAILS AS SD, SHIPMENT_TYPE AS ST, SUPPLIER AS SU
-WHERE S.Shipment_ID = SD.Shipment_ID AND SD.Shipment_Type_ID = ST.Shipment_Type_ID 
-AND SD.Shipment_Type_ID = 2 AND SD.Shipment_Type_ID = 3 AND S.Supplier_ID = SU.Supplier_ID 
-AND S.Kiosk_ID = 1 
-ORDER BY S.Shipment_Date ASC"></asp:SqlDataSource>
-             <br />
-           
-             <div style="overflow:auto; height:auto; max-height:225px; width:650px; ">
-             <h3>OutBound</h3>
-             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource2" GridLines="Vertical" Width="650px">
+          <h3 style="padding-left:50px;">Shipments: </h3>
+         <div id="shipment" class="sectionContent" style="overflow:auto;">
+              <asp:GridView ID="GridView1" runat="server" AllowPaging="False" PageSize="18"
+                  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                  BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Shipment_ID" 
+                  DataSourceID="SqlDataSource1" GridLines="Vertical" AllowSorting="True" Width="650px">
+                
                  <AlternatingRowStyle BackColor="#DCDCDC" />
                  <Columns>
                      <asp:CommandField ShowSelectButton="True" />
-                     <asp:BoundField DataField="Shipment_ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Shipment_ID" />
-                     <asp:BoundField DataField="Supplier_Name" HeaderText="Supplier" SortExpression="Supplier_Name" />
-                     <asp:BoundField DataField="Product_ID" HeaderText="Product ID" SortExpression="Product_ID" />
-                     <asp:BoundField DataField="Quantity" HeaderText="QTY" SortExpression="Quantity" />
-                     <asp:BoundField DataField="Shipment_Date" HeaderText="Ship Date" SortExpression="Shipment_Date" />
-                     <asp:BoundField DataField="Shipment_Type_Description" HeaderText="Type" SortExpression="Shipment_Type_Description" />
+                     <asp:BoundField DataField="Shipment_ID"            HeaderText="Shipment ID" ReadOnly="true" SortExpression="Shipment_ID" />
+                     <asp:BoundField DataField="Supplier_ID"            HeaderText="Supplier ID" SortExpression="Supplier_ID" />
+                     <asp:BoundField DataField="Supplier_Name"          HeaderText="Supplier Name" SortExpression="Supplier_Name" />
+                     <asp:BoundField DataField="Shipment_Date"          HeaderText="Shipment Date" SortExpression="Shipment_Date" />
+                     <asp:BoundField DataField="Shipment_Type_Description"            HeaderText="Inbound/Outbound" SortExpression="Shipment_Type_Description" />
+
+                 </Columns>
+                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                 <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                 <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                 <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                 <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                 <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                 <SortedDescendingHeaderStyle BackColor="#000065" />
+             </asp:GridView>
+             
+         </div>
+
+         <br />
+          <h3 style="padding-left:50px;"><asp:Label ID="lblShipmentDetails" runat="server" Text=""></asp:Label></h3>
+         <div id="shipment_details" class="sectionLower" style="overflow:auto;">
+          <asp:GridView ID="GridView2" runat="server" PageSize="5"
+                  AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                  BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                  DataSourceID="SqlDataSource2" GridLines="Vertical" AllowSorting="True" Width="650px" Visible="False">
+                
+                 <AlternatingRowStyle BackColor="#DCDCDC" />
+                 <Columns>                    
+                     <asp:BoundField DataField="Product_ID"             HeaderText="Product_ID" SortExpression="Product_ID" />
+                     <asp:BoundField DataField="Product_Name"           HeaderText="Product_Name" SortExpression="Product_Name" />
+                     <asp:BoundField DataField="Quantity"               HeaderText="Quantity" SortExpression="Quantity" />
+
                  </Columns>
                  <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                  <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
@@ -90,10 +92,7 @@ ORDER BY S.Shipment_Date ASC"></asp:SqlDataSource>
                  <SortedDescendingHeaderStyle BackColor="#000065" />
              </asp:GridView>
             </div>
-             <div style="float:left;">
-                 Buttons
-             </div>
-         </div>
+
 	</section>
 </asp:Content>
 

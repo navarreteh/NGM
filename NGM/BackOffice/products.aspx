@@ -24,24 +24,32 @@
 		<div id="sectionHeader">Products</div>
          <div id="products" class="sectionContent">
             <h3>Products: </h3>
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Product_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
-                <AlternatingRowStyle BackColor="White" />
-                <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
-                <EditRowStyle BackColor="#7C6F57" />
-                <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
-                <Fields>
-                    <asp:BoundField DataField="Product_ID" HeaderText="Product ID" InsertVisible="False" ReadOnly="True" SortExpression="Product_ID" />
-                    <asp:BoundField DataField="Product_Description" HeaderText="Product_Description" ReadOnly="True" SortExpression="Product_Description" />
-                    <asp:BoundField DataField="Product_Name" HeaderText="Product Name" ReadOnly="True" SortExpression="Product_Name" />
-                    <asp:BoundField DataField="Product_Price" HeaderText="Product Price" ReadOnly="True" SortExpression="Product_Price" />
-                    <asp:BoundField DataField="Product_Discount" HeaderText="Product_Discount" ReadOnly="True" SortExpression="Product_Discount" />
-                    <asp:BoundField DataField="Category_ID" HeaderText="Category_ID" ReadOnly="True" SortExpression="Category_ID" />
-                </Fields>
-                <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
-                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#E3EAEB" />
-            </asp:DetailsView><br />
+             <div style="height:425px; width:675px; overflow-y: scroll" runat="server" id="productDetails">
+                 <asp:GridView ID="GridView1" runat="server" AllowPaging="False" PageSize="9"
+                      AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                      BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Product_ID" 
+                      DataSourceID="SqlDataSource1" GridLines="Vertical" AllowSorting="True" Width="650px">
+                
+                     <AlternatingRowStyle BackColor="#DCDCDC" />
+                    <Columns>
+                        <asp:BoundField DataField="Product_ID"          HeaderText="Product ID"     InsertVisible="False" ReadOnly="True" SortExpression="Product_ID" />
+                        <asp:BoundField DataField="Product_Description" HeaderText="Product_Description"                  ReadOnly="True" SortExpression="Product_Description" />
+                        <asp:BoundField DataField="Product_Name"        HeaderText="Product Name"                         ReadOnly="True" SortExpression="Product_Name" />
+                        <asp:BoundField DataField="Product_Price"       HeaderText="Product Price"                        ReadOnly="True" SortExpression="Product_Price" />
+                        <asp:BoundField DataField="Product_Discount"    HeaderText="Product_Discount"                     ReadOnly="True" SortExpression="Product_Discount" />
+                        <asp:BoundField DataField="Category_ID"         HeaderText="Category_ID"                          ReadOnly="True" SortExpression="Category_ID" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                     <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                     <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                     <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                     <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                     <SortedDescendingHeaderStyle BackColor="#000065" />    
+                  </asp:GridView><br />
+                 </div>
              </div>
 
      </section>
