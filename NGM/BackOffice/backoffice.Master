@@ -40,10 +40,8 @@
 		<a><asp:ImageButton runat="server"  class="backOfficeButtons" type="image" id="transactionsButton" 	src="../images/largeButtons/transaction.png"/></a>
 	 </div>
      <footer id="backOfficeFooter">
-		<p id="hotKeyRef"> 
-				Escape - [ESC] &nbsp;|&nbsp; Home - [CTRL-H] &nbsp;|&nbsp; Print - [CTRL-P] &nbsp;|&nbsp; Help - [F11]
-			</p>
-		<p id="companyName">&copy; New Generation Merchandising</p>
+		<p id="hotKeyRef"></p>
+		<p id="companyName" style="margin-left:800px">&copy; New Generation Merchandising</p>
 	</footer>
     </div>
     </form>

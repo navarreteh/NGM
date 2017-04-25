@@ -19,7 +19,7 @@
              right:313px;
              bottom:95px;
              width:60px;
-             height:425px;
+             height:400px;
              padding-top:30px;
          }
          h3{display:inline-block;}
@@ -63,7 +63,8 @@
               <asp:Parameter Name="Employee_ID" Type="Int32" />
           </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT [Employee_First_Name], [Employee_ID], [Employee_Last_Name], [Employee_Phone] FROM [Employees]" DeleteCommand="DELETE FROM [Employees] WHERE [Employee_ID] = @Employee_ID" InsertCommand="INSERT INTO [Employees] ([Employee_First_Name], [Employee_ID], [Employee_Last_Name], [Employee_Phone]) VALUES (@Employee_First_Name, @Employee_ID, @Employee_Last_Name, @Employee_Phone)" UpdateCommand="UPDATE [Employees] SET [Employee_First_Name] = @Employee_First_Name, [Employee_Last_Name] = @Employee_Last_Name, [Employee_Phone] = @Employee_Phone WHERE [Employee_ID] = @Employee_ID">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
+        SelectCommand="SELECT [Employee_First_Name], [Employee_ID], [Employee_Last_Name], [Employee_Phone] FROM [Employees]" >
         <InsertParameters>
             <asp:Parameter Name="Employee_First_Name" Type="String" />
             <asp:Parameter Name="Employee_ID" Type="Int32" />
@@ -117,20 +118,20 @@
                     <EditRowStyle           BackColor="#7C6F57" />
                     <FieldHeaderStyle        BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
                     <Fields>
-                        <asp:BoundField DataField="Employee_ID"             HeaderText="Employee_ID" ReadOnly="True"    SortExpression="Employee_ID" />
-                        <asp:BoundField DataField="Employee_First_Name"     HeaderText="Employee_First_Name"            SortExpression="Employee_First_Name" />
-                        <asp:BoundField DataField="Employee_Last_Name"      HeaderText="Employee_Last_Name"             SortExpression="Employee_Last_Name" />
-                        <asp:BoundField DataField="Employee_Street_Line1"   HeaderText="Employee_Street_Line1"          SortExpression="Employee_Street_Line1" />
-                        <asp:BoundField DataField="Employee_Street_Line2"   HeaderText="Employee_Street_Line2"          SortExpression="Employee_Street_Line2" />
-                        <asp:BoundField DataField="Employee_City"           HeaderText="Employee_City"                  SortExpression="Employee_City" />
-                        <asp:BoundField DataField="Employee_State"          HeaderText="Employee_State"                 SortExpression="Employee_State" />
-                        <asp:BoundField DataField="Employee_Zip_Code"       HeaderText="Employee_Zip_Code"              SortExpression="Employee_Zip_Code" />
-                        <asp:BoundField DataField="Employee_SSN"            HeaderText="Employee_SSN"                   SortExpression="Employee_SSN" />
-                        <asp:BoundField DataField="Employee_DOB"            HeaderText="Employee_DOB"                   SortExpression="Employee_DOB" />
-                        <asp:BoundField DataField="Employee_Phone"          HeaderText="Employee_Phone"                 SortExpression="Employee_Phone" />
-                        <asp:BoundField DataField="Role_ID"                 HeaderText="Role_ID"                        SortExpression="Role_ID" />
-                        <asp:BoundField DataField="Employee_Hire_Date"      HeaderText="Employee_Hire_Date"             SortExpression="Employee_Hire_Date" />
-                        <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
+                        <asp:BoundField DataField="Employee_ID"             HeaderText="ID" ReadOnly="True"    SortExpression="Employee_ID" />
+                        <asp:BoundField DataField="Employee_First_Name"     HeaderText="First Name"            SortExpression="Employee_First_Name" />
+                        <asp:BoundField DataField="Employee_Last_Name"      HeaderText="Last Name"             SortExpression="Employee_Last_Name" />
+                        <asp:BoundField DataField="Employee_Street_Line1"   HeaderText="Street Line 1"          SortExpression="Employee_Street_Line1" />
+                        <asp:BoundField DataField="Employee_Street_Line2"   HeaderText="Street Line 2"          SortExpression="Employee_Street_Line2" />
+                        <asp:BoundField DataField="Employee_City"           HeaderText="City"                  SortExpression="Employee_City" />
+                        <asp:BoundField DataField="Employee_State"          HeaderText="State"                 SortExpression="Employee_State" />
+                        <asp:BoundField DataField="Employee_Zip_Code"       HeaderText="ZipCode"              SortExpression="Employee_Zip_Code" />
+                        <asp:BoundField DataField="Employee_SSN"            HeaderText="SSN"                   SortExpression="Employee_SSN" />
+                        <asp:BoundField DataField="Employee_DOB"            HeaderText="DOB"                   SortExpression="Employee_DOB" />
+                        <asp:BoundField DataField="Employee_Phone"          HeaderText="Phone"                 SortExpression="Employee_Phone" />
+                        <asp:BoundField DataField="Role_ID"                 HeaderText="Role"                        SortExpression="Role_ID" />
+                        <asp:BoundField DataField="Employee_Hire_Date"      HeaderText="Hire Date"             SortExpression="Employee_Hire_Date" />
+                        <asp:CommandField ShowEditButton="True" />
                     </Fields>
                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

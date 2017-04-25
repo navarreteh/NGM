@@ -9,8 +9,8 @@
 <link href="styleSheet/styleSheetIndex.css" rel="stylesheet" type="text/css"/>
 <link href="styleSheet/styleSheetHome.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-	<form id="form1" runat="server">
+<body onload ="alertOpenKiosk()">
+	<form id="form" runat="server">
 	<div id="homeOverlay">
 		<header>
             <div id="searchBarContainer">
@@ -47,12 +47,9 @@
 	    	<a><asp:ImageButton ID="backOfficeButton"    src="images/largeButtons/home_backOffice.png"   alt="backOffice"    class="largeButtons"   runat="server"/></a><br/>
 	    	<a><asp:ImageButton ID="closeButton"         src="images/largeButtons/home_closePos.png"     alt="closePos"      class="largeButtons"   runat="server"/></a><br/> 
 		</div>
-		<footer id="home_footer">
-			<p id="hotKeyRef"> 
-				Escape - [ESC] &nbsp;|&nbsp; Search - [CTRL - S] &nbsp;|&nbsp; Shipment - [F8] &nbsp;|&nbsp; Email - [F9] &nbsp;|&nbsp; Time Clock - [F10] &nbsp;|&nbsp; Help - [F11]
-			</p>
-		<p id="companyName">&copy; New Generation Merchandising</p>
-		</footer>
+        <footer id="homefooter">
+            <p id="companyName" style="margin-left:800px">&copy; New Generation Merchandising</p>
+	    </footer>
 	</div>
     </form>
 </body>

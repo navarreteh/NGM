@@ -8,7 +8,7 @@
             padding-left:50px;
             padding-right:50px;
         }
-        #calendarDD{
+        #kioskDD{
             width:30em;
             height:2em;
         }

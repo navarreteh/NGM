@@ -4,7 +4,18 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             homeMultiView.SetActiveView(homeLogoView)
+            Dim myOpenScript As String = "function alertOpenKiosk() {alert('Hello World')};"
+            Page.ClientScript.RegisterClientScriptBlock(Me.GetType(), "myOpenScript", myOpenScript, True)
+
+            Session("Kiosk_ID") = 3
+
         End If
+
+        'We need to check the database to see the kiosk is opened or not. 
+        'By prompting an alert for them to enter kiosk number and login again for security. 
+        'This will have to run everytime they are coming from the index. 
+
+
     End Sub
 
 
