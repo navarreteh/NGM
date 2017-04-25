@@ -28,7 +28,7 @@
 		    <asp:DropDownList ID="kioskDD" runat="server" Width="8em" Height="2em">
                 <asp:ListItem>Test</asp:ListItem>
             </asp:DropDownList>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" PageSize="18"
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="False" PageSize="18"
                   AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
                   BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Product_ID" 
                   DataSourceID="SqlDataSource1" GridLines="Vertical" AllowSorting="True" Width="650px">

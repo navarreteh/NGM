@@ -36,7 +36,7 @@
 		    <asp:DropDownList ID="calendarDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="Deposit_Date" DataValueField="Deposit_Date">
             </asp:DropDownList>
               <img class="roundIcons" id="calendarIcon" src="../images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
-            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
+            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Deposit_ID" DataSourceID="SqlDataSource1" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView" Visible="False">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                 <EditRowStyle BackColor="#7C6F57" />
@@ -46,7 +46,6 @@
                     <asp:BoundField DataField="Bank_ID" HeaderText="Bank ID" ReadOnly="True" SortExpression="Bank_ID" />
                     <asp:BoundField DataField="Kiosk_ID" HeaderText="Kiosk ID" ReadOnly="True" SortExpression="Kiosk_ID" />
                     <asp:BoundField DataField="Employee_ID" HeaderText="Employee ID" ReadOnly="True" SortExpression="Employee_ID" />
-                    <asp:BoundField DataField="Deposit_Date" HeaderText="Deposit Date" ReadOnly="True" SortExpression="Deposit_Date" />
                     <asp:BoundField DataField="Deposit_Amount" HeaderText="Deposit Amount" ReadOnly="True" SortExpression="Deposit_Amount" />
                 </Fields>
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
@@ -55,7 +54,7 @@
                 <RowStyle BackColor="#E3EAEB" />
             </asp:DetailsView><br />
               <h3>Bank Info </h3>
-            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Bank_ID" DataSourceID="SqlDataSource2" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView">
+            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Bank_ID" DataSourceID="SqlDataSource2" CellPadding="4" GridLines="None" ForeColor="#333333" CssClass="detailedView" Visible="False">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                 <EditRowStyle BackColor="#7C6F57" />
