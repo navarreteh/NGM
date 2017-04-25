@@ -12,16 +12,16 @@ Option Explicit On
 
 
 Partial Public Class home
-
+    
     '''<summary>
-    '''form1 control.
+    '''form control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    Protected WithEvents form As Global.System.Web.UI.HtmlControls.HtmlForm
+    
     '''<summary>
     '''searchBar control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents searchBar As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''searchIcon control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents searchIcon As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''messageButton control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents messageButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''clockButton control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents clockButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''onlineButton control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents onlineButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''helpButton control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents helpButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''homeMultiView control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents homeMultiView As Global.System.Web.UI.WebControls.MultiView
-
+    
     '''<summary>
     '''homeLogoView control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents homeLogoView As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''homeLoginView control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents homeLoginView As Global.System.Web.UI.WebControls.View
-
+    
     '''<summary>
     '''login_usernameTB control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents login_usernameTB As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''login_passwordTB control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents login_passwordTB As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''login_submitButton control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents login_submitButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''posButton control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents posButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''reportsButton control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents reportsButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''backOfficeButton control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents backOfficeButton As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''closeButton control.
     '''</summary>

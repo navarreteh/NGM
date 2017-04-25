@@ -25,9 +25,7 @@
 		</div>
 	</div>
 	<footer id="manualFooter">
-		<p id="hotKeyRef"> 
-				Escape - [ESC] &nbsp;|&nbsp; Home - [CTRL-H] &nbsp;|&nbsp; Print - [CTRL-P]
-			</p>
+		<p id="hotKeyRef"></p>
 		<p id="companyName">&copy; New Generation Merchandising</p>
 	</footer>
     </form>

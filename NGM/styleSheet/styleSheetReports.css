@@ -88,4 +88,16 @@ header{
     width:140px;
     height:2.5em;
 }
-
+div{
+	color:#29456D;
+}
+.reportsDescription{
+	margin-left: 20px;
+}
+.reportNumbers{
+	font-size:50px;
+	font-weight:900;
+	text-align: right;
+	margin-top: -15px;
+	margin-right: 20px;
+}

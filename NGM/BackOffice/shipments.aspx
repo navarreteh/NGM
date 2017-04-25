@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
+
         .sectionContent{
             width:625px;
             height:200px;
@@ -14,6 +15,7 @@
             padding-left:50px;
             padding-right:50px;
         }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -33,6 +35,7 @@
     </asp:SqlDataSource>
       <section>
 		<div id="sectionHeader">Shipments</div>
+
           <h3 style="padding-left:50px;">Shipments: </h3>
          <div id="shipment" class="sectionContent" style="overflow:auto;">
               <asp:GridView ID="GridView1" runat="server" AllowPaging="False" PageSize="18"
@@ -48,6 +51,7 @@
                      <asp:BoundField DataField="Supplier_Name"          HeaderText="Supplier Name" SortExpression="Supplier_Name" />
                      <asp:BoundField DataField="Shipment_Date"          HeaderText="Shipment Date" SortExpression="Shipment_Date" />
                      <asp:BoundField DataField="Shipment_Type_Description"            HeaderText="Inbound/Outbound" SortExpression="Shipment_Type_Description" />
+
                  </Columns>
                  <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                  <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
@@ -75,6 +79,7 @@
                      <asp:BoundField DataField="Product_ID"             HeaderText="Product_ID" SortExpression="Product_ID" />
                      <asp:BoundField DataField="Product_Name"           HeaderText="Product_Name" SortExpression="Product_Name" />
                      <asp:BoundField DataField="Quantity"               HeaderText="Quantity" SortExpression="Quantity" />
+
                  </Columns>
                  <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                  <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
@@ -87,6 +92,7 @@
                  <SortedDescendingHeaderStyle BackColor="#000065" />
              </asp:GridView>
             </div>
+
 	</section>
 </asp:Content>
 

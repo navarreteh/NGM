@@ -74,10 +74,8 @@
 		    <asp:ImageButton runat="server" src="images/largeButtons/pos_checkout.png" width="325" id="checkoutButton" alt="checkout button"/> 
 		</div>
 		<footer id="posFooter">
-			<p id="hotKeyRef"> 
-				Escape - [ESC] &nbsp;|&nbsp; Add Items - [F1] &nbsp;|&nbsp; Search - [CTRL-S] &nbsp;|&nbsp; Edits - [CTRL-F8] &nbsp;|&nbsp; Void Transaction - [CTRL-F12] &nbsp;|&nbsp; Help - [F11]
-			</p>
-		<p id="companyName">&copy; New Generation Merchandising</p>
+			<p id="hotKeyRef"></p>
+		<p id="companyName" style="margin-left:800px">&copy; New Generation Merchandising</p>
 		</footer>
 	</div>
     </form>

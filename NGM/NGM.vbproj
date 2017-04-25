@@ -18,7 +18,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
@@ -99,6 +100,7 @@
     <Folder Include="images\headerIcons\" />
     <Folder Include="images\largeButtons\" />
     <Folder Include="images\smallButtons\" />
+    <Folder Include="Old_App_Code\" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -131,6 +133,7 @@
     <Content Include="BackOffice\products.aspx" />
     <Content Include="BackOffice\suppliers.aspx" />
     <Content Include="BackOffice\transactions.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="help.aspx" />
     <Content Include="home.aspx" />
     <Content Include="images\backgrounds\home_ice.png" />
@@ -206,6 +209,9 @@
     <Compile Include="BackOffice\transactions.aspx.vb">
       <DependentUpon>transactions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="help.aspx.designer.vb">
       <DependentUpon>help.aspx</DependentUpon>

@@ -32,6 +32,7 @@ Partial Public Class shipments
     Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
+
     '''GridView1 control.
     '''</summary>
     '''<remarks>
@@ -42,12 +43,14 @@ Partial Public Class shipments
     
     '''<summary>
     '''lblShipmentDetails control.
+
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblShipmentDetails As Global.System.Web.UI.WebControls.Label
+
     
     '''<summary>
     '''GridView2 control.
