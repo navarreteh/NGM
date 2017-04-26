@@ -68,6 +68,24 @@ Partial Public Class pos
     Protected WithEvents purchaseBannerPurchase As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
+    '''CategoriesDD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CategoriesDD As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''ProductsDD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ProductsDD As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
     '''returnBannerPurchase control.
     '''</summary>
     '''<remarks>

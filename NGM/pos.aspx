@@ -37,6 +37,11 @@
                 <asp:View ID="purchaseView" runat="server">
     		    <div id="purchaseScreen">
 	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPurchase"	alt="purchaseBanner"/>
+                    <!--The Category DropdownList, populated on pageload if not on autopostback -->
+                    <br /> Select Category: <asp:DropDownList ID="CategoriesDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" OnSelectedIndexChanged="CategoriesDD_SelectedIndexChanged"></asp:DropDownList>
+                   <!--The Product DropdownList, not initially visible but made visible and populated on selectedindexchanged of Category -->
+                    <br /> Select Products: <asp:DropDownList ID="ProductsDD" runat="server" Width="200px" Height="2em" AutoPostBack="True"></asp:DropDownList>
+                   
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
 			    </div> 
@@ -45,7 +50,10 @@
                 <div id="returnScreen">
 	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerReturn"	alt="purchaseBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerReturn"	    alt="returnBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerReturn" 	alt="paymentanner"/>
+                    <!-- -->
+	    		    
+                    
+                     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerReturn" 	alt="paymentanner"/>
 			    </div> 
                 </asp:View>
                 <asp:View ID="paymentView" runat="server">
@@ -53,6 +61,8 @@
 	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPayment"	alt="purchaseBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPayment"	    alt="returnBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPayment"	alt="paymentanner"/>
+                    <!-- -->
+
 
                      <div id="paymentMethodContainer">
 					    <img src="images/largeButtons/pos_cash.png" class="paymentButtons" alt="cashButton"/><br/>
