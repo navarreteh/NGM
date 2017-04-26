@@ -12,9 +12,8 @@ Partial Class index
                 Dim loginID = Integer.Parse(login_usernameTB.Text)
                 Dim conn As SqlConnection
                 Dim cmd As SqlCommand
-                Dim cmdString As String = "Select [Employee_Password], Employees.Role_ID From [Employee_Login],[Employees] Where Employee_Login.Employee_ID = @Username And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.Employee_ID;"
+                Dim cmdString As String = "Select * From [Kiosk_Login] Where Kiosk_Login_ID = @Username And [Kiosk_Login_Password] = @Password"
 
-                '"Select [Employee_Password] From [Employee_Login] Where (([Employee_ID] = @Username) And ([Employee_Password] = @Password))"
 
                 conn = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString)
                 cmd = New SqlCommand(cmdString, conn)
@@ -29,19 +28,16 @@ Partial Class index
 
                 ' If query returns results then attempted user and attempted pass WERE found in database.
                 If myReader.Read() Then
-                    ' Update Employee_Login_Attempt Table
-                    ' create table to hold open,close POS
-                    ' add field to Kiosk Table for Kiosk Status ('active','inactive')
 
-                    ' If resulting statement's "Role" value = 1 (lower-level op employee), deny access.
-                    If myReader.Item(1) = 1 Then
-                        InvalidCredLabel.Text = "Unauthorized Action"
-                        ' Else, ("Role" value > 1), allow entry into system.
-                    Else
-                        InvalidCredLabel.Text = "Correct"
-                        Server.Transfer("home.aspx")
-                        FormsAuthentication.RedirectFromLoginPage(loginID, True)
-                    End If
+                    'InvalidCredLabel.Text = "Correct"
+                    Dim c As New HttpCookie("Kiosk_ID", loginID)
+                    c.Expires = DateTime.Now.AddHours(8)
+                    Response.SetCookie(c)
+
+
+                    Server.Transfer("home.aspx")
+                    FormsAuthentication.RedirectFromLoginPage(loginID, True)
+
                     ' If query fails to return results then attempted user and attempted pass were NOT found in database.
                 Else
                     InvalidCredLabel.Text = "Invalid Credentials"

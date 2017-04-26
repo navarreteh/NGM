@@ -7,7 +7,12 @@
             Dim myOpenScript As String = "function alertOpenKiosk() {alert('Hello World')};"
             Page.ClientScript.RegisterClientScriptBlock(Me.GetType(), "myOpenScript", myOpenScript, True)
 
-            Session("Kiosk_ID") = 3
+            Dim cookie As HttpCookie = Request.Cookies.[Get]("Kiosk_ID")
+            searchBar.Text = cookie.Value.ToString
+
+
+
+
 
         End If
 
@@ -34,6 +39,9 @@
     End Sub
 
     Protected Sub closeButton_Click(sender As Object, e As ImageClickEventArgs) Handles closeButton.Click
+        Dim cookie As HttpCookie = Request.Cookies.[Get]("Kiosk_ID")
+        cookie.Expires = DateTime.Now.AddDays(-1)
+
         Response.Redirect("index.aspx")
     End Sub
 
