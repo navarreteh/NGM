@@ -41,7 +41,19 @@
                     <br /> Select Category: <asp:DropDownList ID="CategoriesDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" OnSelectedIndexChanged="CategoriesDD_SelectedIndexChanged"></asp:DropDownList>
                    <!--The Product DropdownList, not initially visible but made visible and populated on selectedindexchanged of Category -->
                     <br /> Select Products: <asp:DropDownList ID="ProductsDD" runat="server" Width="200px" Height="2em" AutoPostBack="True"></asp:DropDownList>
-                   
+                   <asp:DetailsView ID="ProductDetails" runat="server" AutoGenerateRows="False" DataKeyNames="ProductID"
+                        DataSourceID="ObjectDataSource1" EnableViewState="False">
+                        <Fields>
+                            <asp:BoundField DataField="Product_Name" HeaderText="Product" SortExpression="ProductName" />
+                            <asp:BoundField DataField="Product_Description" HeaderText="Description" SortExpression="Product_Description" />
+                            <asp:BoundField DataField="Product_Price" HeaderText="Price" SortExpression="Product_Price" />
+                            <asp:BoundField DataField="Product_Discount" HeaderText="Discount" SortExpression="Product_Discount" />
+                            <asp:BoundField DataField="Product_Serial_No" HeaderText="Serial" SortExpression="Product_Serial_No" />
+                        </Fields>
+                    </asp:DetailsView>
+                    <asp:Label runat="server" Text="Quantity on Hand: ">
+
+                    </asp:Label>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
 			    </div> 
