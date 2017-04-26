@@ -8,6 +8,11 @@
 <title>Point of Sale</title>
 <link href="styleSheet/styleSheetIndex.css" rel="stylesheet" type="text/css"/>
 <link href="styleSheet/styleSheetPos.css" rel="stylesheet" type="text/css"/>
+<script type = "text/javascript">
+     function SetTarget() {
+         document.forms[0].target = "_blank";
+     }
+</script>
 </head>
 <body>
     <form runat="server">
@@ -24,7 +29,7 @@
 			<div id="headerContainer">
 				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="pos_editIcon" src="images/headerIcons/overrideIcon.png"/></a>
 				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="pos_voidIcon" src="images/headerIcons/voidIcon.png"/></a>
-				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png" OnClientClick = "SetTarget();"/></a>
 			</div>
 		</header>
 		<div id="posScreenContainer">
@@ -69,10 +74,8 @@
 		    <asp:ImageButton runat="server" src="images/largeButtons/pos_checkout.png" width="325" id="checkoutButton" alt="checkout button"/> 
 		</div>
 		<footer id="posFooter">
-			<p id="hotKeyRef"> 
-				Escape - [ESC] &nbsp;|&nbsp; Add Items - [F1] &nbsp;|&nbsp; Search - [CTRL-S] &nbsp;|&nbsp; Edits - [CTRL-F8] &nbsp;|&nbsp; Void Transaction - [CTRL-F12] &nbsp;|&nbsp; Help - [F11]
-			</p>
-		<p id="companyName">&copy; New Generation Merchandising</p>
+			<p id="hotKeyRef"></p>
+		<p id="companyName" style="margin-left:800px">&copy; New Generation Merchandising</p>
 		</footer>
 	</div>
     </form>

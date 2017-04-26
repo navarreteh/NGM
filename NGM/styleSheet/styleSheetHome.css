@@ -6,6 +6,7 @@
 	width: 1100px;
 	overflow: visible;
 	position: relative;
+
 }
 #homeCircle {
     background-image: url(../images/logos/logo_Big.png);
@@ -18,16 +19,14 @@
     margin: 5.5em 4em 4em 4em;
 
 }
-#companyName{
-	color: #9C8F5F;
-	text-align: right;
-	padding: .5em;
-	margin-left: 8em;
-	
-	
-}#home_footer {
-	margin-top: 1em;
+#homefooter {
+    padding:.5em;
+    margin-top: 1em;
 	clear: both;
+}
+#companyName{
+	text-align: left;
+	margin-left: 825px;
 }
 #homeLoginCircle{
     background-image: url(../images/logos/logo_loginBig.png);

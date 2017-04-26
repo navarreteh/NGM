@@ -18,10 +18,7 @@
 	color: #9C8F5F;
 	text-align: right;
 	padding: .5em;
-	margin-left: 310px;
-}
-#hotKeyRef{
-	margin-left: 35px;
+	margin-left: 815px;
 }
 .headerContainer{
 	float:right;
@@ -63,3 +60,5 @@ h1{
 	font-weight: bolder;
 	font-size: 300%;
 }
+.backOfficeButtons{opacity:.85;}
+:hover.backOfficeButtons{opacity:1;}

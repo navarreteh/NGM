@@ -18,9 +18,10 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -99,6 +100,7 @@
     <Folder Include="images\headerIcons\" />
     <Folder Include="images\largeButtons\" />
     <Folder Include="images\smallButtons\" />
+    <Folder Include="Old_App_Code\" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -127,10 +129,12 @@
     <Content Include="BackOffice\bank.aspx" />
     <Content Include="BackOffice\employees.aspx" />
     <Content Include="BackOffice\inventory.aspx" />
-    <Content Include="BackOffice\orders.aspx" />
+    <Content Include="BackOffice\shipments.aspx" />
     <Content Include="BackOffice\products.aspx" />
     <Content Include="BackOffice\suppliers.aspx" />
     <Content Include="BackOffice\transactions.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="help.aspx" />
     <Content Include="home.aspx" />
     <Content Include="images\backgrounds\home_ice.png" />
     <Content Include="images\logos\logo_Big.png" />
@@ -138,9 +142,11 @@
     <Content Include="images\logos\logo_Small.png" />
     <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
+    <Content Include="onlineorders.aspx" />
     <Content Include="pos.aspx" />
     <Content Include="reports.aspx" />
     <Content Include="styleSheet\styleSheetBackOffice.css" />
+    <Content Include="styleSheet\styleSheetHelp.css" />
     <Content Include="styleSheet\styleSheetHome.css" />
     <Content Include="styleSheet\styleSheetIndex.css" />
     <Content Include="styleSheet\styleSheetPos.css" />
@@ -155,33 +161,64 @@
       <DependentUpon>backoffice.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\bank.aspx.designer.vb">
+      <DependentUpon>bank.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\bank.aspx.vb">
       <DependentUpon>bank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackOffice\employees.aspx.designer.vb">
+      <DependentUpon>employees.aspx</DependentUpon>
     </Compile>
     <Compile Include="BackOffice\employees.aspx.vb">
       <DependentUpon>employees.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\inventory.aspx.designer.vb">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\inventory.aspx.vb">
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BackOffice\orders.aspx.vb">
-      <DependentUpon>orders.aspx</DependentUpon>
+    <Compile Include="BackOffice\products.aspx.designer.vb">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\shipments.aspx.designer.vb">
+      <DependentUpon>shipments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\shipments.aspx.vb">
+      <DependentUpon>shipments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BackOffice\products.aspx.vb">
       <DependentUpon>products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\suppliers.aspx.designer.vb">
+      <DependentUpon>suppliers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\suppliers.aspx.vb">
       <DependentUpon>suppliers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="BackOffice\transactions.aspx.designer.vb">
+      <DependentUpon>transactions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BackOffice\transactions.aspx.vb">
       <DependentUpon>transactions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.designer.vb">
+      <DependentUpon>help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.vb">
+      <DependentUpon>help.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="home.aspx.designer.vb">
       <DependentUpon>home.aspx</DependentUpon>
@@ -216,6 +253,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="onlineorders.aspx.designer.vb">
+      <DependentUpon>onlineorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="onlineorders.aspx.vb">
+      <DependentUpon>onlineorders.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="pos.aspx.designer.vb">
       <DependentUpon>pos.aspx</DependentUpon>
     </Compile>
@@ -248,6 +292,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\NGM.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

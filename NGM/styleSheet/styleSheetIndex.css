@@ -59,9 +59,9 @@ body {
 	margin-bottom: 1em;
 }
 .roundIcons  {
-	width: 2em;
-	height: 2em;
-	margin: 5px;
+	width: 30px;
+	height: 30px;
+	margin: 3px;
 	position: relative;
 	vertical-align: middle;
 }
@@ -97,7 +97,7 @@ footer  {
 }
 #companyName{
 	color: #9C8F5F;
-	text-align: center;
+	text-align: right;
 	display:inline;
 	
 }

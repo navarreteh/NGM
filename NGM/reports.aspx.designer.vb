@@ -68,6 +68,15 @@ Partial Public Class reports
     Protected WithEvents poshelpIcon As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
+    '''SqlDataSource1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
     '''reportsMultiView control.
     '''</summary>
     '''<remarks>
@@ -93,6 +102,15 @@ Partial Public Class reports
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents detailedView As Global.System.Web.UI.WebControls.View
+    
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
     '''detailedButton control.

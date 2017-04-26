@@ -1,9 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
+# Visual Studio 2012
+# SharpDevelop 4.4
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NGM", ".", "{E63614AF-0F9E-4F7F-B2F1-6E77A31ABF93}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NGM", "", "{E63614AF-0F9E-4F7F-B2F1-6E77A31ABF93}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_58913"
@@ -24,6 +25,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NGM", ".", "{E63614AF-0F9E-
 		SlnRelativePath = "..\NGM\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewGen2", "D:\SharpDevelopment\NewGen2\NewGen2.csproj", "{00BB20BB-6475-42C4-B670-18C9894AF756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "D:\SharpDevelopment\test\test.csproj", "{12D34556-3E62-4AD3-ABE2-BC412DDB505C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +36,10 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E63614AF-0F9E-4F7F-B2F1-6E77A31ABF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E63614AF-0F9E-4F7F-B2F1-6E77A31ABF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BB20BB-6475-42C4-B670-18C9894AF756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BB20BB-6475-42C4-B670-18C9894AF756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D34556-3E62-4AD3-ABE2-BC412DDB505C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D34556-3E62-4AD3-ABE2-BC412DDB505C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

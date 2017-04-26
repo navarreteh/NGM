@@ -41,15 +41,6 @@ Partial Public Class home
     Protected WithEvents searchIcon As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
-    '''shipmentButton control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents shipmentButton As Global.System.Web.UI.WebControls.ImageButton
-    
-    '''<summary>
     '''messageButton control.
     '''</summary>
     '''<remarks>
@@ -66,6 +57,15 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents clockButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''onlineButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents onlineButton As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
     '''helpButton control.
