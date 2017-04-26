@@ -1,11 +1,87 @@
-﻿Public Class pos
+﻿Imports System.Data
+Imports System.Configuration
+Imports System.Data.SqlClient
+Public Class pos
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        posMultiView.SetActiveView(purchaseView)
         If Not IsPostBack Then
-            posMultiView.SetActiveView(purchaseView)
+            Dim constr As String = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
+            Using con As New SqlConnection(constr)
+                Using cmd As New SqlCommand("SELECT * from Category")
+                    cmd.CommandType = CommandType.Text
+                    cmd.Connection = con
+                    con.Open()
+                    CategoriesDD.DataSource = cmd.ExecuteReader()
+                    CategoriesDD.DataTextField = "Category_Name"
+                    CategoriesDD.DataValueField = "Category_ID"
+                    CategoriesDD.DataBind()
+                    con.Close()
+                End Using
+            End Using
+            CategoriesDD.Items.Insert(0, New ListItem("--Select Category--", "0"))
         End If
     End Sub
+
+    Protected Sub CategoriesDD_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim CategoryID As Integer = Convert.ToInt32(CategoriesDD.SelectedValue.ToString())
+        FillProducts(CategoryID)
+    End Sub
+
+
+    Private Sub FillProducts(ByVal categoryID As Integer)
+        Dim strConn As String = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
+        Dim con As New SqlConnection(strConn)
+        Dim cmd As New SqlCommand()
+        cmd.Connection = con
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "Select * from Products where Category_ID =@CategoryID"
+        cmd.Parameters.AddWithValue("@CategoryID", categoryID)
+        Dim objDs As New DataSet()
+        Dim dAdapter As New SqlDataAdapter()
+        dAdapter.SelectCommand = cmd
+        con.Open()
+        dAdapter.Fill(objDs)
+        con.Close()
+        If objDs.Tables(0).Rows.Count > 0 Then
+            ProductsDD.DataSource = objDs.Tables(0)
+            ProductsDD.DataTextField = "Product_Description"
+            ProductsDD.DataValueField = "Product_ID"
+            ProductsDD.DataBind()
+            ProductsDD.Items.Insert(0, "--Select--")
+        Else
+        End If
+    End Sub
+
+
+    Protected Sub ProductsDD_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ProductID As Integer = Convert.ToInt32(CategoriesDD.SelectedValue.ToString())
+        FillChart(ProductID)
+    End Sub
+    'Private Sub FillChart(ByVal categoryID As Integer)
+    'Dim strConn As String = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
+    'Dim con As New SqlConnection(strConn)
+    'Dim cmd As New SqlCommand()
+    '   cmd.Connection = con
+    '  cmd.CommandType = CommandType.Text
+    ' cmd.CommandText = "Select * from Products where Category_ID =@CategoryID"
+    '   cmd.Parameters.AddWithValue("@CategoryID", categoryID)
+    'Dim objDs As New DataSet()
+    'Dim dAdapter As New SqlDataAdapter()
+    '   dAdapter.SelectCommand = cmd
+    '  con.Open()
+    ' dAdapter.Fill(objDs)
+    'con.Close()
+    'If objDs.Tables(0).Rows.Count > 0 Then
+    '        ProductsDD.DataSource = objDs.Tables(0)
+    '       ProductsDD.DataTextField = "Product_Description"
+    '      ProductsDD.DataValueField = "Product_ID"
+    '     ProductsDD.DataBind()
+    '    ProductsDD.Items.Insert(0, "--Select--")
+    'Else
+    'End If
+    'End Sub
 
     Protected Sub checkoutButton_Click(sender As Object, e As ImageClickEventArgs) Handles checkoutButton.Click
         posMultiView.SetActiveView(paymentView)
