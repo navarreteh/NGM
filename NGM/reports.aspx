@@ -44,31 +44,32 @@
 			        <img src="images/banners/reports_hourly.jpg" width="330" height="40" alt="hourlyTopper"/>
 
                     <p class="reportsDescription">Net Sales:</p>
-				        <p class="reportNumbers">$XXX.XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="netSalesHourlyTB" runat="server" ></asp:Literal></p>
 			        <p class="reportsDescription">Average Sales:</p>
-				        <p class="reportNumbers">$XXX.XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="avgHourlyTB" runat="server" ></asp:Literal></p>
 			        <p class="reportsDescription">Unit Per Transaction:</p>
-				        <p class="reportNumbers">XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="unitsPerHourlyTB" runat="server" ></asp:Literal></p>
 			        <p class="reportsDescription">Number of Transaction:</p>
-				        <p class="reportNumbers">XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="numTransHourlyTB" runat="server" ></asp:Literal></p>
 
 	            </div>
 		        <div id="dailyReportsContainer" class="reportsSection">
 			        <img src="images/banners/reports_daily.jpg" width="330" height="40" alt="dailyTopper"/>
                     <p class="reportsDescription">Net Sales:</p>
-				        <p class="reportNumbers">$XXX.XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="netSalesDailyTB" runat="server" ></asp:Literal></p>
 			        <p class="reportsDescription">Average Sales:</p>
-				        <p class="reportNumbers">$XXX.XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="avgDailyTB" runat="server"></asp:Literal></p>
 			        <p class="reportsDescription">Unit Per Transaction:</p>
-				        <p class="reportNumbers">XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="unitsPerDailyTB" runat="server"></asp:Literal></p>
 			        <p class="reportsDescription">Number of Transaction:</p>
-				        <p class="reportNumbers">XX</p>
+				        <p class="reportNumbers"><asp:Literal ID="numTransDailyTB" runat="server"></asp:Literal></p>
 		        </div>
             </asp:View>
             <asp:View ID="detailedView" runat="server">
 		        <div id="detailedContainer">
 			        <img src="images/banners/reports_detailed.jpg" width="680" height="40" alt="detailedTopper"/>
-                    <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource3"></asp:GridView>
+
+
 	            </div>
             </asp:View>
         </asp:MultiView>

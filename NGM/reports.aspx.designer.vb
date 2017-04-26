@@ -95,6 +95,78 @@ Partial Public Class reports
     Protected WithEvents summaryView As Global.System.Web.UI.WebControls.View
     
     '''<summary>
+    '''netSalesHourlyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents netSalesHourlyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''avgHourlyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents avgHourlyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''unitsPerHourlyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents unitsPerHourlyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''numTransHourlyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents numTransHourlyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''netSalesDailyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents netSalesDailyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''avgDailyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents avgDailyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''unitsPerDailyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents unitsPerDailyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''numTransDailyTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents numTransDailyTB As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''detailedView control.
     '''</summary>
     '''<remarks>
@@ -102,15 +174,6 @@ Partial Public Class reports
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents detailedView As Global.System.Web.UI.WebControls.View
-    
-    '''<summary>
-    '''GridView1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
     '''detailedButton control.
