@@ -8,4 +8,8 @@ Partial Class shipments
 
         lblShipmentDetails.Text = "Details for Shipment ID " & GridView1.SelectedValue & ":"
     End Sub
+
+    Protected Sub btnProcessShipment_Click(sender As Object, e As EventArgs) Handles btnProcessShipment.Click
+
+    End Sub
 End Class

@@ -37,12 +37,20 @@
          .tableCells{
              width:400px;
          }
+         .validator{
+             color:#ad0c0c;
+         }
     </style>
+    <script type="text/javascript">
+        function displayValidatorErrors() {
+            window.confirm(document.getElementById('valEmployee_First_Name').innerHTML);
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
         SelectCommand="SELECT * FROM [Employees]" FilterExpression="Employee_ID='{0}'"
-        UpdateCommand="UPDATE [Employees] SET [Employee_First_Name] = @Employee_First_Name, [Employee_Last_Name] = @Employee_Last_Name, [Employee_Street_Line1] = @Employee_Street_Line1, [Employee_Street_Line2] = @Employee_Street_Line2, [Employee_City] = @Employee_City, [Employee_State] = @Employee_State, [Employee_Zip_Code] = @Employee_Zip_Code, [Employee_SSN] = @Employee_SSN, [Employee_DOB] = @Employee_DOB, [Employee_Phone] = @Employee_Phone, [Role_ID] = @Role_ID, [Employee_Hire_Date] = @Employee_Hire_Date WHERE [Employee_ID] = @Employee_ID">
+        UpdateCommand="UPDATE [Employees] SET [Employee_First_Name] = @Employee_First_Name, [Employee_Last_Name] = @Employee_Last_Name, [Employee_Street_Line1] = @Employee_Street_Line1, [Employee_Street_Line2] = @Employee_Street_Line2, [Employee_City] = @Employee_City, [Employee_State] = @Employee_State, [Employee_Zip_Code] = @Employee_Zip_Code, [Employee_SSN] = @Employee_SSN, [Employee_DOB] = @Employee_DOB, [Employee_Phone] = @Employee_Phone, [Role_ID] = @Role_ID, [Employee_Hire_Date] = @Employee_Hire_Date, [Employee_Release_Date] = @Employee_Release_Date, WHERE [Employee_ID] = @Employee_ID">
      
           <FilterParameters>
                 <asp:ControlParameter ControlID="GridView1" Name="Employee_ID" PropertyName="SelectedValue" />
@@ -60,6 +68,7 @@
               <asp:Parameter Name="Employee_Phone" Type="String" />
               <asp:Parameter Name="Role_ID" Type="Int32" />
               <asp:Parameter DbType="Date" Name="Employee_Hire_Date" />
+              <asp:Parameter DbType="Date" Name="Employee_Release_Date" />
               <asp:Parameter Name="Employee_ID" Type="Int32" />
           </UpdateParameters>
     </asp:SqlDataSource>
@@ -104,11 +113,15 @@
                         <SortedDescendingCellStyle      BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle    BackColor="#000065" />
                     </asp:GridView>
-                </div><br/>
+                </div>
+                
+                <br/>
+
                 <h3 id="employeeHeader" runat="server">Employee </h3>
+                
                 <div style="height: 250px; width:625px; overflow-y: scroll" runat="server" id="detailSection">
 
-                <asp:DetailsView ID="DetailsView1" runat="server" 
+                <asp:DetailsView ID="DetailsView1" runat="server"
                     AutoGenerateRows="False"        DataKeyNames="Employee_ID" 
                     DataSourceID="SqlDataSource1"   CellPadding="4" GridLines="None" 
                     ForeColor="#333333"             CssClass="detailedView">
@@ -131,7 +144,8 @@
                         <asp:BoundField DataField="Employee_Phone"          HeaderText="Phone"                 SortExpression="Employee_Phone" />
                         <asp:BoundField DataField="Role_ID"                 HeaderText="Role"                        SortExpression="Role_ID" />
                         <asp:BoundField DataField="Employee_Hire_Date"      HeaderText="Hire Date"             SortExpression="Employee_Hire_Date" />
-                        <asp:CommandField ShowEditButton="True" />
+                        <asp:BoundField DataField="Employee_Release_Date"      HeaderText="Release Date"             SortExpression="Employee_Release_Date" />
+                        <asp:CommandField ShowEditButton="False" />
                     </Fields>
                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -149,10 +163,11 @@
         <asp:View ID="EmployeeAddForm" runat="server">
             <div class="sectionContent">
             <h3>Add New Employee </h3>
+            <asp:Label ID="errorLabel" runat="server" Text=""></asp:Label>
             <table>
                 <tr>
                   <th>ID</th>
-                  <td><asp:TextBox ID="idTB"        CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:Label ID="idLB"        CssClass="tableCells" runat="server"></asp:Label></td>
                 </tr>
                 <tr>
                   <th>First Name</th>
@@ -201,6 +216,10 @@
                 <tr>
                   <th>Hire Date</th>
                   <td><asp:TextBox ID="hireDateTB"  CssClass="tableCells" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                  <th>Login Password</th>
+                  <td><asp:TextBox ID="loginPasswordTB"  CssClass="tableCells" runat="server"></asp:TextBox></td>
                 </tr>
             </table>
                 <asp:ImageButton ID="cancelButton"  CssClass="formButtons" runat="server" src="../images/smallButtons/cancelIcon.png"/>

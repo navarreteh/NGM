@@ -91,6 +91,7 @@
                  <SortedDescendingCellStyle BackColor="#CAC9C9" />
                  <SortedDescendingHeaderStyle BackColor="#000065" />
              </asp:GridView>
+             <asp:Button ID="btnProcessShipment" runat="server" Text="Process Shipment" visible="false"/>
             </div>
 
 	</section>
