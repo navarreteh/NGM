@@ -14,7 +14,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body onload="<% =loadKioskID %>">
     <form id="form1" runat="server">
     <div id="backOfficeOverlay">
         <header>

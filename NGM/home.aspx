@@ -31,10 +31,11 @@
             <asp:View ID="homeLoginView" runat="server">
                 <div id="homeLoginCircle">
                     <div id="homeLoginForm">
+                        <asp:Label ID="InvalidCredLabel" Style="color:#FFFFFF;" runat="server"></asp:Label><br />
                         <img class="roundIcons" id="userIcon" src="images/roundIcons/userIcon.png" alt="userIcon"/>
-	                    <asp:TextBox class="textBoxes" autofocus="true" type="text" name="textfield" id="login_usernameTB" runat="server"/><br/>
+	                    <asp:TextBox class="textBoxes" autocomplete="off" autofocus="true" type="text" name="textfield" id="login_usernameTB" runat="server"/><br/>
 	                    <img class="roundIcons"  id="passwordIcon" src ="images/roundIcons/passwordIcon.png" alt=""/>
-	                    <asp:TextBox class="textBoxes" type="text" name="textfield2" id="login_passwordTB" runat="server"/><br/>
+	                    <asp:TextBox class="textBoxes" autocomplete="off" type="password" name="textfield2" id="login_passwordTB" runat="server"/><br/>
 	                    <a><asp:ImageButton class="formButtons" type="image" name="sumbitIcon" id="login_submitButton" src="images/smallButtons/submitIcon.png" runat="server"/></a>
                     </div>
 		        </div>

@@ -57,7 +57,7 @@ Public Class pos
 
     Protected Sub ProductsDD_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
         Dim ProductID As Integer = Convert.ToInt32(CategoriesDD.SelectedValue.ToString())
-        FillChart(ProductID)
+        'FillChart(ProductID)
     End Sub
     'Private Sub FillChart(ByVal categoryID As Integer)
     'Dim strConn As String = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString

@@ -104,6 +104,15 @@ Partial Public Class home
     Protected WithEvents homeLoginView As Global.System.Web.UI.WebControls.View
     
     '''<summary>
+    '''InvalidCredLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents InvalidCredLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''login_usernameTB control.
     '''</summary>
     '''<remarks>
