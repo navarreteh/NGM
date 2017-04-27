@@ -16,11 +16,11 @@ Public Class reports
 
             Dim hr_Select As String = "SUM(distinct(Payment_Total)) AS SUMP, FORMAT(avg(distinct(Payment_Total)),'N','en-us') AS AVGP, SUM(Quantity)/COUNT(DISTINCT Transactions.Transaction_ID) AS UNITS, COUNT(DISTINCT Transactions.Transaction_ID) AS TRANS"
             Dim hr_From As String = "((Transactions inner join(SELECT DISTINCT Transaction_ID, Quantity From Transaction_Details) td On Transactions.Transaction_ID = td.Transaction_ID) inner Join Employee_Assignment on Transactions.Assignment_ID = Employee_Assignment.Assignment_ID)"
-            Dim hr_Where As String = "Transaction_Date > '" & dateHourString & "' AND  Transaction_date < '" & dateTimeString & "' And Employee_Assignment.Kiosk_ID = 2 Group BY Employee_Assignment.Kiosk_ID"
+            Dim hr_Where As String = "Transaction_Date > '" & dateHourString & "' AND  Transaction_date < '" & dateTimeString & "' And Employee_Assignment.Kiosk_ID = 1 Group BY Employee_Assignment.Kiosk_ID"
 
             Dim dr_Select As String = "SUM(distinct(Payment_Total)) AS SUMP, FORMAT(avg(distinct(Payment_Total)),'N','en-us') AS AVGP, SUM(Quantity)/COUNT(DISTINCT Transactions.Transaction_ID) AS UNITS, COUNT(DISTINCT Transactions.Transaction_ID) AS TRANS"
             Dim dr_From As String = "((Transactions inner join(SELECT DISTINCT Transaction_ID, Quantity From Transaction_Details) td On Transactions.Transaction_ID = td.Transaction_ID) inner Join Employee_Assignment on Transactions.Assignment_ID = Employee_Assignment.Assignment_ID)"
-            Dim dr_Where As String = "Transaction_Date > '" & dateString & "' AND  Transaction_date < '" & dateTimeString & "' And Employee_Assignment.Kiosk_ID = 2 Group BY Employee_Assignment.Kiosk_ID"
+            Dim dr_Where As String = "Transaction_Date > '" & dateString & "' AND  Transaction_date < '" & dateTimeString & "' And Employee_Assignment.Kiosk_ID = 1 Group BY Employee_Assignment.Kiosk_ID"
 
             Dim detail_Select As String = "SUM(payment_total) AS SUMP, FORMAT(avg(Payment_Total),'N','en-us') AS AVGP, SUM(quantity)/COUNT(t.transaction_id) AS UNITS, COUNT(DISTINCT t.transaction_id) AS TRANS"
             Dim detail_From As String = "Transactions AS t, Transaction_Details AS td"

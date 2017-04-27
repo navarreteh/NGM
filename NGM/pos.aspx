@@ -20,7 +20,7 @@
 		<header>
             <div id="addBarContainer">
 			<asp:TextBox type="search" id="addBar" runat="server"/>
-				<a><asp:ImageButton runat="server" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" width="50" height="50" alt="addIcon"/></a>
+				<a><input type="image" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" width="50" height="50" alt="addIcon"/></a>
 			</div>
 			<div id="searchBarContainer">
 				<input type="search" id="searchBar"/>
