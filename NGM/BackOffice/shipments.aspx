@@ -50,7 +50,7 @@
                      <asp:BoundField DataField="Supplier_ID"            HeaderText="Supplier ID" SortExpression="Supplier_ID" />
                      <asp:BoundField DataField="Supplier_Name"          HeaderText="Supplier Name" SortExpression="Supplier_Name" />
                      <asp:BoundField DataField="Shipment_Date"          HeaderText="Shipment Date" SortExpression="Shipment_Date" />
-                     <asp:BoundField DataField="Shipment_Type_Description"            HeaderText="Inbound/Outbound" SortExpression="Shipment_Type_Description" />
+                     <asp:BoundField DataField="Shipment_Type_Description" HeaderText="Inbound/Outbound" SortExpression="Shipment_Type_Description" />
 
                  </Columns>
                  <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -63,11 +63,11 @@
                  <SortedDescendingCellStyle BackColor="#CAC9C9" />
                  <SortedDescendingHeaderStyle BackColor="#000065" />
              </asp:GridView>
-             
          </div>
 
          <br />
-          <h3 style="padding-left:50px;"><asp:Label ID="lblShipmentDetails" runat="server" Text=""></asp:Label></h3>
+          <h3 style="padding-left:50px;"><asp:Label ID="lblShipmentDetails" runat="server" Text=""></asp:Label><asp:Button ID="btnProcessShipment" style="float:right; margin-right:25px;" runat="server" Text="Process Shipment" visible="false"/></h3>
+          <asp:Label ID="lbloutput" runat="server" Text=""></asp:Label>
          <div id="shipment_details" class="sectionLower" style="overflow:auto;">
           <asp:GridView ID="GridView2" runat="server" PageSize="5"
                   AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
@@ -75,7 +75,8 @@
                   DataSourceID="SqlDataSource2" GridLines="Vertical" AllowSorting="True" Width="650px" Visible="False">
                 
                  <AlternatingRowStyle BackColor="#DCDCDC" />
-                 <Columns>                    
+                 <Columns>   
+                     <asp:CommandField ShowSelectButton="True" />                 
                      <asp:BoundField DataField="Product_ID"             HeaderText="Product_ID" SortExpression="Product_ID" />
                      <asp:BoundField DataField="Product_Name"           HeaderText="Product_Name" SortExpression="Product_Name" />
                      <asp:BoundField DataField="Quantity"               HeaderText="Quantity" SortExpression="Quantity" />

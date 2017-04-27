@@ -113,13 +113,22 @@ Partial Public Class employees
     Protected WithEvents EmployeeAddForm As Global.System.Web.UI.WebControls.View
     
     '''<summary>
-    '''idTB control.
+    '''errorLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents idTB As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents errorLabel As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''idLB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents idLB As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''fNameTB control.
@@ -228,6 +237,15 @@ Partial Public Class employees
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hireDateTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''loginPasswordTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents loginPasswordTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''cancelButton control.
