@@ -8,6 +8,7 @@ Public Class reports
 
         If Not IsPostBack Then
             reportsMultiView.SetActiveView(summaryView)
+
             Dim dateString As String = DateTime.Now.ToString("MM/dd/yyy 00:00:00")
             Dim dateTimeString As String = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
             Dim dateHourString As String = DateTime.Now.AddHours(-1)
