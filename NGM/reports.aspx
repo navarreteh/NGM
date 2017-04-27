@@ -17,20 +17,20 @@
 <form runat="server">
 	<div id="reportsOverlay">
 	<header>
-		<div id="calendarDDContainer" class="headerContainer">
+		<%--<div id="calendarDDContainer" class="headerContainer">
 		    <img class="roundIcons" id="calenderIcon" src="images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
             <asp:DropDownList ID="calenderStartDD" runat="server"  class="calendarDD">
             </asp:DropDownList>
             <asp:DropDownList ID="calenderEndDD" runat="server"  class="calendarDD">
             </asp:DropDownList>
-		</div>
+		</div>--%>
 		<div id="locationDDContainer" class="headerContainer">
 			<img class="roundIcons" id="addIcon" src="images/roundIcons/locationIcon.png" width="50" height="50" alt="LocationIcon"/>
 		    <asp:DropDownList ID="locationDD" runat="server" Height="2.5em">
                 <asp:ListItem>TEST</asp:ListItem>
             </asp:DropDownList>
 		</div>
-		<div id="headerButtons" class="headerContainer">
+		<div id="headerButtons" class="headerContainer" style="float:right;">
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="homeIcon" src="images/headerIcons/homeIcon.png"/></a>
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="printIcon" src="images/headerIcons/printIcon.png"/></a>
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png" OnClientClick = "SetTarget();"/></a>
