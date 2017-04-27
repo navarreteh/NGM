@@ -66,4 +66,16 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DetailsView2 As Global.System.Web.UI.WebControls.DetailsView
+    
+    '''<summary>
+    '''Master property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As NGM.backoffice
+        Get
+            Return CType(MyBase.Master,NGM.backoffice)
+        End Get
+    End Property
 End Class

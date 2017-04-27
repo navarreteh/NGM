@@ -19,8 +19,8 @@
 	<div id="posOverlay">
 		<header>
             <div id="addBarContainer">
-			<input type="search" id="addBar"/>
-				<a><input type="image" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" width="50" height="50" alt="addIcon"/></a>
+			<asp:TextBox type="search" id="addBar" runat="server"/>
+				<a><asp:ImageButton runat="server" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" width="50" height="50" alt="addIcon"/></a>
 			</div>
 			<div id="searchBarContainer">
 				<input type="search" id="searchBar"/>
@@ -37,23 +37,28 @@
                 <asp:View ID="purchaseView" runat="server">
     		    <div id="purchaseScreen">
 	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPurchase"	alt="purchaseBanner"/>
-                    <!--The Category DropdownList, populated on pageload if not on autopostback -->
+                   <!--The Category DropdownList, populated on pageload if not on autopostback -->
                     <br /> Select Category: <asp:DropDownList ID="CategoriesDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" OnSelectedIndexChanged="CategoriesDD_SelectedIndexChanged"></asp:DropDownList>
                    <!--The Product DropdownList, not initially visible but made visible and populated on selectedindexchanged of Category -->
-                    <br /> Select Products: <asp:DropDownList ID="ProductsDD" runat="server" Width="200px" Height="2em" AutoPostBack="True"></asp:DropDownList>
-                   <asp:DetailsView ID="ProductDetails" runat="server" AutoGenerateRows="False" DataKeyNames="ProductID"
-                        DataSourceID="ObjectDataSource1" EnableViewState="False">
-                        <Fields>
-                            <asp:BoundField DataField="Product_Name" HeaderText="Product" SortExpression="ProductName" />
-                            <asp:BoundField DataField="Product_Description" HeaderText="Description" SortExpression="Product_Description" />
-                            <asp:BoundField DataField="Product_Price" HeaderText="Price" SortExpression="Product_Price" />
-                            <asp:BoundField DataField="Product_Discount" HeaderText="Discount" SortExpression="Product_Discount" />
-                            <asp:BoundField DataField="Product_Serial_No" HeaderText="Serial" SortExpression="Product_Serial_No" />
-                        </Fields>
-                    </asp:DetailsView>
+                    <br /> Select Products: <asp:DropDownList ID="ProductsDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" OnSelectedIndexChanged="ProductsDD_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT * FROM Products">
+                    </asp:SqlDataSource>
+
+                    <asp:DetailsView ID="ProductDetails" runat="server" AutoGenerateRows="True" DataKeyNames="Product_ID" DataSourceID="SqlDataSource1"></asp:DetailsView>
                     <asp:Label runat="server" Text="Quantity on Hand: ">
 
                     </asp:Label>
+
+
+                    <table>
+                        <tr>
+                            <td>554456</td>
+                            <td>Iphone</td>
+                            <td>64GB</td>
+                            <td>RED EDITION</td>
+                            <td>$699.99</td>
+                        </tr>
+                    </table>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
 			    </div> 

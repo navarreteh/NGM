@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class pos
     
     '''<summary>
+    '''addBar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents addBar As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''addIcon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents addIcon As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
     '''pos_editIcon control.
     '''</summary>
     '''<remarks>
@@ -84,6 +102,15 @@ Partial Public Class pos
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ProductsDD As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''SqlDataSource1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''ProductDetails control.

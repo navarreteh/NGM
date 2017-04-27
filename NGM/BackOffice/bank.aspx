@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Bank" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="NGM.bank" Codebehind="bank.aspx.vb" %>
+﻿<%@ Page Title="Bank" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="NGM.bank" Codebehind="bank.aspx.vb"  %>
+<%@ MasterType VirtualPath="~/BackOffice/backoffice.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
@@ -24,21 +25,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <asp:SqlDataSource ID="DD_Datasource" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-        SelectCommand="SELECT [Deposit_Date] FROM [Deposit] WHERE Kiosk_ID = 1" >
+        SelectCommand="" >
     </asp:SqlDataSource>
 
 
     <asp:SqlDataSource ID="Deposit_Datasource" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-        SelectCommand="SELECT [Deposit_ID], [Bank_ID], [Kiosk_ID], [Employee_ID], [Deposit_Date], [Deposit_Amount] FROM [Deposit]"
-        FilterExpression="Deposit_Date='{0}'">
-        <FilterParameters>
-                <asp:ControlParameter ControlID="calendarDD" Name="Deposit_Date" PropertyName="SelectedValue"  />
-        </FilterParameters>
+        SelectCommand="">
     </asp:SqlDataSource>
 
     <asp:SqlDataSource ID="Bank_Datasource" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-        SelectCommand="SELECT Bank.Bank_ID, [Bank_Name], [Bank_Street_Line1], [Bank_Street_Line2], [Bank_City], [Bank_State], [Bank_Zip_Code]
-        FROM (Bank INNER JOIN Deposit ON Bank.Bank_ID = Deposit.Bank_ID) WHERE Deposit.Kiosk_ID = 3">
+        SelectCommand="">
  
     </asp:SqlDataSource>
    

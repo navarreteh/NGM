@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class reports
     
     '''<summary>
-    '''calenderStartDD control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents calenderStartDD As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''calenderEndDD control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents calenderEndDD As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
     '''locationDD control.
     '''</summary>
     '''<remarks>

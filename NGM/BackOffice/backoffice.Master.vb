@@ -3,6 +3,9 @@ Partial Class backoffice
 
     Inherits System.Web.UI.MasterPage
 
+    Public kioskCookie As HttpCookie
+    Public loadKioskID As HttpCookie
+
     Protected Sub bankButton_Click(sender As Object, e As ImageClickEventArgs) Handles bankButton.Click
         Response.Redirect("bank.aspx")
     End Sub
@@ -34,6 +37,9 @@ Partial Class backoffice
         Response.Redirect("help.aspx")
     End Sub
 
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        kioskCookie = Request.Cookies.[Get]("Kiosk_ID")
 
+    End Sub
 End Class
 
