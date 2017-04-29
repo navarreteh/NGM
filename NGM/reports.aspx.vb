@@ -13,6 +13,9 @@ Public Class reports
             Dim dateTimeString As String = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
             Dim dateHourString As String = DateTime.Now.AddHours(-1)
 
+            dateDisplay.Text = DateTime.Now.ToString("MM/dd/yyy")
+            timeDisplay.Text = DateTime.Now.ToString("hh:mm tt")
+
 
 
             Dim hr_Select As String = "SUM(distinct(Payment_Total)) AS SUMP, FORMAT(avg(distinct(Payment_Total)),'N','en-us') AS AVGP, SUM(Quantity)/COUNT(DISTINCT Transactions.Transaction_ID) AS UNITS, COUNT(DISTINCT Transactions.Transaction_ID) AS TRANS"

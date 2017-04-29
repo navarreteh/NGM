@@ -18,8 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44351</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
@@ -140,6 +139,7 @@
     <Content Include="images\logos\logo_Big.png" />
     <Content Include="images\logos\logo_loginBig.png" />
     <Content Include="images\logos\logo_Small.png" />
+    <Content Include="images\logos\reportsLogo.png" />
     <Content Include="images\roundIcons\searchIcon.png" />
     <Content Include="index.aspx" />
     <Content Include="onlineorders.aspx" />

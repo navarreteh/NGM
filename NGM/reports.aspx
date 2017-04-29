@@ -31,9 +31,9 @@
             </asp:DropDownList>
 		</div>
 		<div id="headerButtons" class="headerContainer" style="float:right;">
-			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="homeIcon" src="images/headerIcons/homeIcon.png"/></a>
-			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="printIcon" src="images/headerIcons/printIcon.png"/></a>
-			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png" OnClientClick = "SetTarget();"/></a>
+			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="homeIcon" id="homeIcon" src="images/headerIcons/homeIcon.png"       ToolTip="Home"  /></a>
+			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="printIcon" id="printIcon" src="images/headerIcons/printIcon.png"    ToolTip="Print" /></a>
+			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png"    ToolTip="Help" OnClientClick = "SetTarget();"/></a>
 		</div>
 	    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 	</header>
@@ -74,7 +74,14 @@
             </asp:View>
         </asp:MultiView>
 		<div id="asideContainer" class="reportsSection">
-			<img src="images/logos/reportsLogo.png" id="reportsLogo" alt="logoBanner"/>
+            <div id="reportsLogo">
+                <div id="clockContainer">
+                    <h2>
+                        <asp:Literal runat="server" id="timeDisplay" ></asp:Literal><br/>
+                        <asp:Literal runat="server" id="dateDisplay" ></asp:Literal>
+                    </h2>
+                 </div>
+            </div>
 			<asp:ImageButton runat="server" src="images/largeButtons/reports_detailed.png" id="detailedButton" width="300" alt="detailedButton"/>
 		</div>
 	</div>
