@@ -72,13 +72,22 @@ header{
 	width:300px;
 	height:auto;
     margin:auto;
-	margin-top:200px;
+	margin-top:50px;
 }
 #reportsLogo{
-	width: 275px;
+    background-image:url(../images/logos/reportsLogo.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+	width: 280px;
+    height: 280px;
 	display:block;
 	height:auto;
 	margin:auto;
+}
+#clockContainer{
+    padding-top:150px;
+    width: 280px;
+    height: 280px;
 }
 #locationDD{
     width:284px;
@@ -100,4 +109,8 @@ div{
 	text-align: right;
 	margin-top: -15px;
 	margin-right: 20px;
+}
+h2{
+    color:white;
+    text-align:center;
 }

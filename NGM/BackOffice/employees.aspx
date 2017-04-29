@@ -145,7 +145,7 @@
                         <asp:BoundField DataField="Role_ID"                 HeaderText="Role"                        SortExpression="Role_ID" />
                         <asp:BoundField DataField="Employee_Hire_Date"      HeaderText="Hire Date"             SortExpression="Employee_Hire_Date" />
                         <asp:BoundField DataField="Employee_Release_Date"      HeaderText="Release Date"             SortExpression="Employee_Release_Date" />
-                        <asp:CommandField ShowEditButton="False" />
+                        <asp:CommandField ShowEditButton="True" />
                     </Fields>
                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

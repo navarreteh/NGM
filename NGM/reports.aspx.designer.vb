@@ -158,6 +158,24 @@ Partial Public Class reports
     Protected WithEvents detailedView As Global.System.Web.UI.WebControls.View
     
     '''<summary>
+    '''timeDisplay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents timeDisplay As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''dateDisplay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dateDisplay As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''detailedButton control.
     '''</summary>
     '''<remarks>

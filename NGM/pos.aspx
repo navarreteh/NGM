@@ -27,9 +27,9 @@
 				<a><input type="image" class="roundIcons" id="searchIcon" src="images/roundIcons/searchIcon.png" width="50" height="50" alt="searchIcon"/></a>
 			</div>
 			<div id="headerContainer">
-				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="pos_editIcon" src="images/headerIcons/overrideIcon.png"/></a>
-				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="pos_voidIcon" src="images/headerIcons/voidIcon.png"/></a>
-				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png" OnClientClick = "SetTarget();"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon" id="pos_editIcon" src="images/headerIcons/overrideIcon.png"   ToolTip="Edit Transaction"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="voidIcon" id="pos_voidIcon" src="images/headerIcons/voidIcon.png"       ToolTip="Void Transaction"/></a>
+				<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon"  src="images/headerIcons/helpIcon.png"       ToolTip="Help" OnClientClick = "SetTarget();"/></a>
 			</div>
 		</header>
 		<div id="posScreenContainer">
@@ -50,7 +50,7 @@
                     </asp:Label>
 
 
-                    <table>
+                   <%-- <table>
                         <tr>
                             <td>554456</td>
                             <td>Iphone</td>
@@ -58,7 +58,7 @@
                             <td>RED EDITION</td>
                             <td>$699.99</td>
                         </tr>
-                    </table>
+                    </table>--%>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
 			    </div> 
