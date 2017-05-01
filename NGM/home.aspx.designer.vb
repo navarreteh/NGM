@@ -41,6 +41,15 @@ Partial Public Class home
     Protected WithEvents searchIcon As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
+    '''searchResults control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents searchResults As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''messageButton control.
     '''</summary>
     '''<remarks>
@@ -138,6 +147,87 @@ Partial Public Class home
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents login_submitButton As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''closePosView control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents closePosView As Global.System.Web.UI.WebControls.View
+    
+    '''<summary>
+    '''SqlDataSource1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''BankDD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BankDD As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''closeKioksID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents closeKioksID As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''closeEmpUser control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents closeEmpUser As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''closeDate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents closeDate As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''closeDepAmt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents closeDepAmt As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''submitClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents submitClose As Global.System.Web.UI.WebControls.ImageButton
+    
+    '''<summary>
+    '''cancelClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cancelClose As Global.System.Web.UI.WebControls.ImageButton
     
     '''<summary>
     '''posButton control.

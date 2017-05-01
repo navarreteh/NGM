@@ -10,17 +10,18 @@
      function SetTarget() {
          document.forms[0].target = "_blank";
      }
+    
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body onload="<% =loadKioskID %>">
+<body>
     <form id="form1" runat="server">
     <div id="backOfficeOverlay">
         <header>
 		<div id="headerButtons" class="headerContainer">
             <a><asp:ImageButton runat="server" class="headerButtons" type="image" name="editIcon"  id="homeIcon" 		src="../images/headerIcons/homeIcon.png"    ToolTip="Home"/></a>
-			<a><asp:ImageButton runat="server"  class="headerButtons" type="image" name="printIcon" id="printIcon" 	    src="../images/headerIcons/printIcon.png"   ToolTip="Print"/></a>
+			<a><asp:ImageButton runat="server"  class="headerButtons" type="image" name="printIcon" id="printIcon" 	    src="../images/headerIcons/printIcon.png"   ToolTip="Print"  OnClientClick = "CallPrint();"/></a>
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon"      src="../images/headerIcons/helpIcon.png"    ToolTip="Help" OnClientClick ="SetTarget();"/></a>
 		</div>
 		<h1 class="headerContainer">Back Office</h1>

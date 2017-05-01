@@ -114,4 +114,10 @@ Public Class pos
         Response.Redirect("help.aspx")
     End Sub
 
+    Protected Sub addIcon_Click(sender As Object, e As ImageClickEventArgs) Handles addIcon.Click
+
+
+
+
+    End Sub
 End Class

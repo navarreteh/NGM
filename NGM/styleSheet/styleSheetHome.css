@@ -67,3 +67,39 @@
 a{
 	display: inline-block;
 }
+#searchResults{
+    position:absolute;
+    margin-top:-5px;
+    background-color: rgba(255,255,255,0.75);
+    width:560px;
+    height:auto;
+    max-height:700px;
+    overflow:auto;
+    z-index:1;
+
+}
+#closePosContainer{
+	background-color: rgba(126,129,126,.85);
+	box-shadow: -2px 8px 5px 1px rgba(98,100,103,1);
+    position:relative;
+	border-radius: 15px;
+	padding-top: 20px;
+	float:left; 
+	margin: 5.5em 4em 4em 4em;
+	width: 550px;
+	height: 450px;
+
+}
+#closePosForm{
+    width:350px;
+    margin:auto;
+    margin-top:50px;
+}
+.formLabel{
+    width:150px;
+    display:inline-block;
+}
+#submitClose{
+    margin-left:0px;
+    
+}

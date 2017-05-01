@@ -3,7 +3,6 @@
 Public Class home
     Inherits System.Web.UI.Page
 
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             homeMultiView.SetActiveView(homeLogoView)
@@ -59,7 +58,8 @@ Public Class home
     End Sub
 
     Protected Sub messageButton_Click(sender As Object, e As ImageClickEventArgs) Handles messageButton.Click
-        switchViews()
+        Response.Redirect("test.aspx")
+
     End Sub
 
     Protected Sub clockButton_Click(sender As Object, e As ImageClickEventArgs) Handles clockButton.Click
@@ -71,7 +71,56 @@ Public Class home
     End Sub
 
     Protected Sub searchIcon_Click(sender As Object, e As ImageClickEventArgs) Handles searchIcon.Click
-        switchViews()
+
+
+
+        Dim searchText As String = searchBar.Text
+        Dim MyConnection As SqlConnection
+        Dim MyCommand As SqlCommand
+        Dim MyReader As SqlDataReader
+        MyConnection = New SqlConnection()
+        MyConnection.ConnectionString = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
+        MyCommand = New SqlCommand()
+        MyCommand.CommandText = "SELECT Products.Product_ID AS Product_ID, Product_Name AS Product_Name, Products.Category_ID AS Category_ID, Product_QOH AS Product_QOH, Kiosk_ID FROM (Products INNER JOIN Product_QOH ON Products.Product_ID = Product_QOH.Product_ID) WHERE Products.Product_ID LIKE '" & searchText & "%' OR Product_Name LIKE '" & searchText & "%' OR Product_Description LIKE '" & searchText & "%'"
+        MyCommand.CommandType = CommandType.Text
+            MyCommand.Connection = MyConnection
+
+        Try
+            MyCommand.Connection.Open()
+            MyReader = MyCommand.ExecuteReader()
+
+            If Not MyReader.Read() Then
+                searchBar.Text = searchText + " - No matching results found"
+            End If
+
+            While MyReader.Read()
+                Dim record As New Label
+
+                Dim productID As String = MyReader("Product_ID").ToString
+                Dim productName As String = MyReader("Product_Name").ToString
+                Dim productCat As String = MyReader("Category_ID").ToString
+                Dim productQty As String = MyReader("Product_QOH").ToString
+                Dim productLoc As String = MyReader("Kiosk_ID").ToString
+
+                Dim recordString As String = "Product ID: " + productID + " | Name: " + productName + " | Cat: " + productCat + " | QTY: " + productQty + " | Kiosk ID: " + productLoc
+                record.Text = recordString
+                searchResults.Controls.Add(record)
+                searchResults.Controls.Add(New LiteralControl("<br />"))
+
+            End While
+
+            MyReader.Close()
+            MyConnection.Close()
+
+        Catch
+            'Failed to connect for daily
+            searchBar.Text = "Connection Error - Try Again"
+
+        End Try
+
+        'searchResults.Controls.Clear()
+
+
     End Sub
 
 
@@ -91,7 +140,7 @@ Public Class home
 
         Dim directTo As HttpCookie = Request.Cookies.[Get]("DIRECT")
         Dim directToString = directTo.Value.ToString
-        InvalidCredLabel.Text = directToString
+        'InvalidCredLabel.Text = directToString
 
 
         If directToString.Equals("POS") Then
@@ -105,7 +154,9 @@ Public Class home
             Response.Redirect("BackOffice/bank.aspx")
         ElseIf directToString.Equals("CLOSE") Then
             directTo.Expires = DateTime.Now.AddDays(-1)
-            Response.Redirect("index.aspx")
+            homeMultiView.SetActiveView(closePosView)
+            setDepositForm()
+
         End If
 
 
@@ -120,7 +171,7 @@ Public Class home
                 Dim loginID = Integer.Parse(login_usernameTB.Text)
                 Dim conn As SqlConnection
                 Dim cmd As SqlCommand
-                Dim cmdString As String = "Select [Employee_Password], Employees.Role_ID From [Employee_Login],[Employees] Where Employee_Login.Employee_ID = @Username And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.Employee_ID;"
+                Dim cmdString As String = "Select [Employee_Password], Employees.Role_ID, Employees.Employee_Last_Name, Employees.Employee_ID From [Employee_Login],[Employees] Where Employee_Login.Employee_ID = @Username And [Employee_Password] = @Password And Employees.Employee_ID = Employee_Login.Employee_ID;"
 
                 conn = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString)
                 cmd = New SqlCommand(cmdString, conn)
@@ -140,12 +191,24 @@ Public Class home
                     ' add field to Kiosk Table for Kiosk Status ('active','inactive')
 
                     ' If resulting statement's "Role" value = 1 (lower-level op employee), deny access.
+
+
                     If myReader.Item(1) = 1 Then
                         InvalidCredLabel.Text = "Unauthorized Action"
-                        ' Else, ("Role" value > 1), allow entry into system.
+                        'Else, ("Role" value > 1), allow entry into system.
                     Else
-                        InvalidCredLabel.Text = "Correct"
+                        'Success
+                        Dim userIdCookie As New HttpCookie("Emp_ID", myReader.Item(3).ToString)
+                        Dim userCookie As New HttpCookie("UserName", myReader.Item(2).ToString)
+                        Dim userRCookie As New HttpCookie("Role", myReader.Item(1).ToString)
+                        userCookie.Expires = DateTime.Now.AddMinutes(1)
+                        userRCookie.Expires = DateTime.Now.AddMinutes(1)
+                        userIdCookie.Expires = DateTime.Now.AddMinutes(1)
+                        Response.SetCookie(userCookie)
+                        Response.SetCookie(userRCookie)
+                        Response.SetCookie(userIdCookie)
                         directToPage()
+
                     End If
                     ' If query fails to return results then attempted user and attempted pass were NOT found in database.
                 Else
@@ -156,5 +219,49 @@ Public Class home
             'InvalidCredLabel.Text = "Connection Error."
         End Try
 
+    End Sub
+
+    Protected Sub submitClose_Click(sender As Object, e As ImageClickEventArgs) Handles submitClose.Click
+
+        Try
+            Dim MyConnection As New SqlConnection()
+            MyConnection.ConnectionString = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
+            Dim bankIdString As String = BankDD.SelectedValue.ToString
+            Dim empIdString As String = Request.Cookies.[Get]("Emp_ID").Value.ToString
+            Dim dateString As String = DateTime.Now.ToString("MM/dd/yyyy")
+            Dim depositString As String = closeDepAmt.Text
+
+            Dim insertCommand As String = "INSERT INTO Deposit Values ('" & bankIdString & "','" & closeKioksID.Text & "','" & empIdString & "','" & dateString & "','" & depositString & "')"
+
+            Dim MyCommand As New SqlCommand()
+            MyCommand.Connection = MyConnection
+            MyCommand.CommandText = insertCommand
+            MyConnection.Open()
+            MyCommand.ExecuteNonQuery()
+            MyConnection.Close()
+
+
+            Response.Redirect("index.aspx")
+
+        Catch
+
+            closeDepAmt.Text = "Error"
+
+        End Try
+
+        'Response.Redirect("index.aspx")
+    End Sub
+
+    Protected Sub setDepositForm()
+        Dim cookieKiosk As HttpCookie = Request.Cookies.[Get]("Kiosk_ID")
+        Dim cookieEmp As HttpCookie = Request.Cookies.[Get]("UserName")
+        closeKioksID.Text = cookieKiosk.Value.ToString
+        closeEmpUser.Text = cookieEmp.Value.ToString
+        closeDate.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt")
+
+    End Sub
+
+    Protected Sub cancelClose_Click(sender As Object, e As ImageClickEventArgs) Handles cancelClose.Click
+        switchViews()
     End Sub
 End Class
