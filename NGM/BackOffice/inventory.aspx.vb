@@ -1,7 +1,6 @@
 ﻿
 Partial Class inventory
     Inherits System.Web.UI.Page
-
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
         qtyAdjustView.Visible = True
     End Sub
@@ -11,7 +10,12 @@ Partial Class inventory
             qtyAdjustView.Visible = False
             GridView1.AutoGenerateSelectButton = True
 
+
         End If
     End Sub
+
+
+
+
 
 End Class

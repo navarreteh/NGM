@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="reports.aspx.vb" Inherits="NGM.reports" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -35,7 +37,6 @@
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="printIcon" id="printIcon" src="images/headerIcons/printIcon.png"    ToolTip="Print" /></a>
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="helpIcon" id="poshelpIcon" src="images/headerIcons/helpIcon.png"    ToolTip="Help" OnClientClick = "SetTarget();"/></a>
 		</div>
-	    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 	</header>
 	<div id="reportsContainer">
         <asp:MultiView ID="reportsMultiView" runat="server">
@@ -68,7 +69,8 @@
             <asp:View ID="detailedView" runat="server">
 		        <div id="detailedContainer">
 			        <img src="images/banners/reports_detailed.jpg" width="680" height="40" alt="detailedTopper"/>
-
+                 
+                    <asp:DetailsView ID="DetailedReport" runat="server" Height="50px" Width="125px"></asp:DetailsView>
 
 	            </div>
             </asp:View>
@@ -77,7 +79,19 @@
             <div id="reportsLogo">
                 <div id="clockContainer">
                     <h2>
-                        <asp:Literal runat="server" id="timeDisplay" ></asp:Literal><br/>
+                        <asp:Literal runat="server" id="timeDisplay" ></asp:Literal>
+                        <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource2">
+                            <Series>
+                                <asp:Series ChartType="Line" Name="Series1">
+                                </asp:Series>
+                            </Series>
+                            <ChartAreas>
+                                <asp:ChartArea Name="ChartArea1">
+                                </asp:ChartArea>
+                            </ChartAreas>
+                        </asp:Chart>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT * FROM [Bank]"></asp:SqlDataSource>
+                        <br/>
                         <asp:Literal runat="server" id="dateDisplay" ></asp:Literal>
                     </h2>
                  </div>

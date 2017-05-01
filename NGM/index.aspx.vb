@@ -51,4 +51,8 @@ Partial Class index
             InvalidCredLabel.Text = "Connection Error."
         End Try
     End Sub
+
+    Protected Sub header_helpIcon_Click(sender As Object, e As ImageClickEventArgs) Handles header_helpIcon.Click
+        Response.Redirect("helpfromIndex.aspx")
+    End Sub
 End Class
