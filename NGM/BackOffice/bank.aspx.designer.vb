@@ -12,7 +12,8 @@ Option Explicit On
 
 
 Partial Public Class bank
-    
+    Protected WithEvents lblInsertBankID As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
     '''DD_Datasource control.
     '''</summary>
