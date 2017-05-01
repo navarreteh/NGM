@@ -15,13 +15,31 @@ Partial Class employees
     End Sub
 
     Protected Sub cancelButton_Click(sender As Object, e As ImageClickEventArgs) Handles cancelButton.Click
+        ' Clear textboxes.
+        idLB.Text = ""
+        fNameTB.Text = ""
+        lNameTB.Text = ""
+        stOneTB.Text = ""
+        stTwoTB.Text = ""
+        cityTB.Text = ""
+        stateTB.Text = ""
+        zipTB.Text = ""
+        ssnTB.Text = ""
+        dobTB.Text = ""
+        phoneTB.Text = ""
+        roleTB.Text = ""
+        hireDateTB.Text = ""
+        loginPasswordTB.Text = ""
+
+        ' Set EmployeeView as Active View.
         MultiViewEmployees.SetActiveView(EmployeeView)
     End Sub
 
     Protected Sub EmployeeAddForm_Activate(sender As Object, e As EventArgs) Handles EmployeeAddForm.Activate
+        ' This code allows the page to pull the most recent Employee ID number plus 1 to get the new Employee's ID generated and visible.
         Dim selectCommand As String =
             "SELECT TOP 1 Employees.Employee_ID+1
-            FROM Employees
+            From Employees
             ORDER BY Employees.Employee_ID DESC; "
         Dim MyCommand As SqlCommand
         Dim MyReader As SqlDataReader
@@ -49,6 +67,7 @@ Partial Class employees
     End Sub
 
     Protected Sub submitButton_Click(sender As Object, e As ImageClickEventArgs) Handles submitButton.Click
+        ' To enter a new Employee.
         If Page.IsValid Then
             Try
                 Dim MyConnection As New SqlConnection()
@@ -84,20 +103,22 @@ Partial Class employees
                 'If errorLabel.Text = "Success" Then
                 ' clear all text if success
                 idLB.Text = ""
-                    fNameTB.Text = ""
-                    lNameTB.Text = ""
-                    stOneTB.Text = ""
-                    stTwoTB.Text = ""
-                    cityTB.Text = ""
-                    stateTB.Text = ""
-                    zipTB.Text = ""
-                    ssnTB.Text = ""
-                    dobTB.Text = ""
-                    phoneTB.Text = ""
-                    roleTB.Text = ""
+                fNameTB.Text = ""
+                lNameTB.Text = ""
+                stOneTB.Text = ""
+                stTwoTB.Text = ""
+                cityTB.Text = ""
+                stateTB.Text = ""
+                zipTB.Text = ""
+                ssnTB.Text = ""
+                dobTB.Text = ""
+                phoneTB.Text = ""
+                roleTB.Text = ""
                 hireDateTB.Text = ""
                 loginPasswordTB.Text = ""
                 ' toggle views
+
+                Response.Redirect("employees.aspx")
                 MultiViewEmployees.SetActiveView(EmployeeView)
                 'End If
 
@@ -107,4 +128,5 @@ Partial Class employees
 
         End If
     End Sub
+
 End Class

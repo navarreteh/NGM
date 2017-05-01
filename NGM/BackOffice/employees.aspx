@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
         .sectionContent{
-            width:600px;
+            width:700px;
             height:400px;
             padding-left:50px;
             padding-right:50px;
@@ -35,17 +35,13 @@
              text-align:left;
          }
          .tableCells{
-             width:400px;
+             width:300px;
          }
          .validator{
              color:#ad0c0c;
+             font-weight:bold;
          }
     </style>
-    <script type="text/javascript">
-        function displayValidatorErrors() {
-            window.confirm(document.getElementById('valEmployee_First_Name').innerHTML);
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
@@ -164,6 +160,7 @@
             <div class="sectionContent">
             <h3>Add New Employee </h3>
             <asp:Label ID="errorLabel" runat="server" Text=""></asp:Label>
+                
             <table>
                 <tr>
                   <th>ID</th>
@@ -171,15 +168,21 @@
                 </tr>
                 <tr>
                   <th>First Name</th>
-                  <td><asp:TextBox ID="fNameTB"     CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="fNameTB"     CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valfName" class="validator" runat="server" controltovalidate="fNameTB" text="" ErrorMessage="First Name Required" Visible="true" Display="static"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Last Name</th>
-                  <td><asp:TextBox ID="lNameTB"     CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="lNameTB"     CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="vallNameTB" class="validator" runat="server" ErrorMessage="Last Name Required" visible="true" ControlToValidate="lNameTB"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Street Line 1</th>
-                  <td><asp:TextBox ID="stOneTB"     CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="stOneTB"     CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator runat="server" class="validator" ErrorMessage="Street Line 1 Required" ControlToValidate="stOneTB" Visible="true" ID="valstOne"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Street Line 2</th>
@@ -187,42 +190,68 @@
                 </tr>
                 <tr>
                   <th>City</th>
-                  <td><asp:TextBox ID="cityTB"      CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="cityTB"      CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valcity" class="validator" runat="server" ErrorMessage="City Required" Visible="true" ControlToValidate="cityTB"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>State</th>
-                  <td><asp:TextBox ID="stateTB"     CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="stateTB"     CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valstate" class="validator" runat="server" ErrorMessage="State Required" visible="true" ControlToValidate="stateTB"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Zipcode</th>
-                  <td><asp:TextBox ID="zipTB"       CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="zipTB"       CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valzip" class="validator" runat="server" ErrorMessage="Zip Code Required" Visible="true" ControlToValidate="zipTB"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>SSN</th>
-                  <td><asp:TextBox ID="ssnTB"       CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="ssnTB"       CssClass="tableCells" runat="server">xxx-xx-xxxx</asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valssn" class="validator" runat="server" ErrorMessage="Social Security Number Required" Visible="True" ControlToValidate="ssnTB"></asp:RequiredFieldValidator>
+                      <br />
+                      <asp:RegularExpressionValidator ID="regexssn" class="validator" runat="server" ErrorMessage="Social Security Number Format: xxx-xx-xxxx" ValidationExpression="^\d{3}-\d{2}-\d{4}$" ControlToValidate="ssnTB"></asp:RegularExpressionValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>DOB</th>
-                  <td><asp:TextBox ID="dobTB"       CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="dobTB"       CssClass="tableCells" runat="server">xx/xx/xxxx</asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valdob" class="validator" runat="server" ErrorMessage="Date of Birth Required" Visible="true" ControlToValidate="dobTB"></asp:RequiredFieldValidator>
+                      <br />
+                      <asp:RegularExpressionValidator ID="regexdob" class="validator" runat="server" ErrorMessage="Date of Birth Format: xx/xx/xxxx" ValidationExpression="\d{1,2}/(\d{1,2}/\d{4}|\d{2})" ControlToValidate="dobTB"></asp:RegularExpressionValidator>
+
+                  </td>
                 </tr>
                 <tr>
                   <th>Phone</th>
-                  <td><asp:TextBox ID="phoneTB"     CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="phoneTB"     CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valphone" class="validator" runat="server" ErrorMessage="Phone Number Required" Visible="true" ControlToValidate="phoneTB"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Role ID</th>
-                  <td><asp:TextBox ID="roleTB"      CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="roleTB"      CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valrole" class="validator" runat="server" ErrorMessage="Role Number Required" Visible="true" ControlToValidate="roleTB"></asp:RequiredFieldValidator>
+                      <asp:RegularExpressionValidator ID="regexrole" class="validator" runat="server" ErrorMessage="Role Number Invalid" ValidationExpression="1|2|4|5|7|8|9|12" ControlToValidate="roleTB"></asp:RegularExpressionValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Hire Date</th>
-                  <td><asp:TextBox ID="hireDateTB"  CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="hireDateTB"  CssClass="tableCells" runat="server">xx/xx/xxxx</asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valhireDate" class="validator" runat="server" ErrorMessage="Hire Date Required" Visible="true" ControlToValidate="hireDateTB"></asp:RequiredFieldValidator>
+                      <br />
+                      <asp:RegularExpressionValidator ID="regexhireDate" class="validator" runat="server" ErrorMessage="Hire Date Format: xx/xx/xxxx" ValidationExpression="\d{1,2}/(\d{1,2}/\d{4}|\d{2})" ControlToValidate="hiredateTB"></asp:RegularExpressionValidator>
+                  </td>
                 </tr>
                 <tr>
                   <th>Login Password</th>
-                  <td><asp:TextBox ID="loginPasswordTB"  CssClass="tableCells" runat="server"></asp:TextBox></td>
+                  <td><asp:TextBox ID="loginPasswordTB"  CssClass="tableCells" runat="server"></asp:TextBox>
+                      <asp:RequiredFieldValidator ID="valloginPassword" class="validator" runat="server" ErrorMessage="Login Password Required" Visible="true" ControlToValidate="loginPasswordTB"></asp:RequiredFieldValidator>
+                  </td>
                 </tr>
             </table>
-                <asp:ImageButton ID="cancelButton"  CssClass="formButtons" runat="server" src="../images/smallButtons/cancelIcon.png"/>
+                <asp:ImageButton ID="cancelButton"  CssClass="formButtons" causesvalidation="false" runat="server" src="../images/smallButtons/cancelIcon.png"/>
                 <asp:ImageButton ID="submitButton"  CssClass="formButtons"  runat="server" src="../images/smallButtons/submitIcon.png"/>
         </div>
         </asp:View>

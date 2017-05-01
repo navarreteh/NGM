@@ -140,6 +140,15 @@ Partial Public Class employees
     Protected WithEvents fNameTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''valfName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valfName As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''lNameTB control.
     '''</summary>
     '''<remarks>
@@ -149,6 +158,15 @@ Partial Public Class employees
     Protected WithEvents lNameTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''vallNameTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents vallNameTB As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''stOneTB control.
     '''</summary>
     '''<remarks>
@@ -156,6 +174,15 @@ Partial Public Class employees
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents stOneTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''valstOne control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valstOne As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''stTwoTB control.
@@ -176,6 +203,15 @@ Partial Public Class employees
     Protected WithEvents cityTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''valcity control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valcity As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''stateTB control.
     '''</summary>
     '''<remarks>
@@ -183,6 +219,15 @@ Partial Public Class employees
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents stateTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''valstate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valstate As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''zipTB control.
@@ -194,6 +239,15 @@ Partial Public Class employees
     Protected WithEvents zipTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''valzip control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valzip As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''ssnTB control.
     '''</summary>
     '''<remarks>
@@ -201,6 +255,24 @@ Partial Public Class employees
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ssnTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''valssn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valssn As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''regexssn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents regexssn As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''dobTB control.
@@ -212,6 +284,24 @@ Partial Public Class employees
     Protected WithEvents dobTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''valdob control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valdob As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''regexdob control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents regexdob As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''phoneTB control.
     '''</summary>
     '''<remarks>
@@ -219,6 +309,15 @@ Partial Public Class employees
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents phoneTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''valphone control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valphone As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''roleTB control.
@@ -230,6 +329,24 @@ Partial Public Class employees
     Protected WithEvents roleTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''valrole control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valrole As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''regexrole control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents regexrole As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''hireDateTB control.
     '''</summary>
     '''<remarks>
@@ -239,6 +356,24 @@ Partial Public Class employees
     Protected WithEvents hireDateTB As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''valhireDate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valhireDate As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''regexhireDate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents regexhireDate As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''loginPasswordTB control.
     '''</summary>
     '''<remarks>
@@ -246,6 +381,15 @@ Partial Public Class employees
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents loginPasswordTB As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''valloginPassword control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valloginPassword As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''cancelButton control.
