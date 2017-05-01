@@ -20,7 +20,7 @@
 		<header>
             <div id="addBarContainer">
 			<asp:TextBox type="search" id="addBar" runat="server"/>
-				<a><input type="image" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" width="50" height="50" alt="addIcon"/></a>
+				<a><asp:ImageButton runat="server" type="image" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" alt="addIcon"/></a>
 			</div>
 			<div id="searchBarContainer">
 				<input type="search" id="searchBar"/>
@@ -44,7 +44,7 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT * FROM Products">
                     </asp:SqlDataSource>
 
-                    <asp:DetailsView ID="ProductDetails" runat="server" AutoGenerateRows="True" DataKeyNames="Product_ID" DataSourceID="SqlDataSource1"></asp:DetailsView>
+                    <asp:DetailsView ID="ProductDetails" runat="server" DataKeyNames="Product_ID" DataSourceID="SqlDataSource1"></asp:DetailsView>
                     <asp:Label runat="server" Text="Quantity on Hand: ">
 
                     </asp:Label>

@@ -11,62 +11,50 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class inventory
+Partial Public Class test
     
     '''<summary>
-    '''SqlDataSource1 control.
+    '''form1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''printView control.
+    '''pos control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents printView As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents pos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''GridView1 control.
+    '''ListBox1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents ListBox1 As Global.System.Web.UI.WebControls.ListBox
     
     '''<summary>
-    '''SqlDataSource2 control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''qtyAdjustView control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents qtyAdjustView As Global.System.Web.UI.WebControls.DetailsView
-    
-    '''<summary>
-    '''Master property.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated property.
-    '''</remarks>
-    Public Shadows ReadOnly Property Master() As NGM.backoffice
-        Get
-            Return CType(MyBase.Master,NGM.backoffice)
-        End Get
-    End Property
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 End Class

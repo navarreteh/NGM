@@ -25,7 +25,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <asp:SqlDataSource ID="DD_Datasource" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-        SelectCommand="SELECT [Deposit_Date] FROM [Deposit] WHERE ([Kiosk_ID] = @Kiosk_ID) ORDER BY [Deposit_Date] DESC" >
+        SelectCommand="SELECT [Deposit_Date], [BANK_ID] FROM [Deposit] WHERE ([Kiosk_ID] = @Kiosk_ID) ORDER BY [Deposit_Date] DESC" >
         <SelectParameters>
             <asp:CookieParameter CookieName="Kiosk_ID" Name="Kiosk_ID" Type="Int32" />
         </SelectParameters>
@@ -42,7 +42,7 @@
     <asp:SqlDataSource ID="Bank_Datasource" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
         SelectCommand="SELECT * FROM [Bank] WHERE ([Bank_ID] = @Bank_ID)">
         <SelectParameters>
-            <asp:ControlParameter ControlID="DetailsView1" Name="Bank_ID" PropertyName="SelectedValue" Type="Int32" />
+            <asp:ControlParameter ControlID="calendarDD" Name="Bank_ID" PropertyName="SelectedValue" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
    
@@ -51,7 +51,7 @@
           <div id="bank" class="sectionContent">
             <h3>Deposit Date: </h3>
 
-		    <asp:DropDownList ID="calendarDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" 
+		    <asp:DropDownList ID="calendarDD" runat="server" Width="200px" Height="2em" AutoPostBack="True"  
                 DataSourceID="DD_Datasource" DataTextField="Deposit_Date" DataValueField="Deposit_Date">
             </asp:DropDownList>
             <img class="roundIcons" id="calendarIcon" src="../images/roundIcons/calendarIcon.png" width="50" height="50" alt="calendarIcon"/>
@@ -63,7 +63,7 @@
                 <EditRowStyle BackColor="#7C6F57" />
                 <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
                 <Fields>
-                    <asp:BoundField DataField="Bank_ID"         HeaderText="Bank ID"        SortExpression="Bank_ID"        />
+                    <asp:BoundField DataField="Bank_ID"         HeaderText="Bank ID"        SortExpression="Bank_ID"         />
                     <asp:BoundField DataField="Kiosk_ID"        HeaderText="Kiosk ID"       SortExpression="Kiosk_ID"       />
                     <asp:BoundField DataField="Employee_ID"     HeaderText="Employee ID"    SortExpression="Employee_ID"    />
                     <asp:BoundField DataField="Deposit_ID"      HeaderText="Deposit ID"     SortExpression="Deposit_ID" ReadOnly="True"  InsertVisible="False" />
@@ -83,13 +83,13 @@
                 <EditRowStyle BackColor="#7C6F57" />
                 <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" Width="125px" />
                 <Fields>
-                    <asp:BoundField DataField="Bank_ID"             HeaderText="Bank ID"        SortExpression="Bank_ID"  InsertVisible="False" ReadOnly="True" />
-                    <asp:BoundField DataField="Bank_Name"           HeaderText="Name"           SortExpression="Bank_Name"          />
-                    <asp:BoundField DataField="Bank_Street_Line1"   HeaderText="Street_Line1"   SortExpression="Bank_Street_Line1"  />
-                    <asp:BoundField DataField="Bank_Street_Line2"   HeaderText="Street_Line2"   SortExpression="Bank_Street_Line2"  />
-                    <asp:BoundField DataField="Bank_City"           HeaderText="City"           SortExpression="Bank_City"          />
-                    <asp:BoundField DataField="Bank_State"          HeaderText="State"          SortExpression="Bank_State"         />
-                    <asp:BoundField DataField="Bank_Zip_Code"       HeaderText="Zip_Code"       SortExpression="Bank_Zip_Code"      />
+                    <asp:BoundField DataField="Bank_ID"             HeaderText="Bank_ID"             SortExpression="Bank_ID"  InsertVisible="False" ReadOnly="True" />
+                    <asp:BoundField DataField="Bank_Name" HeaderText="Bank_Name" SortExpression="Bank_Name" />
+                    <asp:BoundField DataField="Bank_Street_Line1" HeaderText="Bank_Street_Line1" SortExpression="Bank_Street_Line1" />
+                    <asp:BoundField DataField="Bank_Street_Line2" HeaderText="Bank_Street_Line2" SortExpression="Bank_Street_Line2" />
+                    <asp:BoundField DataField="Bank_City" HeaderText="Bank_City" SortExpression="Bank_City" />
+                    <asp:BoundField DataField="Bank_State" HeaderText="Bank_State" SortExpression="Bank_State" />
+                    <asp:BoundField DataField="Bank_Zip_Code" HeaderText="Bank_Zip_Code" SortExpression="Bank_Zip_Code" />
                 </Fields>
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

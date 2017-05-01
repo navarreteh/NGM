@@ -82,6 +82,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -133,6 +134,7 @@
     <Content Include="BackOffice\suppliers.aspx" />
     <Content Include="BackOffice\transactions.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="helpfromIndex.aspx" />
     <Content Include="help.aspx" />
     <Content Include="home.aspx" />
     <Content Include="images\backgrounds\home_ice.png" />
@@ -151,6 +153,7 @@
     <Content Include="styleSheet\styleSheetIndex.css" />
     <Content Include="styleSheet\styleSheetPos.css" />
     <Content Include="styleSheet\styleSheetReports.css" />
+    <Content Include="test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +216,13 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="helpfromIndex.aspx.designer.vb">
+      <DependentUpon>helpfromIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="helpfromIndex.aspx.vb">
+      <DependentUpon>helpfromIndex.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="help.aspx.designer.vb">
       <DependentUpon>help.aspx</DependentUpon>
     </Compile>
@@ -272,6 +282,13 @@
     </Compile>
     <Compile Include="reports.aspx.vb">
       <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.vb">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.vb">
+      <DependentUpon>test.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

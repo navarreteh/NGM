@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="backoffice.Master" AutoEventWireup="false" Inherits="NGM.inventory" Codebehind="inventory.aspx.vb" %>
+<%@ MasterType virtualpath="backoffice.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style>
@@ -18,15 +19,38 @@
             width: 650px;
         }
     </style>
+    <script>
+
+         function CallPrint() {
+            var printContent = document.getElementById('<%= printView.ClientID %>');
+
+             var date= new Date;
+             var monthS = date.getMonth;
+             var dateS = date.getDate;
+             var yearS = date.getFullYear;
+             var kioskID = '1';
+             var date = monthS + "/" + dateS + "/" + yearS;
+             var printWindow = window.open("All Records", 
+             "Print Panel", 'left=50000,top=50000,width=0,height=0');
+             printWindow.document.write("<h3>Inventory Report</h3><p>Kiosk ID: " + kioskID + " </p><p>" + date + "</p>")
+             printWindow.document.write(printContent.innerHTML);
+             printWindow.document.close();
+             printWindow.focus();
+             printWindow.print();
+        
+     }
+    </script>
+
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
         SelectCommand="SELECT Products.Product_ID, Product_Name, Product_Description, Product_Price, Products.Category_ID, Product_QOH FROM (Products INNER JOIN Product_QOH ON Products.Product_ID = Product_QOH.Product_ID)">
     </asp:SqlDataSource>
      <section>
 		<div id="sectionHeader">Inventory</div>
          <div id="bank" class="sectionContent" style="overflow-y:scroll; height:400px; width:625px;">
-
+        <asp:Panel runat="server" ID="printView">
+            <br />
             <asp:GridView ID="GridView1" runat="server"
                   AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
                   BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Product_ID" 
@@ -52,6 +76,7 @@
                  <SortedDescendingHeaderStyle BackColor="#000065" />
             </asp:GridView>
             <br />
+            </asp:Panel>
             </div>
             <div class="sectionContent" style="margin-top:25px;">
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
