@@ -12,7 +12,6 @@ Option Explicit On
 
 
 Partial Public Class bank
-    Protected WithEvents lblInsertBankID As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''DD_Datasource control.
@@ -22,7 +21,7 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DD_Datasource As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''Deposit_Datasource control.
     '''</summary>
@@ -31,7 +30,7 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Deposit_Datasource As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''Bank_Datasource control.
     '''</summary>
@@ -40,7 +39,7 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Bank_Datasource As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''calendarDD control.
     '''</summary>
@@ -49,7 +48,7 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents calendarDD As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''DetailsView1 control.
     '''</summary>
@@ -58,7 +57,7 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DetailsView1 As Global.System.Web.UI.WebControls.DetailsView
-    
+
     '''<summary>
     '''DetailsView2 control.
     '''</summary>
@@ -67,7 +66,7 @@ Partial Public Class bank
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DetailsView2 As Global.System.Web.UI.WebControls.DetailsView
-    
+
     '''<summary>
     '''Master property.
     '''</summary>
@@ -76,7 +75,7 @@ Partial Public Class bank
     '''</remarks>
     Public Shadows ReadOnly Property Master() As NGM.backoffice
         Get
-            Return CType(MyBase.Master,NGM.backoffice)
+            Return CType(MyBase.Master, NGM.backoffice)
         End Get
     End Property
 End Class
