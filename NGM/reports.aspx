@@ -26,12 +26,7 @@
             <asp:DropDownList ID="calenderEndDD" runat="server"  class="calendarDD">
             </asp:DropDownList>
 		</div>--%>
-		<div id="locationDDContainer" class="headerContainer">
-			<img class="roundIcons" id="addIcon" src="images/roundIcons/locationIcon.png" width="50" height="50" alt="LocationIcon"/>
-		    <asp:DropDownList ID="locationDD" runat="server" Height="2.5em">
-                <asp:ListItem>TEST</asp:ListItem>
-            </asp:DropDownList>
-		</div>
+		
 		<div id="headerButtons" class="headerContainer" style="float:right;">
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="homeIcon" id="homeIcon" src="images/headerIcons/homeIcon.png"       ToolTip="Home"  /></a>
 			<a><asp:ImageButton runat="server" class="headerButtons" type="image" name="printIcon" id="printIcon" src="images/headerIcons/printIcon.png"    ToolTip="Print" /></a>
@@ -80,17 +75,7 @@
                 <div id="clockContainer">
                     <h2>
                         <asp:Literal runat="server" id="timeDisplay" ></asp:Literal>
-                        <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource2">
-                            <Series>
-                                <asp:Series ChartType="Line" Name="Series1">
-                                </asp:Series>
-                            </Series>
-                            <ChartAreas>
-                                <asp:ChartArea Name="ChartArea1">
-                                </asp:ChartArea>
-                            </ChartAreas>
-                        </asp:Chart>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT * FROM [Bank]"></asp:SqlDataSource>
+                  
                         <br/>
                         <asp:Literal runat="server" id="dateDisplay" ></asp:Literal>
                     </h2>

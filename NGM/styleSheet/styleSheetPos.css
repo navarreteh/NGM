@@ -155,3 +155,41 @@ p{
     float:right;
     margin-right:20px;
 }
+.redText{
+    color:red
+}
+
+.blueText{
+    color:#29456D;
+}
+
+h2{
+    color:white;
+    text-align:center;
+}
+#clockContainer{
+    padding-top:75px;
+    width: 308px;
+    height: 280px;
+}
+
+#searchResults{
+    position:absolute;
+    margin-top:-5px;
+    background-color: rgba(255,255,255,0.75);
+    width:560px;
+    height:auto;
+    max-height:700px;
+    overflow:auto;
+    z-index:1;
+
+}
+
+#paymentInputContainer{
+	position: absolute;
+	top:200px;
+	left:425px;
+	width:175px;
+	height:auto;
+    margin:auto;
+}
