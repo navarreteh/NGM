@@ -30,7 +30,7 @@ Partial Public Class products
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents productDetails As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''GridView1 control.
     '''</summary>

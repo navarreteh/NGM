@@ -18,6 +18,9 @@
             height:50px;
             width: 650px;
         }
+        .output{
+            color:white;
+        }
     </style>
     <script>
 
@@ -80,10 +83,11 @@
             </div>
             <div class="sectionContent" style="margin-top:25px;">
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-                    SelectCommand="SELECT [Product_QOH], [Kiosk_ID], [Product_ID] FROM [Product_QOH] WHERE ([Product_ID] = @Product_ID)"
+                    SelectCommand="SELECT [Product_QOH], [Kiosk_ID], [Product_ID] FROM [Product_QOH] WHERE [Kiosk_ID] = @Kiosk_ID AND [Product_ID] = @Product_ID"
                     UpdateCommand="UPDATE [Product_QOH] SET [Product_QOH] = @Product_QOH WHERE [Kiosk_ID] = @Kiosk_ID AND [Product_ID] = @Product_ID">
                  
                     <SelectParameters>
+                        <asp:CookieParameter CookieName="Kiosk_ID" Name="Kiosk_ID" Type="Int32" />
                         <asp:ControlParameter ControlID="GridView1" DefaultValue="0" Name="Product_ID" PropertyName="SelectedValue" Type="Int32" />
                     </SelectParameters>
                     <UpdateParameters>
@@ -93,11 +97,19 @@
                     </UpdateParameters>
                 </asp:SqlDataSource>
 
-                <asp:DetailsView ID="qtyAdjustView" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Kiosk_ID,Product_ID" DataSourceID="SqlDataSource2" GridLines="Vertical" Height="50px" Width="125px">
+                <asp:DetailsView ID="qtyAdjustView" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Kiosk_ID,Product_ID" DataSourceID="SqlDataSource2" GridLines="Vertical" Height="50px" Width="200px">
                     <AlternatingRowStyle BackColor="Gainsboro" />
                     <EditRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
                     <Fields>
-                        <asp:BoundField DataField="Product_QOH" HeaderText="Product_QOH" SortExpression="Product_QOH" />
+                    <asp:TemplateField HeaderText="Product Quantity">
+                        <ItemTemplate>
+                            <asp:Label ID="lblProductQOH"  runat="server" Text='<%# Eval("Product_QOH") %>'></asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:Textbox ID="txtProductQOH"  runat="server" AutoComplete="off" Text='<%# Bind("Product_QOH") %>'></asp:Textbox>
+                            <asp:RegularExpressionValidator ID="regexProductQOH" class="output" runat="server" ErrorMessage="Invalid Value." ControlToValidate="txtProductQOH" ValidationExpression="(0|-?[1-9][0-9]*)"></asp:RegularExpressionValidator>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
                         <asp:CommandField ShowEditButton="True" />
                     </Fields>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -105,6 +117,8 @@
                     <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                 </asp:DetailsView>
+                <br />
+                <asp:Label ID="lblout" class="output" runat="server" Text=""></asp:Label>
             </div>
 	</section>
 </asp:Content>

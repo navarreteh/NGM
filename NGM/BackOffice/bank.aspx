@@ -21,7 +21,8 @@
         width: 650px;
     }
     .validator{
-        color:coral;
+        color:white;
+        font-weight:bold;
     }
     </style>
 </asp:Content>
@@ -121,13 +122,13 @@
                 <Fields>
                     <asp:TemplateField HeaderText="Bank ID">
                         <ItemTemplate>
-                            <asp:Label ID="lblBankID"  runat="server" Text='<%# Eval("Bank_ID") %>'></asp:Label>
+                            <asp:Label ID="idLB"  runat="server" Text='<%# Eval("Bank_ID") %>'></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
                             <asp:Textbox ID="txtBankID"  runat="server" ReadOnly="true" Text='<%# Eval("Bank_ID") %>'></asp:Textbox>
                         </EditItemTemplate>
                         <InsertItemTemplate>
-                            <asp:Label ID="lblInsertBankID" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="idLB" style="color:white;" runat="server" ReadOnly="true" Text='-------------------------------'></asp:Label>
                         </InsertItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Bank Name">
@@ -206,7 +207,7 @@
                             <asp:RequiredFieldValidator ID="valBankZip" class="validator" runat="server" ErrorMessage="*" ControlToValidate="txtBankZip"></asp:RequiredFieldValidator>
                         </InsertItemTemplate>
                     </asp:TemplateField>
-                    <asp:CommandField ShowInsertButton="True" ShowEditButton="True" />
+                    <asp:CommandField ShowInsertButton="True" ShowEditButton="True"/>
                 </Fields>
                 <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
