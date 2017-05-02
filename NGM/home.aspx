@@ -20,8 +20,8 @@
 		<header>
             <div id="searchBarContainer">
                 <asp:Panel runat="server" DefaultButton="searchIcon">
-				    <asp:TextBox runat="server" id="searchBar" ToolTip="Search Inventories" type="search" AutoPostBack="true"></asp:TextBox>
-				    <a><asp:ImageButton runat="server" type="image" class="roundIcons" id="searchIcon" src="images/roundIcons/searchIcon.png" ToolTip="Search" alt="searchIcon"/></a>
+				    <asp:TextBox runat="server" id="searchBar" ToolTip="Search Inventories" type="search" AutoPostBack="true" Placeholder="Search" ></asp:TextBox>
+				    <a><asp:ImageButton runat="server" type="image" class="roundIcons" ID="searchIcon" src="images/roundIcons/searchIcon.png" ToolTip="Search" alt="searchIcon"/></a>
                     <div id="searchResults" runat="server"></div>
                 </asp:Panel>
 			</div>

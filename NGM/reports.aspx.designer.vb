@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class reports
     
     '''<summary>
-    '''locationDD control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents locationDD As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
     '''homeIcon control.
     '''</summary>
     '''<remarks>
@@ -165,24 +156,6 @@ Partial Public Class reports
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents timeDisplay As Global.System.Web.UI.WebControls.Literal
-    
-    '''<summary>
-    '''Chart1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Chart1 As Global.System.Web.UI.DataVisualization.Charting.Chart
-    
-    '''<summary>
-    '''SqlDataSource2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''dateDisplay control.

@@ -21,7 +21,7 @@ Public Class home
 
     Protected Sub posButton_Click(sender As Object, e As ImageClickEventArgs) Handles posButton.Click
         Dim c As New HttpCookie("DIRECT", "POS")
-        c.Expires = DateTime.Now.AddSeconds(60)
+        c.Expires = DateTime.Now.ToLocalTime.AddSeconds(60)
         Response.SetCookie(c)
         switchViews()
 
@@ -30,14 +30,14 @@ Public Class home
 
     Protected Sub reportsButton_Click(sender As Object, e As ImageClickEventArgs) Handles reportsButton.Click
         Dim c As New HttpCookie("DIRECT", "REPORTS")
-        c.Expires = DateTime.Now.AddSeconds(60)
+        c.Expires = DateTime.Now.ToLocalTime.AddSeconds(60)
         Response.SetCookie(c)
         switchViews()
     End Sub
 
     Protected Sub backOfficeButton_Click(sender As Object, e As ImageClickEventArgs) Handles backOfficeButton.Click
         Dim c As New HttpCookie("DIRECT", "BACKOFFICE")
-        c.Expires = DateTime.Now.AddSeconds(60)
+        c.Expires = DateTime.Now.ToLocalTime.AddSeconds(60)
         Response.SetCookie(c)
         switchViews()
 
@@ -45,10 +45,10 @@ Public Class home
 
     Protected Sub closeButton_Click(sender As Object, e As ImageClickEventArgs) Handles closeButton.Click
         Dim cookie As HttpCookie = Request.Cookies.[Get]("Kiosk_ID")
-        cookie.Expires = DateTime.Now.AddDays(-1)
+        cookie.Expires = DateTime.Now.ToLocalTime.AddDays(-1)
 
         Dim c As New HttpCookie("DIRECT", "CLOSE")
-        c.Expires = DateTime.Now.AddSeconds(60)
+        c.Expires = DateTime.Now.ToLocalTime.AddSeconds(60)
         Response.SetCookie(c)
         switchViews()
     End Sub
@@ -58,7 +58,7 @@ Public Class home
     End Sub
 
     Protected Sub messageButton_Click(sender As Object, e As ImageClickEventArgs) Handles messageButton.Click
-        Response.Redirect("test.aspx")
+
 
     End Sub
 
@@ -73,53 +73,56 @@ Public Class home
     Protected Sub searchIcon_Click(sender As Object, e As ImageClickEventArgs) Handles searchIcon.Click
 
 
-
         Dim searchText As String = searchBar.Text
-        Dim MyConnection As SqlConnection
-        Dim MyCommand As SqlCommand
-        Dim MyReader As SqlDataReader
-        MyConnection = New SqlConnection()
-        MyConnection.ConnectionString = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
-        MyCommand = New SqlCommand()
-        MyCommand.CommandText = "SELECT Products.Product_ID AS Product_ID, Product_Name AS Product_Name, Products.Category_ID AS Category_ID, Product_QOH AS Product_QOH, Kiosk_ID FROM (Products INNER JOIN Product_QOH ON Products.Product_ID = Product_QOH.Product_ID) WHERE Products.Product_ID LIKE '" & searchText & "%' OR Product_Name LIKE '" & searchText & "%' OR Product_Description LIKE '" & searchText & "%'"
-        MyCommand.CommandType = CommandType.Text
+        If searchText.Trim IsNot "" Then
+
+            Dim MyConnection As SqlConnection
+            Dim MyCommand As SqlCommand
+            Dim MyReader As SqlDataReader
+            MyConnection = New SqlConnection()
+            MyConnection.ConnectionString = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
+            MyCommand = New SqlCommand()
+            MyCommand.CommandText = "SELECT Products.Product_ID AS Product_ID, Product_Name AS Product_Name, Products.Category_ID AS Category_ID, Product_QOH AS Product_QOH, Kiosk_ID FROM (Products INNER JOIN Product_QOH ON Products.Product_ID = Product_QOH.Product_ID) WHERE Products.Product_ID LIKE '%" & searchText & "%' OR Product_Name LIKE '" & searchText & "%' OR Product_Description LIKE '" & searchText & "%'"
+            MyCommand.CommandType = CommandType.Text
             MyCommand.Connection = MyConnection
 
-        Try
-            MyCommand.Connection.Open()
-            MyReader = MyCommand.ExecuteReader()
+            Try
+                MyCommand.Connection.Open()
+                MyReader = MyCommand.ExecuteReader()
 
-            If Not MyReader.Read() Then
-                searchBar.Text = searchText + " - No matching results found"
-            End If
+                If Not MyReader.HasRows Then
+                    searchBar.Text = "No matching results found"
+                End If
 
-            While MyReader.Read()
-                Dim record As New Label
+                While MyReader.Read()
+                    Dim record As New Label
 
-                Dim productID As String = MyReader("Product_ID").ToString
-                Dim productName As String = MyReader("Product_Name").ToString
-                Dim productCat As String = MyReader("Category_ID").ToString
-                Dim productQty As String = MyReader("Product_QOH").ToString
-                Dim productLoc As String = MyReader("Kiosk_ID").ToString
+                    Dim productID As String = MyReader("Product_ID").ToString
+                    Dim productName As String = MyReader("Product_Name").ToString
+                    Dim productCat As String = MyReader("Category_ID").ToString
+                    Dim productQty As String = MyReader("Product_QOH").ToString
+                    Dim productLoc As String = MyReader("Kiosk_ID").ToString
 
-                Dim recordString As String = "Product ID: " + productID + " | Name: " + productName + " | Cat: " + productCat + " | QTY: " + productQty + " | Kiosk ID: " + productLoc
-                record.Text = recordString
-                searchResults.Controls.Add(record)
-                searchResults.Controls.Add(New LiteralControl("<br />"))
+                    Dim recordString As String = "Product ID: " + productID + " | Name: " + productName + " | Cat: " + productCat + " | QTY: " + productQty + " | Kiosk ID: " + productLoc
+                    record.Text = recordString
+                    searchResults.Controls.Add(record)
+                    searchResults.Controls.Add(New LiteralControl("<br />"))
 
-            End While
+                End While
 
-            MyReader.Close()
-            MyConnection.Close()
+                MyReader.Close()
+                MyConnection.Close()
 
-        Catch
-            'Failed to connect for daily
-            searchBar.Text = "Connection Error - Try Again"
+            Catch
+                'Failed to connect for daily
+                searchBar.Text = "Connection Error - Try Again"
 
-        End Try
+            End Try
 
-        'searchResults.Controls.Clear()
+            'searchResults.Controls.Clear()
 
+            Else searchBar.Text = ""
+        End If
 
     End Sub
 
