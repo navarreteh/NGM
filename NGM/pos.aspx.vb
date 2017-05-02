@@ -4,61 +4,34 @@ Imports System.Data.SqlClient
 Public Class pos
     Inherits System.Web.UI.Page
 
+    Const taxVar As Double = 0.095
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         posMultiView.SetActiveView(purchaseView)
         If Not IsPostBack Then
-            Dim constr As String = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
-            Using con As New SqlConnection(constr)
-                Using cmd As New SqlCommand("SELECT * from Category")
-                    cmd.CommandType = CommandType.Text
-                    cmd.Connection = con
-                    con.Open()
-                    CategoriesDD.DataSource = cmd.ExecuteReader()
-                    CategoriesDD.DataTextField = "Category_Name"
-                    CategoriesDD.DataValueField = "Category_ID"
-                    CategoriesDD.DataBind()
-                    con.Close()
-                End Using
-            End Using
-            CategoriesDD.Items.Insert(0, New ListItem("--Select Category--", "0"))
-        End If
-    End Sub
+            purchaseList.Visible = False
+            purchasePriceLB.Visible = False
 
-    Protected Sub CategoriesDD_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
-        Dim CategoryID As Integer = Convert.ToInt32(CategoriesDD.SelectedValue.ToString())
-        FillProducts(CategoryID)
-    End Sub
+            returnList.Visible = False
+            returnPriceLB.Visible = False
 
 
-    Private Sub FillProducts(ByVal categoryID As Integer)
-        Dim strConn As String = ConfigurationManager.ConnectionStrings("DB_112307_ngmConnectionString").ConnectionString
-        Dim con As New SqlConnection(strConn)
-        Dim cmd As New SqlCommand()
-        cmd.Connection = con
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = "Select * from Products where Category_ID =@categoryID"
-        cmd.Parameters.AddWithValue("@categoryID", categoryID)
-        Dim objDs As New DataSet()
-        Dim dAdapter As New SqlDataAdapter()
-        dAdapter.SelectCommand = cmd
-        con.Open()
-        dAdapter.Fill(objDs)
-        con.Close()
-        If objDs.Tables(0).Rows.Count > 0 Then
-            ProductsDD.DataSource = objDs.Tables(0)
-            ProductsDD.DataTextField = "Product_Description"
-            ProductsDD.DataValueField = "Product_ID"
-            ProductsDD.DataBind()
-            ProductsDD.Items.Insert(0, "--Select--")
-        Else
+            addBar.Focus()
+            DeleteButton.Visible = False
+            DeleteRButton.Visible = False
+            Dim c As New HttpCookie("Counter", "0")
+            c.Expires = DateTime.Now.AddHours(1)
+            Response.Cookies.Add(c)
+
+            Dim c2 As New HttpCookie("CounterReturn", "0")
+            c2.Expires = DateTime.Now.AddHours(1)
+            Response.Cookies.Add(c2)
+
         End If
     End Sub
 
 
-    Protected Sub ProductsDD_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
-        SqlDataSource1.SelectCommand = "SELECT * FROM Products where Category_ID = '" & CategoriesDD.SelectedValue.ToString() & "'"
-        ProductDetails.PageIndex = ProductsDD.SelectedIndex
-    End Sub
+
     Protected Sub checkoutButton_Click(sender As Object, e As ImageClickEventArgs) Handles checkoutButton.Click
         posMultiView.SetActiveView(paymentView)
     End Sub
@@ -115,9 +88,162 @@ Public Class pos
     End Sub
 
     Protected Sub addIcon_Click(sender As Object, e As ImageClickEventArgs) Handles addIcon.Click
+        Dim productID = addBar.Text
+        SqlDataSource1.FilterParameters.Clear()
 
+        If IsNumeric(productID) Then
+            Dim idControl As ControlParameter = New ControlParameter("ProductID", "addBar", "Text")
+            SqlDataSource1.FilterExpression = "Product_ID = '{0}'"
+            SqlDataSource1.FilterParameters.Add(idControl)
+
+            Dim dv As DataView = SqlDataSource1.Select(DataSourceSelectArguments.Empty)
+            If dv.Count > 0 Then
+
+                Dim id As String = dv.Item(0).Row(0).ToString
+                Dim name As String = dv.Item(0).Row(2).ToString
+                Dim desc As String = dv.Item(0).Row(1).ToString
+                Dim price As String = dv.Item(0).Row(3).ToString
+
+                Dim cookie As HttpCookie = Request.Cookies.[Get]("Counter")
+                Dim counter As Integer = Integer.Parse(cookie.Value)
+                Dim newCounter As Integer = counter
+
+                Dim cookieR As HttpCookie = Request.Cookies.[Get]("CounterReturn")
+                Dim counterReturn As Integer = Integer.Parse(cookieR.Value)
+                Dim newCounterReturns As Integer = counterReturn
+
+                Dim control As New LiteralControl
+                control.Equals("<b>")
+
+                Dim record As String = "ID:" + id + " - NAME: " + name + " - DESCRIPTION: " + desc + " - PRICE: " + price
+
+                Dim Item As ListItem = New ListItem(record, id)
+                Dim ItemP As ListItem = New ListItem(price, id)
+
+                If posMultiView.ActiveViewIndex.Equals(0) Or posMultiView.ActiveViewIndex.Equals(2) Then
+                    DeleteButton.Visible = True
+                    purchaseList.Items.Add(Item)
+                    purchasePriceLB.Items.Add(ItemP)
+                    purchaseList.Visible = True
+
+                    newCounter += 1
+                    Response.Cookies("Counter").Value = newCounter.ToString
+
+
+
+                ElseIf posMultiView.ActiveViewIndex.Equals(1) Then
+                    DeleteRButton.Visible = True
+                    returnList.Items.Add(Item)
+                    returnPriceLB.Items.Add(ItemP)
+                    returnList.Visible = True
+
+                    newCounterReturns += 1
+                    Response.Cookies("CounterReturn").Value = newCounterReturns.ToString
+
+
+                End If
+                updateTotal(newCounter, newCounterReturns)
+                addBar.Text = ""
+            Else
+                addBar.Text = "No Item Found"
+                End If
+                addBar.Focus()
+            Else
+                addBar.Text = "Invalid Input"
+            End If
 
 
 
     End Sub
+
+    Protected Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+
+        If purchaseList.SelectedIndex > -1 Then
+
+            Dim cookie As HttpCookie = Request.Cookies.[Get]("Counter")
+            Dim counter As Integer = Integer.Parse(cookie.Value)
+            Dim newCounter As Integer = (counter - 1)
+            Response.Cookies("Counter").Value = newCounter.ToString
+
+            Dim cookieR As HttpCookie = Request.Cookies.[Get]("CounterReturn")
+            Dim counterReturn As Integer = Integer.Parse(cookieR.Value)
+
+            Dim index As Integer = purchaseList.SelectedIndex
+            purchaseList.Items.Remove(purchaseList.SelectedItem)
+            purchasePriceLB.Items.Remove(purchasePriceLB.Items(index))
+
+            updateTotal(newCounter, counterReturn)
+
+            If newCounter = 0 Then
+                DeleteButton.Visible = False
+            End If
+        End If
+
+    End Sub
+
+    Protected Sub DeleteRButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+
+        If purchaseList.SelectedIndex > -1 Then
+
+            Dim cookie As HttpCookie = Request.Cookies.[Get]("Counter")
+            Dim counter As Integer = Integer.Parse(cookie.Value)
+            Dim newCounter As Integer = (counter - 1)
+            Response.Cookies("Counter").Value = newCounter.ToString
+
+            Dim cookieR As HttpCookie = Request.Cookies.[Get]("CounterReturn")
+            Dim counterReturn As Integer = Integer.Parse(cookieR.Value)
+
+            Dim index As Integer = purchaseList.SelectedIndex
+            purchaseList.Items.Remove(purchaseList.SelectedItem)
+            purchasePriceLB.Items.Remove(purchasePriceLB.Items(index))
+
+            updateTotal(newCounter, counterReturn)
+
+            If newCounter = 0 Then
+                DeleteButton.Visible = False
+            End If
+        End If
+
+    End Sub
+
+
+    Protected Sub updateTotal(counter As Integer, counterReturns As Integer)
+        Dim purchaseTotalVar As Decimal = 0
+        Dim returnTotalVar As Decimal = 0
+        Dim subTotalVar As Decimal = 0
+        Dim taxTotalVar As Decimal = 0
+        Dim totalVar As Decimal = 0
+
+        If counter > 0 Then
+            For c As Integer = 1 To (counter)
+                SqlDataSource1.FilterParameters.Clear()
+                Dim index As Integer = c - 1
+                Dim id As String = purchaseList.Items(index).Value
+                Dim price As Double = purchasePriceLB.Items(index).Text
+                Dim purchasePrice As Double = Double.Parse(purchasePriceLB.Items(index).Text.ToString())
+                purchaseTotalVar += purchasePrice
+                subTotalVar += purchasePrice
+                taxTotalVar += (purchasePrice * taxVar)
+
+            Next
+            totalVar += (subTotalVar + taxTotalVar)
+        End If
+
+        purchaseTotalVar = Math.Round(purchaseTotalVar, 2, MidpointRounding.AwayFromZero)
+        subTotalVar = Math.Round(subTotalVar, 2, MidpointRounding.AwayFromZero)
+        taxTotalVar = Math.Round(taxTotalVar, 2, MidpointRounding.AwayFromZero)
+        totalVar = Math.Round(totalVar, 2, MidpointRounding.AwayFromZero)
+
+
+        purchaseTotal.Text = "$" + purchaseTotalVar.ToString
+        returnTotal.Text = "$" + returnTotalVar.ToString
+        subTotal.Text = "$" + subTotalVar.ToString
+        tax.Text = "$" + taxTotalVar.ToString
+        total.Text = "$" + totalVar.ToString
+
+
+    End Sub
+
+
+
 End Class

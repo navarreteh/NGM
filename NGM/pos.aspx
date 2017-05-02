@@ -18,12 +18,13 @@
     <form runat="server">
 	<div id="posOverlay">
 		<header>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT * FROM [Products]"></asp:SqlDataSource>
             <div id="addBarContainer">
 			<asp:TextBox type="search" id="addBar" runat="server"/>
 				<a><asp:ImageButton runat="server" type="image" class="roundIcons" id="addIcon" src="images/roundIcons/addIcon.png" alt="addIcon"/></a>
 			</div>
 			<div id="searchBarContainer">
-				<input type="search" id="searchBar"/>
+				<asp:TextBox type="search" id="searchBar" runat="server" />
 				<a><input type="image" class="roundIcons" id="searchIcon" src="images/roundIcons/searchIcon.png" width="50" height="50" alt="searchIcon"/></a>
 			</div>
 			<div id="headerContainer">
@@ -36,29 +37,14 @@
             <asp:MultiView ID="posMultiView" runat="server">
                 <asp:View ID="purchaseView" runat="server">
     		    <div id="purchaseScreen">
-	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPurchase"	alt="purchaseBanner"/>
-                   <!--The Category DropdownList, populated on pageload if not on autopostback -->
-                    <br /> Select Category: <asp:DropDownList ID="CategoriesDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" OnSelectedIndexChanged="CategoriesDD_SelectedIndexChanged"></asp:DropDownList>
-                   <!--The Product DropdownList, not initially visible but made visible and populated on selectedindexchanged of Category -->
-                    <br /> Select Products: <asp:DropDownList ID="ProductsDD" runat="server" Width="200px" Height="2em" AutoPostBack="True" OnSelectedIndexChanged="ProductsDD_SelectedIndexChanged"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT * FROM Products">
-                    </asp:SqlDataSource>
+	    		   <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPurchase"	alt="purchaseBanner"/>
+                   <div id="purchaseCart">
+                       <asp:ListBox ID="purchaseList" runat="server" CssClass="purchaseList" Rows="20" Height="450px" Width="650" style="overflow:auto;"></asp:ListBox>
+                       <asp:ListBox ID="purchasePriceLB" runat="server"></asp:ListBox>
+                       <asp:Button ID="DeleteButton" runat="server" Text="Delete" style="float:right;" />
+                   </div>
+                        
 
-                    <asp:DetailsView ID="ProductDetails" runat="server" DataKeyNames="Product_ID" DataSourceID="SqlDataSource1"></asp:DetailsView>
-                    <asp:Label runat="server" Text="Quantity on Hand: ">
-
-                    </asp:Label>
-
-
-                   <%-- <table>
-                        <tr>
-                            <td>554456</td>
-                            <td>Iphone</td>
-                            <td>64GB</td>
-                            <td>RED EDITION</td>
-                            <td>$699.99</td>
-                        </tr>
-                    </table>--%>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPurchase"	alt="returnBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPurchase"	alt="paymentanner"/>
 			    </div> 
@@ -67,18 +53,20 @@
                 <div id="returnScreen">
 	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerReturn"	alt="purchaseBanner"/>
 	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerReturn"	    alt="returnBanner"/>
-                    <!-- -->
-	    		    
+                     <div id="returnCart">
+                        <asp:ListBox ID="returnList" runat="server" CssClass="purchaseList" Rows="20" Height="450px" Width="650" style="overflow:auto;"></asp:ListBox>
+                        <asp:ListBox ID="returnPriceLB" runat="server"></asp:ListBox>
+                         <asp:Button ID="DeleteRButton" runat="server" Text="Delete" style="float:right;" />
+	    		    </div>
                     
                      <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerReturn" 	alt="paymentanner"/>
 			    </div> 
                 </asp:View>
                 <asp:View ID="paymentView" runat="server">
                 <div id="paymentScreen">
-	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg" class="posBanners" id="purchaseBannerPayment"	alt="purchaseBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	class="posBanners" id="returnBannerPayment"	    alt="returnBanner"/>
-	    		     <asp:ImageButton runat="server"  src="images/banners/payments.jpg" 	class="posBanners" id="paymentBannerPayment"	alt="paymentanner"/>
-                    <!-- -->
+	    		     <asp:ImageButton runat="server"  src="images/banners/purchases.jpg"    class="posBanners" id="purchaseBannerPayment"	alt="purchaseBanner"/>
+	    		     <asp:ImageButton runat="server"  src="images/banners/returns.jpg" 	    class="posBanners" id="returnBannerPayment"	    alt="returnBanner"/>
+                     <asp:ImageButton runat="server"  src="images/banners/payments.jpg"     class="posBanners" id="paymentBannerPayment"	    alt="paymentBanner"/>
 
 
                      <div id="paymentMethodContainer">
@@ -86,6 +74,9 @@
 					    <img src="images/largeButtons/pos_card.png" class="paymentButtons" alt="cardButton"/><br/>
 					    <img src="images/largeButtons/manual.png" 	class="paymentButtons" alt="manualButton"/> 
    			         </div>
+			         
+			         
+			         
 			    </div> 
                 </asp:View>
             </asp:MultiView>
@@ -96,6 +87,11 @@
 			<div id="posTotals">
 		    	<img src="images/banners/totals.png" width="300" alt="totals banner"/>
 		    	<div id="totalsView">
+                    <p class="totalText">Purchases:</p> <p class="totalValue"><asp:Literal ID="purchaseTotal"   runat="server" Text="$000.00"></asp:Literal></p><br />
+                    <p class="totalText">Returns:</p>   <p class="totalValue"><asp:Literal ID="returnTotal"     runat="server" Text="$000.00"></asp:Literal></p><br />
+                    <p class="totalText">SubTotal</p>   <p class="totalValue"><asp:Literal ID="subTotal"        runat="server" Text="$000.00"></asp:Literal></p><br />
+                    <p class="totalText">Tax:</p>       <p class="totalValue"><asp:Literal ID="tax"             runat="server" Text="$000.00"></asp:Literal></p><br />
+                    <p class="totalText">Total:</p>     <p class="totalValue"><asp:Literal ID="total"           runat="server" Text="$000.00"></asp:Literal></p>
 				</div>
 		    </div>
 		    <asp:ImageButton runat="server" src="images/largeButtons/pos_checkout.png" width="325" id="checkoutButton" alt="checkout button"/> 
