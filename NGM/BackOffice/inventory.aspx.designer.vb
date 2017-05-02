@@ -59,6 +59,15 @@ Partial Public Class inventory
     Protected WithEvents qtyAdjustView As Global.System.Web.UI.WebControls.DetailsView
     
     '''<summary>
+    '''lblout control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblout As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Master property.
     '''</summary>
     '''<remarks>

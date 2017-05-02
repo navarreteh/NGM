@@ -18,7 +18,7 @@
      </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT Products.Product_ID, [Product_Description], [Product_Name], [Product_Price], [Product_Discount], Products.Category_ID
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT Products.Product_ID, [Product_Description], [Product_Name], [Product_Price], Products.Category_ID
     FROM Products;"></asp:SqlDataSource>
      <section>
 		<div id="sectionHeader">Products</div>
@@ -32,12 +32,46 @@
                 
                      <AlternatingRowStyle BackColor="#DCDCDC" />
                     <Columns>
-                        <asp:BoundField DataField="Product_ID"          HeaderText="Product ID"     InsertVisible="False" ReadOnly="True" SortExpression="Product_ID" />
-                        <asp:BoundField DataField="Product_Description" HeaderText="Product_Description"                  ReadOnly="True" SortExpression="Product_Description" />
-                        <asp:BoundField DataField="Product_Name"        HeaderText="Product Name"                         ReadOnly="True" SortExpression="Product_Name" />
-                        <asp:BoundField DataField="Product_Price"       HeaderText="Product Price"                        ReadOnly="True" SortExpression="Product_Price" />
-                        <asp:BoundField DataField="Product_Discount"    HeaderText="Product_Discount"                     ReadOnly="True" SortExpression="Product_Discount" />
-                        <asp:BoundField DataField="Category_ID"         HeaderText="Category_ID"                          ReadOnly="True" SortExpression="Category_ID" />
+                        <asp:TemplateField HeaderText="Product ID">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProductID"  runat="server" Text='<%# Eval("Product_ID") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Textbox ID="lblProductID"  runat="server" ReadOnly="true" Text='<%# Eval("Product_ID") %>'></asp:Textbox>
+                            </EditItemTemplate>
+                            <InsertItemTemplate>
+                                <asp:Label ID="lblProductID" style="color:white;" runat="server" ReadOnly="true" Text='-------------------------------'></asp:Label>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Product Description">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProductDescription"  runat="server" Text='<%# Eval("Product_Description") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Textbox ID="txtProductDescription" runat="server" Text='<%# Bind("Product_Description") %>'></asp:Textbox>
+                                <asp:CustomValidator ID="valProdDescrLength" runat="server" onservervalidate="checkProdDescrLength" ErrorMessage="50 character max." ControlToValidate="txtProductDescription"></asp:CustomValidator>
+                            </EditItemTemplate>
+                            <InsertItemTemplate>
+                                <asp:Label ID="txtProductDescription" runat="server" Text='<%# Bind("Product_Description") %>'></asp:Label>
+                                <asp:CustomValidator ID="valProdDescrLength" runat="server" onservervalidate="checkProdDescrLength" ErrorMessage="50 character max." ControlToValidate="txtProductDescription"></asp:CustomValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Product Name">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProductName"  runat="server" Text='<%# Eval("Product_Name") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Textbox ID="txtProductName" runat="server" Text='<%# Bind("Product_Name") %>'></asp:Textbox>
+                                <asp:CustomValidator ID="valProdNameLength" runat="server" onservervalidate="checkProdNameLength" ErrorMessage="20 character max." ControlToValidate="txtProductName"></asp:CustomValidator>
+                                <asp:RequiredFieldValidator ID="valProdName" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductName"></asp:RequiredFieldValidator>
+                            </EditItemTemplate>
+                            <InsertItemTemplate>
+                                <asp:Label ID="txtProductName" runat="server" Text='<%# Bind("Product_Name") %>'></asp:Label>
+                                <asp:CustomValidator ID="valProdNameLength" runat="server" onservervalidate="checkProdNameLength" ErrorMessage="20 character max." ControlToValidate="txtProductName"></asp:CustomValidator>
+                                <asp:RequiredFieldValidator ID="valProdName" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductName"></asp:RequiredFieldValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                      <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
