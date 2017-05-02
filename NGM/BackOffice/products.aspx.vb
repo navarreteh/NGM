@@ -15,4 +15,7 @@ Partial Class products
         args.IsValid = (args.Value.Length <= 20)
     End Sub
 
+    Protected Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
+
+    End Sub
 End Class

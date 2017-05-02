@@ -18,8 +18,16 @@
      </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" SelectCommand="SELECT Products.Product_ID, [Product_Description], [Product_Name], [Product_Price], Products.Category_ID
-    FROM Products;"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
+        SelectCommand="SELECT Products.Product_ID, [Product_Description], [Product_Name], [Product_Price], Products.Category_ID FROM Products;"
+        UpdateCommand="UPDATE Products SET [Product_Description] = @Product_Description, [Product_Name] = @Product_Name, [Product_Price] = @Product_Price, Products.Category_ID = @Category_ID WHERE [Product_ID] = @Product_ID">
+    <UpdateParameters>
+        <asp:Parameter Type="String" Name="Product_Description"/>
+        <asp:Parameter Type="String" Name="Product_Name"/>
+        <asp:Parameter DbType="Decimal" Name="Product_Price"/>
+        <asp:Parameter Type="Int32" Name="Category_ID"/>
+    </UpdateParameters>
+    </asp:SqlDataSource>
      <section>
 		<div id="sectionHeader">Products</div>
          <div id="products" class="sectionContent">
@@ -71,7 +79,33 @@
                                 <asp:RequiredFieldValidator ID="valProdName" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductName"></asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
-                        <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
+                        <asp:TemplateField HeaderText="Product Price">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProductPrice"  runat="server" Text='<%# Eval("Product_Price") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Textbox ID="txtProductPrice" runat="server" Text='<%# Bind("Product_Price") %>'></asp:Textbox>
+                                <asp:RequiredFieldValidator ID="valProdPrice" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductPrice"></asp:RequiredFieldValidator>
+                            </EditItemTemplate>
+                            <InsertItemTemplate>
+                                <asp:Label ID="txtProductPrice" runat="server" Text='<%# Bind("Product_Price") %>'></asp:Label>
+                                <asp:RequiredFieldValidator ID="valProdPrice" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductPrice"></asp:RequiredFieldValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="CAT">
+                            <ItemTemplate>
+                                <asp:Label ID="lblProductCategory"  runat="server" Text='<%# Eval("Category_ID") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Textbox ID="txtProductCategory" runat="server" Text='<%# Bind("Category_ID") %>'></asp:Textbox>
+                                <asp:RequiredFieldValidator ID="valProdCat" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductCategory"></asp:RequiredFieldValidator>
+                            </EditItemTemplate>
+                            <InsertItemTemplate>
+                                <asp:Label ID="txtProductCategory" runat="server" Text='<%# Bind("Category_ID") %>'></asp:Label>
+                                <asp:RequiredFieldValidator ID="valProdCat" style="color:lightcoral;" runat="server" ErrorMessage="* Required" ControlToValidate="txtProductCategory"></asp:RequiredFieldValidator>
+                            </InsertItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowEditButton="True"/>
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                      <HeaderStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
@@ -83,6 +117,8 @@
                      <SortedDescendingCellStyle BackColor="#CAC9C9" />
                      <SortedDescendingHeaderStyle BackColor="#000065" />    
                   </asp:GridView><br />
+
+                 <asp:Button ID="btnsubmit" runat="server" Text="Add Employee" />
                  </div>
              </div>
 

@@ -47,7 +47,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_112307_ngmConnectionString %>" 
-        SelectCommand="SELECT Products.Product_ID, Product_Name, Product_Description, Product_Price, Products.Category_ID, Product_QOH FROM (Products INNER JOIN Product_QOH ON Products.Product_ID = Product_QOH.Product_ID)">
+        SelectCommand="SELECT Products.Product_ID, Product_Name, Product_Description, Product_Price, Products.Category_ID, Product_QOH FROM (Products INNER JOIN Product_QOH ON Products.Product_ID = Product_QOH.Product_ID) WHERE Product_QOH.Kiosk_ID = @Kiosk_ID">
+    <SelectParameters>
+        <asp:CookieParameter CookieName="Kiosk_ID" Name="Kiosk_ID" Type="Int32"/>
+    </SelectParameters>
     </asp:SqlDataSource>
      <section>
 		<div id="sectionHeader">Inventory</div>

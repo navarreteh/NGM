@@ -52,7 +52,7 @@ set Product_QOH.Product_QOH =(SELECT Product_QOH.Product_QOH FROM Product_QOH in
             MyConnection.Open()
             MyReader = MyCommand.ExecuteReader()
 
-            'lblShipmentDetails.Text = GridView2.SelectedRow.Cells(1).Text
+            lblShipmentDetails.Text = GridView2.SelectedRow.Cells(1).Text
 
             If MyReader.Read() Then
                 Dim results As String = MyReader.GetValue(0).ToString
